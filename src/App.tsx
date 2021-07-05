@@ -1,6 +1,4 @@
 import React from 'react';
 
-const App = () => {
-  return <>React hello World!</>;
-};
+const App = () => <>React hello World!</>;
 export default App;
