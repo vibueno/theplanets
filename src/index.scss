@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@500&family=Spartan:wght@400;700&display=swap');
+
 $color-white: #fff;
 $color-blue-dark: #070724;
 $color-grey-dark: #38384f;
@@ -12,5 +14,39 @@ $color-turquoise: #1ec2a4;
 $color-blue-dark: #2d68f0;
 
 body {
+  font-family: Spartan, serif;
   color: $color-turquoise;
+  font-size: 14px;
+  line-height: 25px;
+}
+
+h1 {
+  font-family: Antonio, serif;
+  font-weight: 500;
+  font-size: 80px;
+  line-height: 103px;
+}
+
+h2 {
+  font-family: Antonio, serif;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 52px;
+  letter-spacing: -1.5px;
+}
+
+h3 {
+  font-family: Spartan, serif;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 25px;
+  letter-spacing: +2.6px;
+}
+
+h4 {
+  font-family: Antonio, serif;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 25px;
+  letter-spacing: +1px;
 }
