@@ -1,6 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const webpack = require('webpack');
+const ESLintPlugin = require('eslint-webpack-plugin');
 
 module.exports = {
   entry: './src/index.tsx',
@@ -14,7 +15,7 @@ module.exports = {
       {
         test: /\.(ts|tsx)$/,
         exclude: /node_modules/,
-        use: ['babel-loader', 'ts-loader', 'eslint-loader']
+        use: ['babel-loader', 'ts-loader']
       },
       {
         test: /\.s[ac]ss$/i,
@@ -53,6 +54,7 @@ module.exports = {
     }),
     new webpack.ProvidePlugin({
       process: 'process/browser'
-    })
+    }),
+    new ESLintPlugin({})
   ]
 };

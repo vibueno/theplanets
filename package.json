@@ -100,7 +100,6 @@
     "eslint-config-node": "^4.1.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-config-react": "^1.1.7",
-    "eslint-loader": "^4.0.2",
     "eslint-plugin-import": "^2.23.4",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^3.4.0",
@@ -122,6 +121,7 @@
   "dependencies": {
     "axios": "^0.21.1",
     "dotenv-webpack": "^7.0.3",
+    "eslint-webpack-plugin": "^2.5.4",
     "express": "^4.17.1",
     "html-webpack-plugin": "^5.3.1",
     "react": "^17.0.1",
