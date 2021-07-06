@@ -3,23 +3,24 @@ import React from 'react';
 import './index.scss';
 
 type ButtonProps = {
-  btnCssClass: string;
+  cssClass: string;
+  caption: string;
   numberingCssClass: string;
   numbering: string;
-  caption: string;
 };
 
 const Button = ({
-  btnCssClass,
+  cssClass,
+  caption,
   numberingCssClass,
-  numbering,
-  caption
+  numbering
 }: ButtonProps) => (
   <>
-    <button className={btnCssClass}>
+    <button className={cssClass}>
       <span className={numberingCssClass}>{numbering}</span>
       {caption}
     </button>
   </>
 );
+
 export default Button;

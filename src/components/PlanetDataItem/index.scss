@@ -1,0 +1,21 @@
+@import '../../variables.scss';
+
+.planet-data-item {
+  border: 2px solid $color-grey-border;
+  padding: 20px 0 30px 20px;
+  font-family: Antonio, Arial, Helvetica;
+  font-size: 40px;
+  line-height: 52px;
+  font-weight: 500;
+  letter-spacing: -1.5px;
+}
+
+.planet-data-item-title {
+  font-family: Spartan, Arial, Helvetica;
+  font-size: 11px;
+  line-height: 25px;
+  font-weight: 700;
+  letter-spacing: +1px;
+  text-transform: uppercase;
+  color: $color-grey-light;
+}
