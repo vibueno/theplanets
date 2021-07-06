@@ -1,0 +1,94 @@
+@import '../../variables.scss';
+
+.btn {
+  padding: 5px 25px;
+  border: 2px solid $color-grey-border;
+  background-color: $color-blue-dark;
+  cursor: pointer;
+  font-family: Spartan, Arial, Helvetica;
+  font-size: 12px;
+  line-height: 25px;
+  font-weight: 700;
+  letter-spacing: +2.6px;
+  text-transform: uppercase;
+  color: $color-white;
+}
+
+.btn-numbering {
+  padding: 0 25px 0 0;
+  color: $color-grey-light;
+}
+
+.btn:hover {
+  border-color: $color-grey-dark;
+  background-color: $color-grey-dark;
+}
+
+.btn:hover {
+  border-color: $color-grey-dark;
+  background-color: $color-grey-dark;
+}
+
+.btn-mercury {
+  @extend .btn;
+  &:focus {
+    border-color: $color-blue-light;
+    background-color: $color-blue-light;
+  }
+}
+
+.btn-venus {
+  @extend .btn;
+  &:focus {
+    border-color: $color-orange-light;
+    background-color: $color-orange-light;
+  }
+}
+
+.btn-earth {
+  @extend .btn;
+  &:focus {
+    border-color: $color-lila;
+    background-color: $color-lila;
+  }
+}
+
+.btn-mars {
+  @extend .btn;
+  &:focus {
+    border-color: $color-red-light;
+    background-color: $color-red-light;
+  }
+}
+
+.btn-jupiter {
+  @extend .btn;
+  &:focus {
+    border-color: $color-red;
+    background-color: $color-red;
+  }
+}
+
+.btn-saturn {
+  @extend .btn;
+  &:focus {
+    border-color: $color-orange-dark;
+    background-color: $color-orange-dark;
+  }
+}
+
+.btn-uranus {
+  @extend .btn;
+  &:focus {
+    border-color: $color-turquoise;
+    background-color: $color-turquoise;
+  }
+}
+
+.btn-neptune {
+  @extend .btn;
+  &:focus {
+    border-color: $color-blue;
+    background-color: $color-blue;
+  }
+}
