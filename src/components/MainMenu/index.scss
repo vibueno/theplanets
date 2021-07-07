@@ -2,7 +2,7 @@
 
 nav {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   flex-wrap: wrap;
   border-bottom: $border;
   width: 100%;
@@ -12,8 +12,8 @@ nav {
 
   & .app-title {
     display: flex;
-    align-content: center;
     flex: 1 1 30%;
+    align-items: center;
     font-family: Antonio, Arial, Helvetica;
     font-size: 28px;
     font-weight: 500;
@@ -23,6 +23,7 @@ nav {
   & .menu {
     display: flex;
     flex: 1 1;
+    align-items: stretch;
     list-style: none;
     font-family: Spartan, Arial, Helvetica;
     font-size: 11px;
@@ -31,8 +32,19 @@ nav {
     letter-spacing: +1px;
 
     & li {
+      z-index: 0;
+      display: flex;
+      align-items: center;
       margin: 0 0 0 1.25rem;
+      border-top: 5px solid transparent;
       cursor: pointer;
+
+      /* TODO: each planet site must use its defined color forthe border and the buttons
+       It should be parametrized, so that we only have a CSS class instead of per planet
+       */
+      &:hover {
+        border-top: 5px solid white;
+      }
     }
   }
 }
