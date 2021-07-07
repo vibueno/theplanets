@@ -1,4 +1,5 @@
 import React from 'react';
+import MainMenu from '../../components/MainMenu';
 import ButtonPanel from '../ButtonPanel';
 import PlanetDataItem from '../../components/PlanetDataItem';
 
@@ -6,6 +7,7 @@ import './index.scss';
 
 const MainPage = () => (
   <>
+    <MainMenu />
     <ButtonPanel />
     <h1>I am an H1 header</h1>
     <h2>I am an H2 header</h2>
