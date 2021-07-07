@@ -1,0 +1,7 @@
+@import '../../variables.scss';
+
+.button-panel {
+  display: flex;
+  flex-direction: column;
+  max-width: 375px;
+}

@@ -1,8 +1,9 @@
 @import '../../variables.scss';
 
 .btn {
-  padding: 5px 25px;
+  margin: 0 0 1em 0;
   border: 2px solid $color-grey-border;
+  padding: 5px 25px;
   background-color: $color-blue-dark;
   cursor: pointer;
   font-family: Spartan, Arial, Helvetica;
@@ -11,6 +12,7 @@
   font-weight: 700;
   letter-spacing: +2.6px;
   text-transform: uppercase;
+  text-align: left;
   color: $color-white;
 }
 

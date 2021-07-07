@@ -1,17 +1,12 @@
 import React from 'react';
-import Button from '../../components/Button';
+import ButtonPanel from '../ButtonPanel';
 import PlanetDataItem from '../../components/PlanetDataItem';
 
 import './index.scss';
 
 const MainPage = () => (
   <>
-    <Button
-      cssClass="btn-earth"
-      numberingCssClass="btn-numbering"
-      numbering="02"
-      caption="Internal Structure"
-    ></Button>
+    <ButtonPanel />
     <h1>I am an H1 header</h1>
     <h2>I am an H2 header</h2>
     <h3>I am an H3 header</h3>
