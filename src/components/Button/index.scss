@@ -26,71 +26,16 @@
   background-color: $color-grey-dark;
 }
 
-.btn:hover {
-  border-color: $color-grey-dark;
-  background-color: $color-grey-dark;
-}
-
-.btn-mercury {
-  @extend .btn;
-  &:focus {
-    border-color: $color-blue-light;
-    background-color: $color-blue-light;
+@mixin assign-btn-focus-color() {
+  @each $planet, $color in $planets {
+    .btn-#{$planet} {
+      @extend .btn;
+      &:focus {
+        border-color: $color;
+        background-color: $color;
+      }
+    }
   }
 }
 
-.btn-venus {
-  @extend .btn;
-  &:focus {
-    border-color: $color-orange-light;
-    background-color: $color-orange-light;
-  }
-}
-
-.btn-earth {
-  @extend .btn;
-  &:focus {
-    border-color: $color-lila;
-    background-color: $color-lila;
-  }
-}
-
-.btn-mars {
-  @extend .btn;
-  &:focus {
-    border-color: $color-red-light;
-    background-color: $color-red-light;
-  }
-}
-
-.btn-jupiter {
-  @extend .btn;
-  &:focus {
-    border-color: $color-red;
-    background-color: $color-red;
-  }
-}
-
-.btn-saturn {
-  @extend .btn;
-  &:focus {
-    border-color: $color-orange-dark;
-    background-color: $color-orange-dark;
-  }
-}
-
-.btn-uranus {
-  @extend .btn;
-  &:focus {
-    border-color: $color-turquoise;
-    background-color: $color-turquoise;
-  }
-}
-
-.btn-neptune {
-  @extend .btn;
-  &:focus {
-    border-color: $color-blue;
-    background-color: $color-blue;
-  }
-}
+@include assign-btn-focus-color();

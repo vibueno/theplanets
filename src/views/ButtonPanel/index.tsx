@@ -10,19 +10,19 @@ const ButtonPanel = ({}: ButtonPanelProps) => (
     {/* TODO: create state variables for active planet and active section */}
     <div className="button-panel">
       <Button
-        cssClass="btn-earth"
+        cssClass="btn-mercury"
         caption="Overview"
         numberingCssClass="btn-numbering"
         numbering="01"
       />
       <Button
-        cssClass="btn-earth"
+        cssClass="btn-mercury"
         caption="Internal Structure"
         numberingCssClass="btn-numbering"
         numbering="02"
       />
       <Button
-        cssClass="btn-earth"
+        cssClass="btn-mercury"
         caption="Surface Geology"
         numberingCssClass="btn-numbering"
         numbering="03"

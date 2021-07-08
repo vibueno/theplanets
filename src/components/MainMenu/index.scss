@@ -39,12 +39,15 @@ nav {
       border-top: 5px solid transparent;
       cursor: pointer;
 
-      /* TODO: each planet site must use its defined color forthe border and the buttons
-       It should be parametrized, so that we only have a CSS class instead of per planet
-       */
-      &:hover {
-        border-top: 5px solid white;
+      @mixin assign-menu-item-border-color() {
+        @each $planet, $color in $planets {
+          &.#{$planet}:hover {
+            border-color: $color;
+          }
+        }
       }
+
+      @include assign-menu-item-border-color();
     }
   }
 }
