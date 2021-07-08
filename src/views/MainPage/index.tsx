@@ -1,7 +1,7 @@
 import React from 'react';
 import MainMenu from '../../components/MainMenu';
 import ButtonPanel from '../ButtonPanel';
-import PlanetDataItem from '../../components/PlanetDataItem';
+import PlanetData from '../PlanetData';
 
 import './index.scss';
 
@@ -14,12 +14,7 @@ const MainPage = () => (
     <h3>I am an H3 header</h3>
     <h4>I am an H4 header</h4>
     <div>I am normal text</div>
-    <PlanetDataItem
-      cssClass="planet-data-item"
-      title="revolution time"
-      titleCssClass="planet-data-item-title"
-      content="87.97 days"
-    />
+    <PlanetData />
   </>
 );
 
