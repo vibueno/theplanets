@@ -24,12 +24,12 @@
 }
 
 @mixin assign-btn-focus-color() {
-  @each $planet, $color in $planets {
-    .btn-#{$planet} {
+  @each $planet-name, $planet-color in $planets {
+    .btn-#{$planet-name} {
       @extend .btn;
       &:focus {
-        border-color: $color;
-        background-color: $color;
+        border-color: $planet-color;
+        background-color: $planet-color;
       }
     }
   }

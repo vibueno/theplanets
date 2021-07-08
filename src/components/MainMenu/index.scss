@@ -34,9 +34,9 @@ nav {
       cursor: pointer;
 
       @mixin assign-menu-item-border-color() {
-        @each $planet, $color in $planets {
-          &.#{$planet}:hover {
-            border-color: $color;
+        @each $planet-name, $planet-color in $planets {
+          &.#{$planet-name}:hover {
+            border-color: $planet-color;
           }
         }
       }
