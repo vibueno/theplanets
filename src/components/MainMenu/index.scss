@@ -14,9 +14,7 @@ nav {
     display: flex;
     flex: 1 1 30%;
     align-items: center;
-    font-family: Antonio, Arial, Helvetica;
-    font-size: 28px;
-    font-weight: 500;
+    font: 500 28px Antonio, Arial, Helvetica;
     letter-spacing: -1.05px;
   }
 
@@ -25,14 +23,10 @@ nav {
     flex: 1 1;
     align-items: stretch;
     list-style: none;
-    font-family: Spartan, Arial, Helvetica;
-    font-size: 11px;
-    line-height: 25px;
-    font-weight: 700;
+    font: 700 11px/25px Spartan, Arial, Helvetica;
     letter-spacing: +1px;
 
     & li {
-      z-index: 0;
       display: flex;
       align-items: center;
       margin: 0 0 0 1.25rem;
