@@ -1,6 +1,7 @@
 import React from 'react';
 import MainMenu from '../../components/MainMenu';
 import PlanetPic from '../../components/PlanetPic';
+import PlanetDesc from '../../components/PlanetDesc';
 import ButtonPanel from '../ButtonPanel';
 import PlanetData from '../PlanetData';
 
@@ -10,6 +11,7 @@ const MainPage = () => (
   <>
     <MainMenu />
     <PlanetPic planetName="mercury" />
+    <PlanetDesc planetDesc="I am mercury. And you?" />
     <ButtonPanel />
     <h1>I am an H1 header</h1>
     <h2>I am an H2 header</h2>
