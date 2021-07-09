@@ -28,7 +28,7 @@ const MainPage = () => {
       <MainMenu clickHandler={menuclickHandler} />
       <PlanetPic planetName={planet} />
       <PlanetDesc planetDesc="I am mercury. And you?" />
-      <ButtonPanel clickHandler={buttonPanelclickHandler} />
+      <ButtonPanel planet={planet} clickHandler={buttonPanelclickHandler} />
       <h1>I am an H1 header</h1>
       <h2>I am an H2 header</h2>
       <h3>I am an H3 header</h3>
