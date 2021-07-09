@@ -23,6 +23,10 @@
   background-color: $color-grey-dark;
 }
 
+.btn:focus {
+  outline: none;
+}
+
 @mixin assign-btn-focus-color() {
   @each $planet-name, $planet-color in $planets {
     .btn-#{$planet-name} {

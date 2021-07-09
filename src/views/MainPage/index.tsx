@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, MouseEvent } from 'react';
 
 import MainMenu from '../../components/MainMenu';
 import PlanetPic from '../../components/PlanetPic';
@@ -11,13 +11,20 @@ import data from '../../assets/data.json';
 
 const MainPage = () => {
   const [planet, setPlanet] = useState(0);
+  const [section, setSection] = useState('overview');
+
+  const buttonPanelclickHandler = (e: MouseEvent) => {
+    var btn = e.target as HTMLElement;
+    setSection(btn.id);
+  };
 
   return (
     <>
+      {section}
       <MainMenu />
       <PlanetPic planetName={data[planet].name.toLowerCase()} />
       <PlanetDesc planetDesc="I am mercury. And you?" />
-      <ButtonPanel />
+      <ButtonPanel clickHandler={buttonPanelclickHandler} />
       <h1>I am an H1 header</h1>
       <h2>I am an H2 header</h2>
       <h3>I am an H3 header</h3>

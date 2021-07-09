@@ -115,6 +115,7 @@
     "style-loader": "^2.0.0",
     "svg-url-loader": "^7.1.1",
     "ts-loader": "^8.1.0",
+    "typescript": "^4.3.5",
     "webpack-cli": "^4.7.2",
     "webpack-dev-server": "^3.11.2"
   },
@@ -125,7 +126,6 @@
     "html-webpack-plugin": "^5.3.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "typescript": "^4.2.3",
     "webpack": "^5.42.0",
     "webpack-merge": "^5.8.0"
   }
