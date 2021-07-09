@@ -10,7 +10,7 @@ import './index.scss';
 import data from '../../assets/data.json';
 
 const MainPage = () => {
-  const [planet, setPlanet] = useState(0);
+  const [planet, setPlanet] = useState('mercury');
   const [section, setSection] = useState('overview');
 
   const buttonPanelclickHandler = (e: MouseEvent) => {
@@ -18,11 +18,15 @@ const MainPage = () => {
     setSection(btn.id);
   };
 
+  const menuclickHandler = (e: MouseEvent) => {
+    var menuItem = e.target as HTMLElement;
+    setPlanet(menuItem.id);
+  };
+
   return (
     <>
-      {section}
-      <MainMenu />
-      <PlanetPic planetName={data[planet].name.toLowerCase()} />
+      <MainMenu clickHandler={menuclickHandler} />
+      <PlanetPic planetName={planet} />
       <PlanetDesc planetDesc="I am mercury. And you?" />
       <ButtonPanel clickHandler={buttonPanelclickHandler} />
       <h1>I am an H1 header</h1>
