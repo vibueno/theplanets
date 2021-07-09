@@ -14,13 +14,14 @@ const MainPage = () => {
   const [section, setSection] = useState('overview');
 
   const buttonPanelclickHandler = (e: MouseEvent) => {
-    var btn = e.target as HTMLElement;
+    const btn = e.target as HTMLElement;
     setSection(btn.id);
   };
 
   const menuclickHandler = (e: MouseEvent) => {
-    var menuItem = e.target as HTMLElement;
-    setPlanet(menuItem.id);
+    const clickedElement = e.target as HTMLElement;
+    const parentElement = clickedElement.parentNode as HTMLElement;
+    if (parentElement.classList.contains('menu')) setPlanet(clickedElement.id);
   };
 
   return (
