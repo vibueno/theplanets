@@ -9,6 +9,7 @@ type PlanetPicProps = {
 const PlanetPic = ({ planetName }: PlanetPicProps) => (
   <>
     <img
+      className="planet-pic"
       src={require(`../../assets/img/planet-${planetName}.svg`)}
       alt={planetName}
     />

@@ -1,1 +1,21 @@
 @import '../../variables.scss';
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 9rem 7.5rem 3rem 7.5rem;
+}
+
+.planet-pic-container {
+  display: flex;
+  flex: 0 0 66.66%;
+  padding: 7rem 0 0 13rem;
+}
+
+.planet-data-container {
+  flex: 0 0 100%;
+}
+
+.planet-desc-container {
+  flex: 0 0 33.33%;
+}

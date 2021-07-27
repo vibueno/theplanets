@@ -1,6 +1,6 @@
 @import '../../variables.scss';
 
-.planet-data-item {
+.planet-data-item-base {
   flex-grow: 1;
   margin: 0 2rem 0 0;
   border: $border;
@@ -9,6 +9,16 @@
   font: 500 40px/52px Antonio, Arial, Helvetica;
   letter-spacing: -1.5px;
   text-transform: uppercase;
+}
+
+.planet-data-item {
+  @extend .planet-data-item-base;
+  margin: 0 2rem 0 0;
+}
+
+.planet-data-item-last {
+  @extend .planet-data-item-base;
+  margin: 0;
 }
 
 .planet-data-item-title {

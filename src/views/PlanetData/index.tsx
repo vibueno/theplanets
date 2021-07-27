@@ -28,7 +28,7 @@ const PlanetData = () => (
       />
 
       <PlanetDataItem
-        cssClass="planet-data-item"
+        cssClass="planet-data-item-last"
         title="average temp."
         titleCssClass="planet-data-item-title"
         content="430ºC"
