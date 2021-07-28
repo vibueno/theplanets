@@ -19,8 +19,6 @@ const MainPage = () => {
     let target = e.target as HTMLElement;
     let targetParent = target.parentNode as HTMLElement;
 
-    console.log(target.tagName);
-
     if (target.tagName === 'BUTTON') btn = target;
     else if (targetParent.tagName === 'BUTTON') {
       btn = targetParent;
@@ -41,7 +39,7 @@ const MainPage = () => {
       {planet && section ? (
         <main>
           <div className="planet-pic-container">
-            <PlanetPic planetName={planet} />
+            <PlanetPic planetName={planet} section={section} />
           </div>
 
           <div className="planet-desc-container">

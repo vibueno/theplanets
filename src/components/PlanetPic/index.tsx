@@ -4,13 +4,21 @@ import './index.scss';
 
 type PlanetPicProps = {
   planetName: string;
+  section: string;
 };
 
-const PlanetPic = ({ planetName }: PlanetPicProps) => (
+const getSectionSuffix = (section: string) => {
+  if (section === 'structure') return '-internal';
+  else return '';
+};
+
+const PlanetPic = ({ planetName, section }: PlanetPicProps) => (
   <>
     <img
       className="planet-pic"
-      src={require(`../../assets/img/planet-${planetName}.svg`)}
+      src={require(`../../assets/img/planet-${planetName}${getSectionSuffix(
+        section
+      )}.svg`)}
       alt={planetName}
     />
   </>
