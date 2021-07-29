@@ -9,4 +9,11 @@ const planetNames = {
   neptune: 'neptune'
 };
 
-export { planetNames };
+const planetKeyData = {
+  rotation: 'rotation',
+  revolution: 'revolution',
+  radius: 'radius',
+  temperature: 'temperature'
+};
+
+export { planetNames, planetKeyData };

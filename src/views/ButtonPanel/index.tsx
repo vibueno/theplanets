@@ -4,23 +4,23 @@ import Button from '../../components/Button';
 import './index.scss';
 
 type ButtonPanelProps = {
-  planet: string;
+  planetName: string;
   clickHandler: MouseEventHandler<HTMLButtonElement>;
 };
 
-const ButtonPanel = ({ planet, clickHandler }: ButtonPanelProps) => {
+const ButtonPanel = ({ planetName, clickHandler }: ButtonPanelProps) => {
   const btnOverviewRef = React.useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     btnOverviewRef.current ? btnOverviewRef.current.focus() : null;
-  }, [planet]);
+  }, [planetName]);
 
   return (
     <>
       <div className="button-panel">
         <Button
           id="overview"
-          cssClass={`btn-${planet}`}
+          cssClass={`btn-${planetName}`}
           caption="Overview"
           numberingCssClass="btn-numbering"
           numbering="01"
@@ -29,7 +29,7 @@ const ButtonPanel = ({ planet, clickHandler }: ButtonPanelProps) => {
         />
         <Button
           id="structure"
-          cssClass={`btn-${planet}`}
+          cssClass={`btn-${planetName}`}
           caption="Internal Structure"
           numberingCssClass="btn-numbering"
           numbering="02"
@@ -37,7 +37,7 @@ const ButtonPanel = ({ planet, clickHandler }: ButtonPanelProps) => {
         />
         <Button
           id="geology"
-          cssClass={`btn-${planet}`}
+          cssClass={`btn-${planetName}`}
           caption="Surface Geology"
           numberingCssClass="btn-numbering"
           numbering="03"

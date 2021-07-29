@@ -6,7 +6,7 @@ import PlanetDesc from '../../components/PlanetDesc';
 import ButtonPanel from '../ButtonPanel';
 import PlanetData from '../PlanetData';
 
-import { getPlanetInfo } from '../../utils';
+import { getPlanetData } from '../../utils';
 
 import './index.scss';
 
@@ -45,16 +45,16 @@ const MainPage = () => {
 
             <div className="planet-desc-container">
               <h1>{planet}</h1>
-              <PlanetDesc planetDesc={getPlanetInfo(planet, section).content} />
+              <PlanetDesc planetDesc={getPlanetData(planet, section).content} />
               Source:{' '}
-              <a href={getPlanetInfo(planet, section).source}>Wikipedia</a>
+              <a href={getPlanetData(planet, section).source}>Wikipedia</a>
               <ButtonPanel
-                planet={planet}
+                planetName={planet}
                 clickHandler={buttonPanelclickHandler}
               />
             </div>
             <div className="planet-data-container">
-              <PlanetData />
+              <PlanetData planetName={planet} />
             </div>
           </main>
         ) : null}
