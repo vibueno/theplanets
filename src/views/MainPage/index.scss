@@ -1,21 +1,31 @@
 @import '../../variables.scss';
 
+.layout {
+  display: grid;
+  grid-template-rows: 5rem 4fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+}
+
 main {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 9rem 7.5rem 3rem 7.5rem;
+  display: grid;
+  grid-row: 2 / 4;
+  grid-column: 1 / 3;
+  grid-template-columns: 60% 40%;
+  margin: 6rem 7.5rem 3rem 7.5rem;
 }
 
 .planet-pic-container {
-  display: flex;
-  flex: 0 0 66.66%;
-  padding: 7rem 0 0 13rem;
+  display: grid;
+  grid-column: 1 / 2;
+  align-items: center;
+  justify-content: center;
 }
 
 .planet-data-container {
-  flex: 0 0 100%;
+  grid-column: 1 / 3;
 }
 
 .planet-desc-container {
-  flex: 0 0 33.33%;
+  grid-column: 2 / 3;
 }

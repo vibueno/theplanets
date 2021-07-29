@@ -64,7 +64,11 @@ const PlanetPic = ({ planetName, section }: PlanetPicProps) => (
       alt={planetName}
     />
     {section === 'geology' ? (
-      <img src={getGeologyPic(planetName)} alt={planetName} />
+      <img
+        className="planet-pic-geology"
+        src={getGeologyPic(planetName)}
+        alt={planetName}
+      />
     ) : null}
   </>
 );

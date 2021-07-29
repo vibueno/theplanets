@@ -2,6 +2,7 @@
 
 .button-panel {
   display: flex;
+  align-items: stretch;
   flex-direction: column;
-  max-width: 375px;
+  width: 100%;
 }

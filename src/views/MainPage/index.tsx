@@ -35,28 +35,30 @@ const MainPage = () => {
 
   return (
     <>
-      <MainMenu clickHandler={menuclickHandler} />
-      {planet && section ? (
-        <main>
-          <div className="planet-pic-container">
-            <PlanetPic planetName={planet} section={section} />
-          </div>
+      <div className="layout">
+        <MainMenu clickHandler={menuclickHandler} />
+        {planet && section ? (
+          <main>
+            <div className="planet-pic-container">
+              <PlanetPic planetName={planet} section={section} />
+            </div>
 
-          <div className="planet-desc-container">
-            <h1>{planet}</h1>
-            <PlanetDesc planetDesc={getPlanetInfo(planet, section).content} />
-            Source:{' '}
-            <a href={getPlanetInfo(planet, section).source}>Wikipedia</a>
-            <ButtonPanel
-              planet={planet}
-              clickHandler={buttonPanelclickHandler}
-            />
-          </div>
-          <div className="planet-data-container">
-            <PlanetData />
-          </div>
-        </main>
-      ) : null}
+            <div className="planet-desc-container">
+              <h1>{planet}</h1>
+              <PlanetDesc planetDesc={getPlanetInfo(planet, section).content} />
+              Source:{' '}
+              <a href={getPlanetInfo(planet, section).source}>Wikipedia</a>
+              <ButtonPanel
+                planet={planet}
+                clickHandler={buttonPanelclickHandler}
+              />
+            </div>
+            <div className="planet-data-container">
+              <PlanetData />
+            </div>
+          </main>
+        ) : null}
+      </div>
     </>
   );
 };
