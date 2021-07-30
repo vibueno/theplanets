@@ -1,5 +1,24 @@
 @media only screen and (min-width: 375px) {
+  .planet-data-item,
+  .planet-data-item-last {
+    font: 500 24px/52px Antonio, Arial, Helvetica;
+    letter-spacing: -0.9px;
+  }
 }
 
 @media only screen and (min-width: 768px) {
+  body,
+  .source-container {
+    font: 14px/25px Spartan, Arial, Helvetica;
+  }
+
+  h4 {
+    font: 700 11px/25px Spartan, Arial, Helvetica;
+  }
+
+  .planet-data-item,
+  .planet-data-item-last {
+    font: 500 40px/52px Antonio, Arial, Helvetica;
+    letter-spacing: -1.5px;
+  }
 }

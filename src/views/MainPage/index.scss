@@ -33,6 +33,7 @@ main {
 .source-container {
   display: flex;
   margin: 2rem 0;
+  font: 12px/25px Spartan, Arial, Helvetica;
   color: $color-grey-light;
   & a {
     display: flex;

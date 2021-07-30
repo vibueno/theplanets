@@ -17,7 +17,9 @@ const PlanetDataItem = ({
 }: PlanetDataItemProps) => (
   <>
     <div className={cssClass}>
-      <div className={titleCssClass}>{title}</div>
+      <div className={titleCssClass}>
+        <h4>{title}</h4>
+      </div>
       <div>{content}</div>
     </div>
   </>
