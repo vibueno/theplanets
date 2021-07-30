@@ -28,7 +28,7 @@
 }
 
 @mixin assign-btn-focus-color() {
-  @each $planet-name, $planet-color in $planets {
+  @each $planet-name, $planet-color in $planet-colors {
     .btn-#{$planet-name} {
       @extend .btn;
       &:focus {

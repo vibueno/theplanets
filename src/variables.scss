@@ -4,7 +4,7 @@ $color-grey-dark: #38384f;
 $color-grey-border: #35354a;
 $color-grey-light: #838391;
 
-$planets: (
+$planet-colors: (
   mercury: #419ebb,
   venus: #eda249,
   earth: #6f2ed6,
@@ -13,6 +13,17 @@ $planets: (
   saturn: #cd5120,
   uranus: #1ec2a4,
   neptune: #2d68f0
+);
+
+$planet-sizes: (
+  mercury: 12rem,
+  venus: 15rem,
+  earth: 20rem,
+  mars: 13rem,
+  jupiter: 28rem,
+  saturn: 26rem,
+  uranus: 22rem,
+  neptune: 22rem
 );
 
 $border: 1px solid $color-grey-border;

@@ -2,10 +2,20 @@
 
 .planet-pic {
   width: auto;
-  max-width: 200px;
   height: auto;
-  max-height: 200px;
 }
+
+@mixin assign-planet-size() {
+  @each $planet-name, $planet-size in $planet-sizes {
+    .planet-pic-#{$planet-name} {
+      @extend .planet-pic;
+      max-width: $planet-size;
+      max-height: $planet-size;
+    }
+  }
+}
+
+@include assign-planet-size();
 
 .planet-pic-geology {
   width: auto;

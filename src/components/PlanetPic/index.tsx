@@ -57,7 +57,7 @@ type PlanetPicProps = {
 const PlanetPic = ({ planetName, section }: PlanetPicProps) => (
   <>
     <img
-      className="planet-pic"
+      className={`planet-pic-${planetName}`}
       src={require(`../../assets/img/planet-${planetName}${getSectionSuffix(
         section
       )}.svg`)}
