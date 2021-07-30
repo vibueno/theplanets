@@ -29,3 +29,23 @@ main {
 .planet-desc-container {
   grid-column: 2 / 3;
 }
+
+.source-container {
+  display: flex;
+  margin: 2rem 0;
+  color: $color-grey-light;
+  & a {
+    display: flex;
+    font-weight: 700;
+    color: $color-grey-light;
+
+    & .source-icon {
+      align-self: center;
+      margin: 0 0 0 0.75em;
+    }
+  }
+
+  & .source-title {
+    margin: 0 0.5em 0 0;
+  }
+}

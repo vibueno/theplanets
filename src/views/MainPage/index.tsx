@@ -46,8 +46,16 @@ const MainPage = () => {
             <div className="planet-desc-container">
               <h1>{planet}</h1>
               <PlanetDesc planetDesc={getPlanetData(planet, section).content} />
-              Source:{' '}
-              <a href={getPlanetData(planet, section).source}>Wikipedia</a>
+              <p className="source-container">
+                <span className="source-title">Source:</span>
+                <a href={getPlanetData(planet, section).source}>
+                  Wikipedia
+                  <img
+                    className="source-icon"
+                    src={require('../../assets/img/icon-source.svg')}
+                  />
+                </a>
+              </p>
               <ButtonPanel
                 planetName={planet}
                 clickHandler={buttonPanelclickHandler}
