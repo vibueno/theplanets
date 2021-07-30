@@ -1,7 +1,5 @@
 import React from 'react';
 
-import './index.scss';
-
 type PlanetDescProps = {
   planetDesc: string;
 };

@@ -11,20 +11,20 @@
   text-transform: uppercase;
   text-align: left;
   color: $color-white;
+
+  &:hover {
+    border-color: $color-grey-dark;
+    background-color: $color-grey-dark;
+  }
+
+  &:focus {
+    outline: none;
+  }
 }
 
 .btn-numbering {
   padding: 0 25px 0 0;
   color: $color-grey-light;
-}
-
-.btn:hover {
-  border-color: $color-grey-dark;
-  background-color: $color-grey-dark;
-}
-
-.btn:focus {
-  outline: none;
 }
 
 @mixin assign-btn-focus-color() {
