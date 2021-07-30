@@ -1,4 +1,12 @@
 @media only screen and (min-width: 375px) {
+  main {
+    margin: 3rem 3.75rem 1.5rem 3.75rem;
+  }
+
+  .planet-data {
+    flex-direction: row;
+  }
+
   .planet-data-item,
   .planet-data-item-last {
     font: 500 24px/52px Antonio, Arial, Helvetica;
@@ -7,6 +15,35 @@
 }
 
 @media only screen and (min-width: 768px) {
+  .layout {
+    display: grid;
+    grid-template-rows: 5rem 4fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    min-height: 100vh;
+  }
+
+  main {
+    display: grid;
+    grid-row: 2 / 4;
+    grid-column: 1 / 3;
+    grid-template-columns: 60% 40%;
+    margin: 6rem 7.5rem 3rem 7.5rem;
+  }
+
+  .planet-pic-container {
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+  }
+
+  .planet-desc-container {
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+  }
+
+  .planet-data-container {
+    grid-column: 1 / 3;
+  }
+
   body,
   .source-container {
     font: 14px/25px Spartan, Arial, Helvetica;
