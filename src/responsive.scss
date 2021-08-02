@@ -1,16 +1,35 @@
 @media only screen and (min-width: 375px) {
+  .layout {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 4em 4em repeat(3, 1fr);
+  }
+
   main {
     margin: 3rem 3.75rem 1.5rem 3.75rem;
+  }
+
+  .button-panel {
+    grid-row: 3 / 4;
   }
 
   .planet-data {
     flex-direction: row;
   }
 
+  .planet-data-item {
+    margin: 0 2rem 0 0;
+  }
+
   .planet-data-item,
   .planet-data-item-last {
+    display: block;
+    padding: 20px 0 30px 20px;
     font: 500 24px/52px Antonio, Arial, Helvetica;
     letter-spacing: -0.9px;
+  }
+
+  .planet-data-item-content {
+    display: block;
   }
 }
 
@@ -55,6 +74,7 @@
 
   .planet-data-item,
   .planet-data-item-last {
+    flex-direction: row;
     font: 500 40px/52px Antonio, Arial, Helvetica;
     letter-spacing: -1.5px;
   }

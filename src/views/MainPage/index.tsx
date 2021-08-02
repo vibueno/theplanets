@@ -56,11 +56,11 @@ const MainPage = () => {
                   />
                 </a>
               </p>
-              <ButtonPanel
-                planetName={planet}
-                clickHandler={buttonPanelclickHandler}
-              />
             </div>
+            <ButtonPanel
+              planetName={planet}
+              clickHandler={buttonPanelclickHandler}
+            />
             <div className="planet-data-container">
               <PlanetData planetName={planet} />
             </div>

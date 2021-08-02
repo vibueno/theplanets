@@ -2,30 +2,40 @@
 
 .planet-data-item-base {
   flex-grow: 1;
-  margin: 0 2rem 0 0;
   border: $border;
-  padding: 20px 0 30px 20px;
   min-width: 12rem;
   letter-spacing: -1.5px;
   text-transform: uppercase;
 }
 
-.planet-data-item {
+.planet-data-item,
+.planet-data-item-last {
   @extend .planet-data-item-base;
-  margin: 0 2rem 0 0;
-  font: 500 20px/52px Antonio, Arial, Helvetica;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px 20px;
+  font: 500 20px/16px Antonio, Arial, Helvetica;
   letter-spacing: -0.75px;
 }
 
-.planet-data-item-last {
-  @extend .planet-data-item-base;
+.planet-data-item {
+  margin: 0 0 20px 0;
+}
+
+.planet-data-last {
   margin: 0;
-  font: 500 20px/52px Antonio, Arial, Helvetica;
-  letter-spacing: -0.75px;
 }
 
 .planet-data-item-title {
+  flex: 1 1 50%;
   letter-spacing: +1px;
   text-transform: uppercase;
   color: $color-grey-light;
+}
+
+.planet-data-item-content {
+  flex: 1 1 50%;
+  display: flex;
+  justify-content: flex-end;
 }
