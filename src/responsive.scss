@@ -1,21 +1,50 @@
 @import './variables.scss';
 
-@media only screen and (min-width: 375px) {
+@media only screen and (min-width: 768px) {
   .layout {
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 4em 4em repeat(3, 1fr);
+    grid-template-rows: 4em 4em 1fr;
   }
 
   main {
-    margin: 3rem 3.75rem 1.5rem 3.75rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, auto);
+    margin: 3rem 2rem 1.5rem 2rem;
+  }
+
+  nav {
+    display: grid;
+    justify-content: center;
+
+    & .app-title {
+      justify-content: center;
+      grid-row: 1 / 2;
+      grid-column: 1 / 3;
+    }
+  }
+
+  .menu {
+    grid-row: 2 / 3;
+    grid-column: 1 / 3;
+  }
+
+  .planet-pic-container {
+    grid-row: 1 / 2;
+    grid-column: 1 / 3;
+  }
+
+  .planet-desc-container {
+    flex: 1 1 100%;
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
   }
 
   .button-panel {
     display: flex;
+    align-self: center;
     flex-direction: column;
-    grid-row: 3 / 4;
+    grid-row: 2 / 3;
     grid-column: 2 / 3;
-    width: 100%;
     font: 700 12px/25px Spartan, Arial, Helvetica;
 
     & .btn {
@@ -44,6 +73,10 @@
     }
   }
 
+  .planet-data-container {
+    grid-row: 3 /4;
+  }
+
   .planet-data {
     flex-direction: row;
   }
@@ -51,11 +84,12 @@
   .planet-data-item,
   .planet-data-item-last {
     display: block;
-    margin: 0 2rem 0 0;
-    min-width: 12rem;
-    padding: 20px 0 30px 20px;
     font: 500 24px/52px Antonio, Arial, Helvetica;
     letter-spacing: -0.9px;
+  }
+
+  .planet-data-item {
+    margin: 0 1rem 0 0;
   }
 
   .planet-data-item-last {
@@ -80,12 +114,20 @@
   @include assign-btn-focus-color();
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1200px) {
   .layout {
     display: grid;
     grid-template-rows: 5rem 4fr 1fr;
     grid-template-columns: repeat(2, 1fr);
     min-height: 100vh;
+  }
+
+  nav {
+    display: flex;
+
+    & .app-title {
+      justify-content: flex-start;
+    }
   }
 
   main {
@@ -97,12 +139,12 @@
   }
 
   .planet-pic-container {
-    grid-row: 2 / 3;
+    grid-row: 1 / 3;
     grid-column: 1 / 2;
   }
 
   .planet-desc-container {
-    grid-row: 2 / 3;
+    grid-row: 1 / 2;
     grid-column: 2 / 3;
   }
 
@@ -122,7 +164,16 @@
   .planet-data-item,
   .planet-data-item-last {
     flex-direction: row;
+    padding: 20px 0 30px 20px;
     font: 500 40px/52px Antonio, Arial, Helvetica;
     letter-spacing: -1.5px;
+  }
+
+  .planet-data-item {
+    margin: 0 2rem 0 0;
+  }
+
+  .planet-data-item-last {
+    margin: 0;
   }
 }
