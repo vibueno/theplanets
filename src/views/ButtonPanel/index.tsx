@@ -20,8 +20,9 @@ const ButtonPanel = ({ planetName, clickHandler }: ButtonPanelProps) => {
       <div className="button-panel">
         <Button
           id="overview"
-          cssClass={`btn-${planetName}`}
-          caption="Overview"
+          cssClass={`btn btn-${planetName}`}
+          caption="overview"
+          extendedCaption="overview"
           numberingCssClass="btn-numbering"
           numbering="01"
           clickHandler={clickHandler}
@@ -29,16 +30,18 @@ const ButtonPanel = ({ planetName, clickHandler }: ButtonPanelProps) => {
         />
         <Button
           id="structure"
-          cssClass={`btn-${planetName}`}
-          caption="Internal Structure"
+          cssClass={`btn btn-${planetName}`}
+          caption="structure"
+          extendedCaption="internal structure"
           numberingCssClass="btn-numbering"
           numbering="02"
           clickHandler={clickHandler}
         />
         <Button
           id="geology"
-          cssClass={`btn-${planetName}`}
-          caption="Surface Geology"
+          cssClass={`btn btn-${planetName}`}
+          caption="surface"
+          extendedCaption="surface geology"
           numberingCssClass="btn-numbering"
           numbering="03"
           clickHandler={clickHandler}

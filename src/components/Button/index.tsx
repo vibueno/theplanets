@@ -6,6 +6,7 @@ type ButtonProps = {
   id: string;
   cssClass: string;
   caption: string;
+  extendedCaption: string;
   numberingCssClass: string;
   numbering: string;
   clickHandler: MouseEventHandler<HTMLButtonElement>;
@@ -13,12 +14,21 @@ type ButtonProps = {
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   (
-    { id, cssClass, caption, numberingCssClass, numbering, clickHandler },
+    {
+      id,
+      cssClass,
+      caption,
+      extendedCaption,
+      numberingCssClass,
+      numbering,
+      clickHandler
+    },
     ref
   ) => (
     <button id={id} className={cssClass} onClick={clickHandler} ref={ref}>
       <span className={numberingCssClass}>{numbering}</span>
-      {caption}
+      <span className="btn-caption">{caption}</span>
+      <span className="btn-extended-caption">{extendedCaption}</span>
     </button>
   )
 );

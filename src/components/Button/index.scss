@@ -1,20 +1,24 @@
 @import '../../variables.scss';
 
 .btn {
-  margin: 0 0 1em 0;
-  border: $border;
-  padding: 5px 25px;
+  margin: 0;
+  border: none;
   background-color: $color-blue-dark;
   cursor: pointer;
-  font: 700 12px/25px Spartan, Arial, Helvetica;
-  letter-spacing: +2.6px;
+  font: 700 9px/22px Spartan, Arial, Helvetica;
+  letter-spacing: 1.93px;
   text-transform: uppercase;
   text-align: left;
   color: $color-white;
 
-  &:hover {
-    border-color: $color-grey-dark;
-    background-color: $color-grey-dark;
+  & .btn-numbering {
+    display: none;
+    padding: 0 25px 0 0;
+    color: $color-grey-light;
+  }
+
+  & .btn-extended-caption {
+    display: none;
   }
 
   &:focus {
@@ -22,18 +26,11 @@
   }
 }
 
-.btn-numbering {
-  padding: 0 25px 0 0;
-  color: $color-grey-light;
-}
-
 @mixin assign-btn-focus-color() {
   @each $planet-name, $planet-color in $planet-colors {
     .btn-#{$planet-name} {
-      @extend .btn;
       &:focus {
-        border-color: $planet-color;
-        background-color: $planet-color;
+        border-bottom: 5px solid $planet-color;
       }
     }
   }

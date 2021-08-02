@@ -1,3 +1,5 @@
+@import './variables.scss';
+
 @media only screen and (min-width: 375px) {
   .layout {
     grid-template-columns: repeat(3, 1fr);
@@ -9,28 +11,73 @@
   }
 
   .button-panel {
+    display: flex;
+    flex-direction: column;
     grid-row: 3 / 4;
+    grid-column: 2 / 3;
+    width: 100%;
+    font: 700 12px/25px Spartan, Arial, Helvetica;
+
+    & .btn {
+      justify-content: flex-start;
+      margin: 0 0 1em 0;
+      border: $border;
+      padding: 5px 25px;
+      letter-spacing: 2.57px;
+
+      &:hover {
+        border-color: $color-grey-dark;
+        background-color: $color-grey-dark;
+      }
+
+      & .btn-numbering {
+        display: inline-block;
+      }
+
+      & .btn-caption {
+        display: none;
+      }
+
+      & .btn-extended-caption {
+        display: inline-block;
+      }
+    }
   }
 
   .planet-data {
     flex-direction: row;
   }
 
-  .planet-data-item {
-    margin: 0 2rem 0 0;
-  }
-
   .planet-data-item,
   .planet-data-item-last {
     display: block;
+    margin: 0 2rem 0 0;
+    min-width: 12rem;
     padding: 20px 0 30px 20px;
     font: 500 24px/52px Antonio, Arial, Helvetica;
     letter-spacing: -0.9px;
   }
 
+  .planet-data-item-last {
+    margin: 0;
+  }
+
   .planet-data-item-content {
     display: block;
   }
+
+  @mixin assign-btn-focus-color() {
+    @each $planet-name, $planet-color in $planet-colors {
+      .btn-#{$planet-name} {
+        &:focus {
+          border-color: $planet-color;
+          background-color: $planet-color;
+        }
+      }
+    }
+  }
+
+  @include assign-btn-focus-color();
 }
 
 @media only screen and (min-width: 768px) {
