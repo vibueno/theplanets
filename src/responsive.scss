@@ -60,7 +60,10 @@
     flex-direction: column;
     grid-row: 2 / 3;
     grid-column: 2 / 3;
+    margin: 0;
+    border: none;
     padding: 0 0 0 5em;
+    width: auto;
     font: 700 12px/25px Spartan, Arial, Helvetica;
 
     & .btn {

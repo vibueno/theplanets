@@ -1,8 +1,11 @@
 @import '../../variables.scss';
 
-.planet-pic {
-  width: auto;
-  height: auto;
+.planet-pic-container {
+  margin: 4rem 0;
+  & .planet-pic {
+    width: auto;
+    height: auto;
+  }
 }
 
 @mixin assign-planet-size() {
