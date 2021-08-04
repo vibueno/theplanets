@@ -1,3 +1,21 @@
+const sections = {
+  overview: {
+    id: 'overview',
+    btnCaption: 'overview',
+    btnCaptionExtended: 'overview'
+  },
+  structure: {
+    id: 'structure',
+    btnCaption: 'structure',
+    btnCaptionExtended: 'internal structure'
+  },
+  geology: {
+    id: 'geology',
+    btnCaption: 'geology',
+    btnCaptionExtended: 'surface geology'
+  }
+};
+
 const planetNames = {
   mercury: 'mercury',
   venus: 'venus',
@@ -16,4 +34,4 @@ const planetKeyData = {
   temperature: 'temperature'
 };
 
-export { planetNames, planetKeyData };
+export { sections, planetNames, planetKeyData };

@@ -6,6 +6,8 @@ import PlanetDesc from '../../components/PlanetDesc';
 import ButtonPanel from '../ButtonPanel';
 import PlanetData from '../PlanetData';
 
+import { sections } from '../../constants';
+
 import { getPlanetData } from '../../utils';
 
 import './index.scss';
@@ -30,7 +32,10 @@ const MainPage = () => {
   const menuclickHandler = (e: MouseEvent) => {
     const clickedElement = e.target as HTMLElement;
     const parentElement = clickedElement.parentNode as HTMLElement;
-    if (parentElement.classList.contains('menu')) setPlanet(clickedElement.id);
+    if (parentElement.classList.contains('menu')) {
+      setPlanet(clickedElement.id);
+      setSection(sections.overview.id);
+    }
   };
 
   return (

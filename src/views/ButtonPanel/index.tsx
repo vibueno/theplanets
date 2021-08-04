@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, MouseEventHandler } from 'react';
 import Button from '../../components/Button';
 
+import { sections } from '../../constants';
+
 import './index.scss';
 
 type ButtonPanelProps = {
@@ -19,29 +21,29 @@ const ButtonPanel = ({ planetName, clickHandler }: ButtonPanelProps) => {
     <>
       <div className="button-panel">
         <Button
-          id="overview"
+          id={sections.overview.id}
           cssClass={`btn btn-${planetName}`}
-          caption="overview"
-          extendedCaption="overview"
+          caption={sections.overview.btnCaption}
+          extendedCaption={sections.overview.btnCaptionExtended}
           numberingCssClass="btn-numbering"
           numbering="01"
           clickHandler={clickHandler}
           ref={btnOverviewRef}
         />
         <Button
-          id="structure"
+          id={sections.structure.id}
           cssClass={`btn btn-${planetName}`}
-          caption="structure"
-          extendedCaption="internal structure"
+          caption={sections.structure.btnCaption}
+          extendedCaption={sections.structure.btnCaptionExtended}
           numberingCssClass="btn-numbering"
           numbering="02"
           clickHandler={clickHandler}
         />
         <Button
-          id="geology"
+          id={sections.geology.id}
           cssClass={`btn btn-${planetName}`}
-          caption="surface"
-          extendedCaption="surface geology"
+          caption={sections.geology.btnCaption}
+          extendedCaption={sections.geology.btnCaptionExtended}
           numberingCssClass="btn-numbering"
           numbering="03"
           clickHandler={clickHandler}
