@@ -1,17 +1,6 @@
 @import './variables.scss';
 
 @media only screen and (min-width: 768px) {
-  .layout {
-    grid-template-rows: auto 4em 1fr;
-  }
-
-  main {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, auto);
-    margin: 3rem 2rem 1.5rem 2rem;
-  }
-
   nav {
     display: flex;
     flex-wrap: wrap;
@@ -30,8 +19,19 @@
     }
   }
 
+  main {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, auto);
+    margin: 3rem 2rem 1.5rem 2rem;
+  }
+
   h1 {
     text-align: left;
+  }
+
+  .layout {
+    grid-template-rows: auto 4em 1fr;
   }
 
   .planet-pic-container {
@@ -91,10 +91,10 @@
 
   .planet-data-container {
     grid-row: 3 /4;
-  }
 
-  .planet-data {
-    flex-direction: row;
+    & .planet-data {
+      flex-direction: row;
+    }
   }
 
   .planet-data-item,
@@ -132,11 +132,8 @@
 }
 
 @media only screen and (min-width: 1200px) {
-  .layout {
-    display: grid;
-    grid-template-rows: 5rem 4fr 1fr;
-    grid-template-columns: repeat(2, 1fr);
-    min-height: 100vh;
+  body {
+    font: 14px/25px Spartan, Arial, Helvetica;
   }
 
   nav {
@@ -155,12 +152,28 @@
       margin: 0;
     }
   }
+
   main {
     display: grid;
     grid-row: 2 / 4;
     grid-column: 1 / 3;
     grid-template-columns: 65% 35%;
     margin: 6rem 7.5rem 3rem 7.5rem;
+  }
+
+  h1 {
+    font: 500 80px/103px Antonio, Arial, Helvetica;
+  }
+
+  h4 {
+    font: 700 11px/25px Spartan, Arial, Helvetica;
+  }
+
+  .layout {
+    display: grid;
+    grid-template-rows: 5rem 4fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    min-height: 100vh;
   }
 
   .planet-pic-container {
@@ -183,14 +196,6 @@
 
   .planet-data-container {
     grid-column: 1 / 3;
-  }
-
-  body {
-    font: 14px/25px Spartan, Arial, Helvetica;
-  }
-
-  h4 {
-    font: 700 11px/25px Spartan, Arial, Helvetica;
   }
 
   .planet-data-item,
