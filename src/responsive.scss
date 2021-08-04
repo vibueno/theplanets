@@ -60,6 +60,7 @@
     flex-direction: column;
     grid-row: 2 / 3;
     grid-column: 2 / 3;
+    padding: 0 0 0 5em;
     font: 700 12px/25px Spartan, Arial, Helvetica;
 
     & .btn {
@@ -173,6 +174,10 @@
     & .source-container {
       margin: 2rem 0;
     }
+  }
+
+  .button-panel {
+    padding: 0;
   }
 
   .planet-data-container {
