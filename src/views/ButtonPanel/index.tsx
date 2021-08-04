@@ -26,7 +26,7 @@ const ButtonPanel = ({ planetName, clickHandler }: ButtonPanelProps) => {
           caption={sections.overview.btnCaption}
           extendedCaption={sections.overview.btnCaptionExtended}
           numberingCssClass="btn-numbering"
-          numbering="01"
+          numbering={sections.overview.number}
           clickHandler={clickHandler}
           ref={btnOverviewRef}
         />
@@ -36,7 +36,7 @@ const ButtonPanel = ({ planetName, clickHandler }: ButtonPanelProps) => {
           caption={sections.structure.btnCaption}
           extendedCaption={sections.structure.btnCaptionExtended}
           numberingCssClass="btn-numbering"
-          numbering="02"
+          numbering={sections.structure.number}
           clickHandler={clickHandler}
         />
         <Button
@@ -45,7 +45,7 @@ const ButtonPanel = ({ planetName, clickHandler }: ButtonPanelProps) => {
           caption={sections.geology.btnCaption}
           extendedCaption={sections.geology.btnCaptionExtended}
           numberingCssClass="btn-numbering"
-          numbering="03"
+          numbering={sections.geology.number}
           clickHandler={clickHandler}
         />
       </div>

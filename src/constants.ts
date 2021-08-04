@@ -1,16 +1,19 @@
 const sections = {
   overview: {
     id: 'overview',
+    number: '01',
     btnCaption: 'overview',
     btnCaptionExtended: 'overview'
   },
   structure: {
     id: 'structure',
+    number: '02',
     btnCaption: 'structure',
     btnCaptionExtended: 'internal structure'
   },
   geology: {
     id: 'geology',
+    number: '03',
     btnCaption: 'geology',
     btnCaptionExtended: 'surface geology'
   }
