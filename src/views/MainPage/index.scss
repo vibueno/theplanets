@@ -2,7 +2,7 @@
 
 .layout {
   display: grid;
-  grid-template-rows: 4em 5em repeat(3, 1fr);
+  grid-template-rows: auto 5em repeat(3, 1fr);
   grid-template-columns: 1fr;
   min-height: 100vh;
 }
