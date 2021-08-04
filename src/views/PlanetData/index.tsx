@@ -15,30 +15,30 @@ const PlanetData = ({ planetName }: PlanetDataProps) => (
     <div className="planet-data">
       <PlanetDataItem
         cssClass="planet-data-item"
-        title="rotation time"
+        title={planetKeyData.rotation.title}
         titleCssClass="planet-data-item-title"
-        content={getPlanetData(planetName, planetKeyData.rotation)}
+        content={getPlanetData(planetName, planetKeyData.rotation.id)}
       />
 
       <PlanetDataItem
         cssClass="planet-data-item"
-        title="revolution time"
+        title={planetKeyData.revolution.title}
         titleCssClass="planet-data-item-title"
-        content={getPlanetData(planetName, planetKeyData.revolution)}
+        content={getPlanetData(planetName, planetKeyData.revolution.id)}
       />
 
       <PlanetDataItem
         cssClass="planet-data-item"
-        title="radius"
+        title={planetKeyData.radius.title}
         titleCssClass="planet-data-item-title"
-        content={getPlanetData(planetName, planetKeyData.radius)}
+        content={getPlanetData(planetName, planetKeyData.radius.id)}
       />
 
       <PlanetDataItem
         cssClass="planet-data-item-last"
-        title="average temp."
+        title={planetKeyData.temperature.title}
         titleCssClass="planet-data-item-title"
-        content={getPlanetData(planetName, planetKeyData.temperature)}
+        content={getPlanetData(planetName, planetKeyData.temperature.id)}
       />
     </div>
   </>

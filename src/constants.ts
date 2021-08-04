@@ -28,10 +28,22 @@ const planetNames = {
 };
 
 const planetKeyData = {
-  rotation: 'rotation',
-  revolution: 'revolution',
-  radius: 'radius',
-  temperature: 'temperature'
+  rotation: {
+    id: 'rotation',
+    title: 'rotation time'
+  },
+  revolution: {
+    id: 'revolution',
+    title: 'rotation time'
+  },
+  radius: {
+    id: 'radius',
+    title: 'radius'
+  },
+  temperature: {
+    id: 'temperature',
+    title: 'average temp.'
+  }
 };
 
 export { sections, planetNames, planetKeyData };
