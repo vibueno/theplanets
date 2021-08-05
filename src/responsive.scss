@@ -50,7 +50,7 @@
 
     & .source-container {
       justify-content: left;
-      margin: 2rem 0 0 0;
+      margin: 1.5rem 0 2rem 0;
     }
   }
 
@@ -187,10 +187,6 @@
   .planet-desc-container {
     grid-row: 1 / 2;
     grid-column: 2 / 3;
-
-    & .source-container {
-      margin: 2rem 0;
-    }
   }
 
   .button-panel {
@@ -199,6 +195,7 @@
 
   .planet-data-container {
     grid-column: 1 / 3;
+    margin: 2rem 0 0 0;
   }
 
   .planet-data-item,
