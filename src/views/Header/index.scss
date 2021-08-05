@@ -1,0 +1,53 @@
+@import '../../variables.scss';
+
+nav {
+  grid-row: 1;
+  display: grid;
+  grid-template-rows: repeat(3, auto);
+  align-items: stretch;
+  border-bottom: $border;
+  text-transform: uppercase;
+
+  & .app-title {
+    grid-row: 1 / 2;
+    display: flex;
+    justify-content: center;
+    font: 500 28px Antonio, Arial, Helvetica;
+    letter-spacing: -1.05px;
+  }
+
+  & .menu {
+    display: fixed;
+    justify-content: center;
+  }
+
+  & .planet-sections-submenu {
+    grid-row: 2 / 3;
+    grid-column: 1 / 1;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    border-bottom: $border;
+
+    & .btn {
+      display: flex;
+      justify-content: center;
+      background-color: transparent;
+    }
+
+    & #overview {
+      grid-column: 1 / 2;
+    }
+
+    & #structure {
+      grid-column: 2 / 3;
+    }
+
+    & #geology {
+      grid-column: 3 / 4;
+    }
+  }
+}
+
+.planet-sections-button-panel {
+  display: none;
+}

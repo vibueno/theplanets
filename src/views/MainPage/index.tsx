@@ -1,9 +1,9 @@
 import React, { useState, MouseEvent } from 'react';
 
-import MainMenu from '../../components/MainMenu';
+import Header from '../Header';
 import PlanetPic from '../../components/PlanetPic';
 import PlanetDesc from '../../components/PlanetDesc';
-import ButtonPanel from '../ButtonPanel';
+import PlanetSections from '../../components/PlanetSections';
 import PlanetData from '../PlanetData';
 
 import { sections } from '../../constants';
@@ -41,7 +41,11 @@ const MainPage = () => {
   return (
     <>
       <div className="layout">
-        <MainMenu clickHandler={menuclickHandler} />
+        <Header
+          menuClickHandler={menuclickHandler}
+          submenuClickHandler={buttonPanelclickHandler}
+          planet={planet}
+        />
         {planet && section ? (
           <main>
             <div className="planet-pic-container">
@@ -62,9 +66,10 @@ const MainPage = () => {
                 </a>
               </p>
             </div>
-            <ButtonPanel
+            <PlanetSections
               planetName={planet}
               clickHandler={buttonPanelclickHandler}
+              cssClass="planet-sections-button-panel"
             />
             <div className="planet-data-container">
               <PlanetData planetName={planet} />

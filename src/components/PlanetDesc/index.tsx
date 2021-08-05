@@ -7,9 +7,7 @@ type PlanetDescProps = {
 };
 
 const PlanetDesc = ({ planetDesc }: PlanetDescProps) => (
-  <>
-    <div className="planet-desc">{planetDesc}</div>
-  </>
+  <div className="planet-desc">{planetDesc}</div>
 );
 
 export default PlanetDesc;

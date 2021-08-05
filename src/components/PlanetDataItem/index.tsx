@@ -15,14 +15,12 @@ const PlanetDataItem = ({
   title,
   titleCssClass
 }: PlanetDataItemProps) => (
-  <>
-    <div className={cssClass}>
-      <div className={titleCssClass}>
-        <h4>{title}</h4>
-      </div>
-      <div className="planet-data-item-content">{content}</div>
+  <div className={cssClass}>
+    <div className={titleCssClass}>
+      <h4>{title}</h4>
     </div>
-  </>
+    <div className="planet-data-item-content">{content}</div>
+  </div>
 );
 
 export default PlanetDataItem;

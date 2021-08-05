@@ -2,36 +2,54 @@
 
 @media only screen and (min-width: 768px) {
   nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-
     & .app-title {
-      flex: 0 0 100%;
+      grid-row: 1 / 2;
       justify-content: center;
       margin: 0.75em 0;
     }
 
     & .menu {
-      flex: 0 0 100%;
-      justify-content: center;
+      grid-row: 2 / 3;
+      display: flex;
       margin: 0 0 2em 0;
+      list-style: none;
+      font: 700 11px/25px Spartan, Arial, Helvetica;
+      letter-spacing: +1px;
+
+      & li {
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        margin: 0 0 0 1.25rem;
+        border-top: 5px solid transparent;
+        cursor: pointer;
+
+        @mixin assign-menu-item-border-color() {
+          @each $planet-name, $planet-color in $planet-colors {
+            &.#{$planet-name}:hover {
+              border-color: $planet-color;
+            }
+          }
+        }
+
+        @include assign-menu-item-border-color();
+      }
+    }
+
+    & .planet-sections-submenu {
+      display: none;
     }
   }
 
   main {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, auto);
+    grid-template-rows: repeat(2, auto);
     margin: 3rem 2rem 1.5rem 2rem;
   }
 
   h1 {
     text-align: left;
-  }
-
-  .layout {
-    grid-template-rows: auto 4em 1fr;
   }
 
   .planet-pic-container {
@@ -54,7 +72,7 @@
     }
   }
 
-  .button-panel {
+  .planet-sections-button-panel {
     display: flex;
     align-self: center;
     flex-direction: column;
@@ -140,11 +158,14 @@
   }
 
   nav {
+    grid-column: 1 / 3;
     display: flex;
+    padding: 0 2rem;
 
     & .app-title {
       flex: 1 1 30%;
       justify-content: flex-start;
+      align-items: center;
       margin: 0;
     }
 
@@ -154,11 +175,15 @@
       justify-content: flex-end;
       margin: 0;
     }
+
+    & .planet-sections-submenu {
+      display: none;
+    }
   }
 
   main {
     display: grid;
-    grid-row: 2 / 4;
+    grid-row: 2 / 3;
     grid-column: 1 / 3;
     grid-template-columns: 65% 35%;
     margin: 6rem 7.5rem 3rem 7.5rem;
@@ -174,7 +199,7 @@
 
   .layout {
     display: grid;
-    grid-template-rows: 5rem 4fr 1fr;
+    grid-template-rows: 5rem auto;
     grid-template-columns: repeat(2, 1fr);
     min-height: 100vh;
   }
@@ -189,7 +214,7 @@
     grid-column: 2 / 3;
   }
 
-  .button-panel {
+  .planet-sections-button-panel {
     padding: 0;
   }
 
