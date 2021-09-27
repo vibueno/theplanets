@@ -7,7 +7,7 @@ module.exports = merge(common, {
   devtool: 'inline-source-map',
   devServer: {
     host: '0.0.0.0',
-    contentBase: './build',
+    static: './build',
     historyApiFallback: true
   },
   plugins: [new Dotenv()]
