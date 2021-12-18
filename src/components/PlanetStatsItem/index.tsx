@@ -2,19 +2,19 @@ import React from 'react';
 
 import './index.scss';
 
-type PlanetDataItemProps = {
+type PlanetStatsItemProps = {
   cssClass: string;
   content: string;
   title: string;
   titleCssClass: string;
 };
 
-const PlanetDataItem = ({
+const PlanetStatsItem = ({
   cssClass,
   content,
   title,
   titleCssClass
-}: PlanetDataItemProps) => (
+}: PlanetStatsItemProps) => (
   <div className={cssClass}>
     <div className={titleCssClass}>
       <h4>{title}</h4>
@@ -23,4 +23,4 @@ const PlanetDataItem = ({
   </div>
 );
 
-export default PlanetDataItem;
+export default PlanetStatsItem;

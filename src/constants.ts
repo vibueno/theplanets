@@ -1,3 +1,14 @@
+interface ISectionItem {
+  id: string;
+  number: string;
+  btnCaption: string;
+  btnCaptionExtended: string;
+}
+
+interface ISections {
+  [key: string]: ISectionItem;
+}
+
 const sections = {
   overview: {
     id: 'overview',
@@ -19,7 +30,11 @@ const sections = {
   }
 };
 
-const planetNames = {
+interface IPlanetnames {
+  [key: string]: string;
+}
+
+const planetNames: IPlanetnames = {
   mercury: 'mercury',
   venus: 'venus',
   earth: 'earth',
@@ -30,16 +45,16 @@ const planetNames = {
   neptune: 'neptune'
 };
 
-interface IPlanetKeyDataItem {
+interface IPlanetStatsItem {
   id: string;
   title: string;
 }
 
-interface IPlanetKeyData {
-  [key: string]: IPlanetKeyDataItem;
+interface IPlanetStats {
+  [key: string]: IPlanetStatsItem;
 }
 
-const planetKeyData: IPlanetKeyData = {
+const planetStats: IPlanetStats = {
   rotation: {
     id: 'rotation',
     title: 'rotation time'
@@ -58,10 +73,14 @@ const planetKeyData: IPlanetKeyData = {
   }
 };
 
-const planetKeyDataKeys = [
-  planetKeyData.rotation.id,
-  planetKeyData.revolution.id,
-  planetKeyData.radius.id,
-  planetKeyData.temperature.id
+interface IPlanetStatsKeys {
+  [index: number]: string;
+}
+
+const planetStatsKeys = [
+  planetStats.rotation.id,
+  planetStats.revolution.id,
+  planetStats.radius.id,
+  planetStats.temperature.id
 ];
-export { sections, planetNames, planetKeyData, planetKeyDataKeys };
+export { sections, planetNames, planetStats, planetStatsKeys };

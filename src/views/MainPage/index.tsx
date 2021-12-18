@@ -4,7 +4,7 @@ import Header from '../Header';
 import PlanetPic from '../../components/PlanetPic';
 import PlanetDesc from '../../components/PlanetDesc';
 import PlanetSections from '../../components/PlanetSections';
-import PlanetData from '../PlanetData';
+import PlanetStats from '../PlanetStats';
 
 import { sections } from '../../constants';
 
@@ -72,7 +72,7 @@ const MainPage = () => {
               cssClass="planet-sections-button-panel"
             />
             <div className="planet-data-container">
-              <PlanetData planetName={planet} />
+              <PlanetStats planetName={planet} />
             </div>
           </main>
         ) : null}
