@@ -3,7 +3,7 @@ import React, { useState, MouseEvent } from 'react';
 import Header from '../Header';
 import PlanetPic from '../../components/PlanetPic';
 import PlanetDesc from '../../components/PlanetDesc';
-import PlanetSections from '../../components/PlanetSections';
+import PlanetSections from '../PlanetSections';
 import PlanetStats from '../PlanetStats';
 
 import { sections, planetNames } from '../../constants';

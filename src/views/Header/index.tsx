@@ -1,6 +1,6 @@
 import React, { MouseEventHandler } from 'react';
 
-import PlanetSections from '../../components/PlanetSections';
+import PlanetSections from '../PlanetSections';
 import MenuItem from '../../components/MenuItem';
 import { planetNamesKeys } from '../../constants';
 
