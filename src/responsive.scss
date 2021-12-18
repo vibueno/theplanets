@@ -201,7 +201,7 @@
     display: grid;
     grid-template-rows: 5rem auto;
     grid-template-columns: repeat(2, 1fr);
-    min-height: 100vh;
+    max-height: 90vh;
   }
 
   .planet-pic-container {
