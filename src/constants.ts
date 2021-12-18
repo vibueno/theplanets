@@ -30,7 +30,16 @@ const planetNames = {
   neptune: 'neptune'
 };
 
-const planetKeyData = {
+interface IPlanetKeyDataItem {
+  id: string;
+  title: string;
+}
+
+interface IPlanetKeyData {
+  [key: string]: IPlanetKeyDataItem;
+}
+
+const planetKeyData: IPlanetKeyData = {
   rotation: {
     id: 'rotation',
     title: 'rotation time'
@@ -49,4 +58,10 @@ const planetKeyData = {
   }
 };
 
-export { sections, planetNames, planetKeyData };
+const planetKeyDataKeys = [
+  planetKeyData.rotation.id,
+  planetKeyData.revolution.id,
+  planetKeyData.radius.id,
+  planetKeyData.temperature.id
+];
+export { sections, planetNames, planetKeyData, planetKeyDataKeys };
