@@ -56,7 +56,13 @@ module.exports = {
 
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
-    fallback: { fs: false, path: require.resolve('path-browserify') }
+    fallback: { fs: false, path: require.resolve('path-browserify') },
+    alias: {
+      components: path.resolve(__dirname, 'src/components'),
+      views: path.resolve(__dirname, 'src/views'),
+      assets: path.resolve(__dirname, 'src/assets'),
+      src: path.resolve(__dirname, 'src')
+    }
   },
   plugins: [
     new HtmlWebpackPlugin({

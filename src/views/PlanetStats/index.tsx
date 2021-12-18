@@ -1,8 +1,8 @@
 import React from 'react';
-import PlanetStatsItem from '../../components/PlanetStatsItem';
+import PlanetStatsItem from 'components/PlanetStatsItem';
 
-import { getPlanetData } from '../../utils';
-import { planetStats, planetStatsKeys } from '../../constants';
+import { getPlanetData } from 'src/utils';
+import { planetStats, planetStatsKeys } from 'src/constants';
 
 import './index.scss';
 

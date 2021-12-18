@@ -1,14 +1,14 @@
 import React, { useState, MouseEvent } from 'react';
 
 import Header from '../Header';
-import PlanetPic from '../../components/PlanetPic';
-import PlanetDesc from '../../components/PlanetDesc';
+import PlanetPic from 'components/PlanetPic';
+import PlanetDesc from 'components/PlanetDesc';
 import PlanetSections from '../PlanetSections';
 import PlanetStats from '../PlanetStats';
 
-import { sections, planetNames } from '../../constants';
+import { sections, planetNames } from 'src/constants';
 
-import { getPlanetData } from '../../utils';
+import { getPlanetData } from 'src/utils';
 
 import './index.scss';
 
@@ -39,7 +39,7 @@ const MainPage = () => {
           sectionPanelClickHandler={sectionPanelClickHandler}
           planet={planet}
         />
-        {planet && section ? (
+        {planet && section && (
           <main>
             <div className="planet-pic-container">
               <PlanetPic planetName={planet} section={section} />
@@ -62,13 +62,13 @@ const MainPage = () => {
             <PlanetSections
               planetName={planet}
               clickHandler={sectionPanelClickHandler}
-              cssClass="planet-sections-button-panel"
+              className="planet-sections-button-panel"
             />
             <div className="planet-stats-container">
               <PlanetStats planetName={planet} />
             </div>
           </main>
-        ) : null}
+        )}
       </div>
     </>
   );

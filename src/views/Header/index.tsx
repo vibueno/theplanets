@@ -1,8 +1,8 @@
 import React, { MouseEventHandler } from 'react';
 
 import PlanetSections from '../PlanetSections';
-import MenuItem from '../../components/MenuItem';
-import { planetNamesKeys } from '../../constants';
+import MenuItem from 'components/MenuItem';
+import { planetNamesKeys } from 'src/constants';
 
 import './index.scss';
 
@@ -37,7 +37,7 @@ const Header = ({
     <PlanetSections
       planetName={planet}
       clickHandler={sectionPanelClickHandler}
-      cssClass="planet-sections-submenu"
+      className="planet-sections-submenu"
     />
   </nav>
 );
