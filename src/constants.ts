@@ -38,6 +38,16 @@ const planetNames: IPlanetnames = {
   neptune: 'neptune'
 };
 
+const planetNamesKeys: string[] = [
+  planetNames.mercury,
+  planetNames.venus,
+  planetNames.earth,
+  planetNames.mars,
+  planetNames.jupiter,
+  planetNames.saturn,
+  planetNames.neptune
+];
+
 const planetStats: IPlanetStats = {
   rotation: {
     id: 'rotation',
@@ -64,4 +74,11 @@ const planetStatsKeys: string[] = [
   planetStats.temperature.id
 ];
 
-export { sections, sectionKeys, planetNames, planetStats, planetStatsKeys };
+export {
+  sections,
+  sectionKeys,
+  planetNames,
+  planetNamesKeys,
+  planetStats,
+  planetStatsKeys
+};

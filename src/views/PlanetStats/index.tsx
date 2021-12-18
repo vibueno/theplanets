@@ -15,6 +15,7 @@ const PlanetStats = ({ planetName }: PlanetStatsProps) => (
     <div className="planet-data">
       {planetStatsKeys.map(planetStatsKey => (
         <PlanetStatsItem
+          key={planetStatsKey}
           cssClass="planet-data-item"
           title={planetStats[planetStatsKey].title}
           titleCssClass="planet-data-item-title"

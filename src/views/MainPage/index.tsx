@@ -6,44 +6,37 @@ import PlanetDesc from '../../components/PlanetDesc';
 import PlanetSections from '../../components/PlanetSections';
 import PlanetStats from '../PlanetStats';
 
-import { sections } from '../../constants';
+import { sections, planetNames } from '../../constants';
 
 import { getPlanetData } from '../../utils';
 
 import './index.scss';
 
 const MainPage = () => {
-  const [planet, setPlanet] = useState('mercury');
-  const [section, setSection] = useState('overview');
+  const [planet, setPlanet] = useState(planetNames.mercury);
+  const [section, setSection] = useState(sections.overview.id);
 
-  const buttonPanelclickHandler = (e: MouseEvent) => {
-    let btn;
-    let target = e.target as HTMLElement;
-    let targetParent = target.parentNode as HTMLElement;
-
-    if (target.tagName === 'BUTTON') btn = target;
-    else if (targetParent.tagName === 'BUTTON') {
-      btn = targetParent;
-    }
-
-    if (btn) setSection(btn.id);
+  const sectionPanelClickHandler = (
+    e: React.MouseEvent<HTMLButtonElement>,
+    ref: React.RefObject<HTMLButtonElement>
+  ): void => {
+    setSection(ref.current?.id as string);
   };
 
-  const menuclickHandler = (e: MouseEvent) => {
-    const clickedElement = e.target as HTMLElement;
-    const parentElement = clickedElement.parentNode as HTMLElement;
-    if (parentElement.classList.contains('menu')) {
-      setPlanet(clickedElement.id);
-      setSection(sections.overview.id);
-    }
+  const menuClickHandler = (
+    e: React.MouseEvent<HTMLLIElement>,
+    ref: React.RefObject<HTMLLIElement>
+  ): void => {
+    setPlanet(ref.current?.id as string);
+    setSection(sections.overview.id);
   };
 
   return (
     <>
       <div className="layout">
         <Header
-          menuClickHandler={menuclickHandler}
-          submenuClickHandler={buttonPanelclickHandler}
+          menuClickHandler={menuClickHandler}
+          sectionPanelClickHandler={sectionPanelClickHandler}
           planet={planet}
         />
         {planet && section ? (
@@ -68,7 +61,7 @@ const MainPage = () => {
             </div>
             <PlanetSections
               planetName={planet}
-              clickHandler={buttonPanelclickHandler}
+              clickHandler={sectionPanelClickHandler}
               cssClass="planet-sections-button-panel"
             />
             <div className="planet-data-container">

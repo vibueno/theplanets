@@ -5,7 +5,10 @@ import { sections, sectionKeys } from '../../constants';
 
 type PlanetSectionsProps = {
   planetName: string;
-  clickHandler: MouseEventHandler<HTMLButtonElement>;
+  clickHandler: (
+    e: React.MouseEvent<HTMLButtonElement>,
+    ref: React.RefObject<HTMLButtonElement>
+  ) => void;
   cssClass: string;
 };
 
@@ -14,16 +17,11 @@ const PlanetSections = ({
   clickHandler,
   cssClass
 }: PlanetSectionsProps) => {
-  const btnOverviewRef = React.useRef<HTMLButtonElement>(null);
-
-  useEffect(() => {
-    btnOverviewRef.current ? btnOverviewRef.current.focus() : null;
-  }, [planetName]);
-
   return (
     <div className={cssClass}>
       {sectionKeys.map(sectionKey => (
         <Button
+          key={sectionKey}
           id={sections[sectionKey].id}
           cssClass={`btn btn-${planetName}`}
           caption={sections[sectionKey].btnCaption}
