@@ -1,13 +1,4 @@
-interface ISectionItem {
-  id: string;
-  number: string;
-  btnCaption: string;
-  btnCaptionExtended: string;
-}
-
-interface ISections {
-  [key: string]: ISectionItem;
-}
+import { ISections, IPlanetnames, IPlanetStats } from './interfaces';
 
 const sections: ISections = {
   overview: {
@@ -36,10 +27,6 @@ const sectionKeys: string[] = [
   sections.geology.id
 ];
 
-interface IPlanetnames {
-  [key: string]: string;
-}
-
 const planetNames: IPlanetnames = {
   mercury: 'mercury',
   venus: 'venus',
@@ -50,15 +37,6 @@ const planetNames: IPlanetnames = {
   uranus: 'uranus',
   neptune: 'neptune'
 };
-
-interface IPlanetStatsItem {
-  id: string;
-  title: string;
-}
-
-interface IPlanetStats {
-  [key: string]: IPlanetStatsItem;
-}
 
 const planetStats: IPlanetStats = {
   rotation: {
