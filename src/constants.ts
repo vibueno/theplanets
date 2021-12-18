@@ -9,7 +9,7 @@ interface ISections {
   [key: string]: ISectionItem;
 }
 
-const sections = {
+const sections: ISections = {
   overview: {
     id: 'overview',
     number: '01',
@@ -29,6 +29,12 @@ const sections = {
     btnCaptionExtended: 'surface geology'
   }
 };
+
+const sectionKeys: string[] = [
+  sections.overview.id,
+  sections.structure.id,
+  sections.geology.id
+];
 
 interface IPlanetnames {
   [key: string]: string;
@@ -73,14 +79,11 @@ const planetStats: IPlanetStats = {
   }
 };
 
-interface IPlanetStatsKeys {
-  [index: number]: string;
-}
-
-const planetStatsKeys = [
+const planetStatsKeys: string[] = [
   planetStats.rotation.id,
   planetStats.revolution.id,
   planetStats.radius.id,
   planetStats.temperature.id
 ];
-export { sections, planetNames, planetStats, planetStatsKeys };
+
+export { sections, sectionKeys, planetNames, planetStats, planetStatsKeys };
