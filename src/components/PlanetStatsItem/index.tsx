@@ -19,7 +19,7 @@ const PlanetStatsItem = ({
     <div className={titleCssClass}>
       <h4>{title}</h4>
     </div>
-    <div className="planet-data-item-content">{content}</div>
+    <div className="planet-stats-item-content">{content}</div>
   </div>
 );
 

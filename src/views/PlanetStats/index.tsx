@@ -12,13 +12,13 @@ type PlanetStatsProps = {
 
 const PlanetStats = ({ planetName }: PlanetStatsProps) => (
   <>
-    <div className="planet-data">
+    <div className="planet-stats">
       {planetStatsKeys.map(planetStatsKey => (
         <PlanetStatsItem
           key={planetStatsKey}
-          cssClass="planet-data-item"
+          cssClass="planet-stats-item"
           title={planetStats[planetStatsKey].title}
-          titleCssClass="planet-data-item-title"
+          titleCssClass="planet-stats-item-title"
           content={getPlanetData(planetName, planetStats[planetStatsKey].id)}
         />
       ))}

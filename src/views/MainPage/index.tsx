@@ -64,7 +64,7 @@ const MainPage = () => {
               clickHandler={sectionPanelClickHandler}
               cssClass="planet-sections-button-panel"
             />
-            <div className="planet-data-container">
+            <div className="planet-stats-container">
               <PlanetStats planetName={planet} />
             </div>
           </main>
