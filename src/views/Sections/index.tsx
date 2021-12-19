@@ -1,10 +1,10 @@
 import React, { useEffect, useRef, MouseEventHandler } from 'react';
 import Button from 'COMPONENTS/Button';
 
-import { SECTIONS, SECTION_KEYS } from 'SRC/constants';
+import { PLANETS, SECTIONS, SECTION_KEYS } from 'SRC/constants';
 
-type PlanetSectionsProps = {
-  planetName: string;
+type SectionsProps = {
+  planetKey: string;
   clickHandler: (
     e: React.MouseEvent<HTMLButtonElement>,
     ref: React.RefObject<HTMLButtonElement>
@@ -12,18 +12,14 @@ type PlanetSectionsProps = {
   className: string;
 };
 
-const PlanetSections = ({
-  planetName,
-  clickHandler,
-  className
-}: PlanetSectionsProps) => {
+const Sections = ({ planetKey, clickHandler, className }: SectionsProps) => {
   return (
     <div className={className}>
       {SECTION_KEYS.map(sectionKey => (
         <Button
           key={sectionKey}
-          id={SECTIONS[sectionKey].NAME}
-          cssClass={`btn btn-${planetName}`}
+          id={sectionKey}
+          cssClass={`btn btn-${PLANETS[planetKey].NAME}`}
           caption={SECTIONS[sectionKey].BTN_CAPTION}
           extendedCaption={SECTIONS[sectionKey].BTN_CAPTION_LONG}
           numberingCssClass="btn-numbering"
@@ -35,4 +31,4 @@ const PlanetSections = ({
   );
 };
 
-export default PlanetSections;
+export default Sections;

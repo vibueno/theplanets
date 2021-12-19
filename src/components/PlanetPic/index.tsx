@@ -1,67 +1,32 @@
 import React from 'react';
 
-import { PLANET_NAMES, PLANET_PICS } from '../../constants';
+import { SECTIONS, PLANETS } from '../../constants';
 
 import './index.scss';
 
-const getSectionSuffix = (section: string) => {
-  if (section === 'structure') return '-internal';
-  else return '';
-};
-
-const getGeologyPic = (planetName: string) => {
-  switch (planetName) {
-    case PLANET_NAMES.MERCURY:
-      return PLANET_PICS.MERCURY.GEOLOGY;
-      break;
-    case PLANET_NAMES.VENUS:
-      return PLANET_PICS.VENUS.GEOLOGY;
-      break;
-    case PLANET_NAMES.EARTH:
-      return PLANET_PICS.EARTH.GEOLOGY;
-      break;
-    case PLANET_NAMES.MARS:
-      return PLANET_PICS.MARS.GEOLOGY;
-      break;
-    case PLANET_NAMES.JUPITER:
-      return PLANET_PICS.JUPITER.GEOLOGY;
-      break;
-    case PLANET_NAMES.SATURN:
-      return PLANET_PICS.MARS.GEOLOGY;
-      break;
-    case PLANET_NAMES.URANUS:
-      return PLANET_PICS.URANUS.GEOLOGY;
-      break;
-    case PLANET_NAMES.NEPTUNE:
-      return PLANET_PICS.NEPTUNE.GEOLOGY;
-      break;
-    default:
-      break;
-  }
-};
-
 type PlanetPicProps = {
-  planetName: string;
+  planetKey: string;
   section: string;
 };
 
-const PlanetPic = ({ planetName, section }: PlanetPicProps) => (
-  <>
-    <img
-      className={`planet-pic-${planetName}`}
-      src={require(`../../assets/img/planet-${planetName}${getSectionSuffix(
-        section
-      )}.svg`)}
-      alt={planetName}
-    />
-    {section === 'geology' ? (
+const PlanetPic = ({ planetKey, section }: PlanetPicProps) => {
+  const planetName = PLANETS[planetKey].NAME;
+  return (
+    <>
       <img
-        className="planet-pic-geology"
-        src={getGeologyPic(planetName)}
+        className={`planet-pic-${planetName}`}
+        src={require(`ASSETS/img/${PLANETS[planetKey].PICS[section]}`)}
         alt={planetName}
       />
-    ) : null}
-  </>
-);
+      {section === SECTIONS.GEOLOGY.KEY ? (
+        <img
+          className="planet-pic-geology"
+          src={PLANETS[planetKey].PICS.GEOLOGY_ZOOM}
+          alt={planetName}
+        />
+      ) : null}
+    </>
+  );
+};
 
 export default PlanetPic;

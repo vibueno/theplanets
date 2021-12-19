@@ -3,18 +3,18 @@ import React, { useState, MouseEvent } from 'react';
 import Header from '../Header';
 import PlanetPic from 'COMPONENTS/PlanetPic';
 import PlanetDesc from 'COMPONENTS/PlanetDesc';
-import PlanetSections from '../PlanetSections';
-import PlanetStats from '../PlanetStats';
+import Sections from '../Sections';
+import Stats from '../Stats';
 
-import { SECTIONS, PLANET_NAMES } from 'SRC/constants';
+import { SECTIONS, PLANETS } from 'SRC/constants';
 
 import { getPlanetData } from 'SRC/utils';
 
 import './index.scss';
 
 const MainPage = () => {
-  const [currentPlanet, setCurrentPlanet] = useState(PLANET_NAMES.MERCURY);
-  const [currentSection, setCurrentSection] = useState(SECTIONS.OVERVIEW.NAME);
+  const [currentPlanet, setCurrentPlanet] = useState(PLANETS.MERCURY.KEY);
+  const [currentSection, setCurrentSection] = useState(SECTIONS.OVERVIEW.KEY);
 
   const sectionMenuClickHandler = (
     e: React.MouseEvent<HTMLButtonElement>,
@@ -28,7 +28,7 @@ const MainPage = () => {
     ref: React.RefObject<HTMLLIElement>
   ): void => {
     setCurrentPlanet(ref.current?.id as string);
-    setCurrentSection(SECTIONS.OVERVIEW.NAME);
+    setCurrentSection(SECTIONS.OVERVIEW.KEY);
   };
 
   return (
@@ -37,24 +37,34 @@ const MainPage = () => {
         <Header
           menuClickHandler={menuClickHandler}
           sectionMenuClickHandler={sectionMenuClickHandler}
-          planetName={currentPlanet}
+          planetKey={currentPlanet}
         />
         {currentPlanet && currentSection && (
           <main>
             <div className="planet-pic-container">
-              <PlanetPic planetName={currentPlanet} section={currentSection} />
+              <PlanetPic planetKey={currentPlanet} section={currentSection} />
             </div>
 
             <div className="planet-desc-container">
               <h1>{currentPlanet}</h1>
               <PlanetDesc
                 planetDesc={
-                  getPlanetData(currentPlanet, currentSection).content
+                  getPlanetData(
+                    PLANETS[currentPlanet].NAME,
+                    SECTIONS[currentSection].NAME
+                  ).content
                 }
               />
               <p className="source-container">
                 <span className="source-title">Source:</span>
-                <a href={getPlanetData(currentPlanet, currentSection).source}>
+                <a
+                  href={
+                    getPlanetData(
+                      PLANETS[currentPlanet].NAME,
+                      SECTIONS[currentSection].NAME
+                    ).source
+                  }
+                >
                   Wikipedia
                   <img
                     className="source-icon"
@@ -63,13 +73,13 @@ const MainPage = () => {
                 </a>
               </p>
             </div>
-            <PlanetSections
-              planetName={currentPlanet}
+            <Sections
+              planetKey={currentPlanet}
               clickHandler={sectionMenuClickHandler}
               className="planet-sections-button-panel"
             />
             <div className="planet-stats-container">
-              <PlanetStats planetName={currentPlanet} />
+              <Stats planetKey={currentPlanet} />
             </div>
           </main>
         )}

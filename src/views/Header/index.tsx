@@ -1,13 +1,13 @@
 import React, { MouseEventHandler } from 'react';
 
-import PlanetSections from '../PlanetSections';
+import Sections from '../Sections';
 import Menu from 'VIEWS/Menu';
-import { APP_TITLE } from 'SRC/constants';
+import { APP_TITLE, PLANETS } from 'SRC/constants';
 
 import './index.scss';
 
 type HeaderProps = {
-  planetName: string;
+  planetKey: string;
   menuClickHandler: (
     e: React.MouseEvent<HTMLLIElement>,
     ref: React.RefObject<HTMLLIElement>
@@ -19,15 +19,15 @@ type HeaderProps = {
 };
 
 const Header = ({
-  planetName,
+  planetKey,
   menuClickHandler,
   sectionMenuClickHandler
 }: HeaderProps) => (
   <nav>
     <div className="app-title">{APP_TITLE}</div>
-    <Menu planetName={planetName} clickHandler={menuClickHandler} />
-    <PlanetSections
-      planetName={planetName}
+    <Menu planetKey={planetKey} clickHandler={menuClickHandler} />
+    <Sections
+      planetKey={planetKey}
       clickHandler={sectionMenuClickHandler}
       className="planet-sections-submenu"
     />

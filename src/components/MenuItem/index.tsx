@@ -1,19 +1,24 @@
 import React, { MouseEvent } from 'react';
 
+import { PLANETS } from 'SRC/constants';
+
 type MenuItemProps = {
-  planetName: string;
+  planetKey: string;
   clickHandler: (
     e: React.MouseEvent<HTMLLIElement>,
     ref: React.RefObject<HTMLLIElement>
   ) => void;
 };
 
-const MenuItem = ({ planetName, clickHandler }: MenuItemProps) => {
+const MenuItem = ({ planetKey, clickHandler }: MenuItemProps) => {
   const ref = React.useRef<HTMLLIElement>(null);
+
+  const planetName = PLANETS[planetKey].NAME;
+
   return (
     <li
-      id={planetName}
-      key={planetName}
+      id={planetKey}
+      key={planetKey}
       className={planetName}
       onClick={e => clickHandler(e, ref)}
       ref={ref}

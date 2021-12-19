@@ -1,4 +1,4 @@
-import { ISections, IPlanetnames, IPlanetStats } from './interfaces';
+import { ISections, IPlanets, IStats } from './interfaces';
 
 import MERCURY_GEOLOGY_PIC from 'ASSETS/img/geology-mercury.png';
 import VENUS_GEOLOGY_PIC from 'ASSETS/img/geology-venus.png';
@@ -41,55 +41,7 @@ const SECTION_KEYS: string[] = [
   SECTIONS.GEOLOGY.KEY
 ];
 
-const PLANET_NAMES: IPlanetnames = {
-  MERCURY: 'mercury',
-  VENUS: 'venus',
-  EARTH: 'earth',
-  MARS: 'mars',
-  JUPITER: 'jupiter',
-  SATURN: 'saturn',
-  URANUS: 'uranus',
-  NEPTUNE: 'neptune'
-};
-
-const PLANET_NAMES_KEYS: string[] = [
-  PLANET_NAMES.MERCURY,
-  PLANET_NAMES.VENUS,
-  PLANET_NAMES.EARTH,
-  PLANET_NAMES.MARS,
-  PLANET_NAMES.JUPITER,
-  PLANET_NAMES.SATURN,
-  PLANET_NAMES.NEPTUNE
-];
-
-const PLANET_PICS = {
-  MERCURY: {
-    GEOLOGY: MERCURY_GEOLOGY_PIC
-  },
-  VENUS: {
-    GEOLOGY: VENUS_GEOLOGY_PIC
-  },
-  EARTH: {
-    GEOLOGY: EARTH_GEOLOGY_PIC
-  },
-  MARS: {
-    GEOLOGY: MARS_GEOLOGY_PIC
-  },
-  JUPITER: {
-    GEOLOGY: JUPITER_GEOLOGY_PIC
-  },
-  SATURN: {
-    GEOLOGY: SATURN_GEOLOGY_PIC
-  },
-  URANUS: {
-    GEOLOGY: URANUS_GEOLOGY_PIC
-  },
-  NEPTUNE: {
-    GEOLOGY: NEPTUNE_GEOLOGY_PIC
-  }
-};
-
-const PLANET_STATS: IPlanetStats = {
+const STATS: IStats = {
   ROTATION: {
     KEY: 'ROTATION',
     NAME: 'rotation',
@@ -112,20 +64,112 @@ const PLANET_STATS: IPlanetStats = {
   }
 };
 
-const PLANET_STATS_KEYS: string[] = [
-  PLANET_STATS.ROTATION.KEY,
-  PLANET_STATS.REVOLUTION.KEY,
-  PLANET_STATS.RADIUS.KEY,
-  PLANET_STATS.TEMPERATURE.KEY
+const STATS_KEYS: string[] = [
+  STATS.ROTATION.KEY,
+  STATS.REVOLUTION.KEY,
+  STATS.RADIUS.KEY,
+  STATS.TEMPERATURE.KEY
+];
+
+const PLANETS: IPlanets = {
+  MERCURY: {
+    KEY: 'MERCURY',
+    NAME: 'mercury',
+    PICS: {
+      OVERVIEW: 'planet-mercury.svg',
+      STRUCTURE: 'planet-mercury-internal.svg',
+      GEOLOGY: 'planet-mercury.svg',
+      GEOLOGY_ZOOM: MERCURY_GEOLOGY_PIC
+    }
+  },
+  VENUS: {
+    KEY: 'VENUS',
+    NAME: 'venus',
+    PICS: {
+      OVERVIEW: 'planet-venus.svg',
+      STRUCTURE: 'planet-venus-internal.svg',
+      GEOLOGY: 'planet-venus.svg',
+      GEOLOGY_ZOOM: VENUS_GEOLOGY_PIC
+    }
+  },
+  EARTH: {
+    KEY: 'EARTH',
+    NAME: 'earth',
+    PICS: {
+      OVERVIEW: 'planet-earth.svg',
+      STRUCTURE: 'planet-earth-internal.svg',
+      GEOLOGY: 'planet-earth.svg',
+      GEOLOGY_ZOOM: EARTH_GEOLOGY_PIC
+    }
+  },
+  MARS: {
+    KEY: 'MARS',
+    NAME: 'mars',
+    PICS: {
+      OVERVIEW: 'planet-mars.svg',
+      STRUCTURE: 'planet-mars-internal.svg',
+      GEOLOGY: 'planet-mars.svg',
+      GEOLOGY_ZOOM: MARS_GEOLOGY_PIC
+    }
+  },
+  JUPITER: {
+    KEY: 'JUPITER',
+    NAME: 'jupiter',
+    PICS: {
+      OVERVIEW: 'planet-jupiter.svg',
+      STRUCTURE: 'planet-jupiter-internal.svg',
+      GEOLOGY: 'planet-jupiter.svg',
+      GEOLOGY_ZOOM: JUPITER_GEOLOGY_PIC
+    }
+  },
+  SATURN: {
+    KEY: 'SATURN',
+    NAME: 'saturn',
+    PICS: {
+      OVERVIEW: 'planet-saturn.svg',
+      STRUCTURE: 'planet-saturn-internal.svg',
+      GEOLOGY: 'planet-saturn.svg',
+      GEOLOGY_ZOOM: SATURN_GEOLOGY_PIC
+    }
+  },
+  URANUS: {
+    KEY: 'URANUS',
+    NAME: 'uranus',
+    PICS: {
+      OVERVIEW: 'planet-uranus.svg',
+      STRUCTURE: 'planet-uranus-internal.svg',
+      GEOLOGY: 'planet-uranus.svg',
+      GEOLOGY_ZOOM: URANUS_GEOLOGY_PIC
+    }
+  },
+  NEPTUNE: {
+    KEY: 'NEPTUNE',
+    NAME: 'neptune',
+    PICS: {
+      OVERVIEW: 'planet-neptune.svg',
+      STRUCTURE: 'planet-neptune-internal.svg',
+      GEOLOGY: 'planet-neptune.svg',
+      GEOLOGY_ZOOM: NEPTUNE_GEOLOGY_PIC
+    }
+  }
+};
+
+const PLANET_KEYS: string[] = [
+  PLANETS.MERCURY.KEY,
+  PLANETS.VENUS.KEY,
+  PLANETS.EARTH.KEY,
+  PLANETS.MARS.KEY,
+  PLANETS.JUPITER.KEY,
+  PLANETS.SATURN.KEY,
+  PLANETS.NEPTUNE.KEY
 ];
 
 export {
   APP_TITLE,
   SECTIONS,
   SECTION_KEYS,
-  PLANET_NAMES,
-  PLANET_PICS,
-  PLANET_NAMES_KEYS,
-  PLANET_STATS,
-  PLANET_STATS_KEYS
+  STATS,
+  STATS_KEYS,
+  PLANETS,
+  PLANET_KEYS
 };

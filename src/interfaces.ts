@@ -10,24 +10,28 @@ interface ISections {
   [key: string]: ISectionItem;
 }
 
-interface IPlanetnames {
+interface IPlanetPics {
   [key: string]: string;
 }
 
-interface IPlanetStatsItem {
+interface IPlanetItem {
+  KEY: string;
+  NAME: string;
+  PICS: IPlanetPics;
+}
+
+interface IPlanets {
+  [key: string]: IPlanetItem;
+}
+
+interface IStatsItem {
   KEY: string;
   NAME: string;
   TITLE: string;
 }
 
-interface IPlanetStats {
-  [key: string]: IPlanetStatsItem;
+interface IStats {
+  [key: string]: IStatsItem;
 }
 
-export type {
-  ISectionItem,
-  ISections,
-  IPlanetnames,
-  IPlanetStatsItem,
-  IPlanetStats
-};
+export type { ISectionItem, ISections, IPlanets, IStatsItem, IStats };

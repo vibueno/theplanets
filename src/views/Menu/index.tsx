@@ -1,24 +1,24 @@
 import React from 'react';
 import MenuItem from 'COMPONENTS/MenuItem';
 
-import { PLANET_NAMES_KEYS } from 'SRC/constants';
+import { PLANET_KEYS } from 'SRC/constants';
 
 type MenuProps = {
-  planetName: string;
+  planetKey: string;
   clickHandler: (
     e: React.MouseEvent<HTMLLIElement>,
     ref: React.RefObject<HTMLLIElement>
   ) => void;
 };
 
-const Menu = ({ planetName, clickHandler }: MenuProps) => (
+const Menu = ({ planetKey, clickHandler }: MenuProps) => (
   <>
     <ul className="menu">
-      {PLANET_NAMES_KEYS.map(planetNameKey => (
+      {PLANET_KEYS.map(planetKey => (
         <MenuItem
-          key={planetNameKey}
+          key={planetKey}
           clickHandler={clickHandler}
-          planetName={planetNameKey}
+          planetKey={planetKey}
         />
       ))}
     </ul>
