@@ -1,4 +1,4 @@
-import React, { MouseEventHandler } from 'react';
+import React, { MouseEvent } from 'react';
 
 type MenuItemProps = {
   planetName: string;

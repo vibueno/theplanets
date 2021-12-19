@@ -1,8 +1,8 @@
 import React, { MouseEventHandler } from 'react';
 
 import PlanetSections from '../PlanetSections';
-import MenuItem from 'COMPONENTS/MenuItem';
-import { APP_TITLE, PLANET_NAMES_KEYS } from 'SRC/constants';
+import Menu from 'VIEWS/Menu';
+import { APP_TITLE } from 'SRC/constants';
 
 import './index.scss';
 
@@ -25,15 +25,7 @@ const Header = ({
 }: HeaderProps) => (
   <nav>
     <div className="app-title">{APP_TITLE}</div>
-    <ul className="menu">
-      {PLANET_NAMES_KEYS.map(planetNameKey => (
-        <MenuItem
-          key={planetNameKey}
-          clickHandler={menuClickHandler}
-          planetName={planetNameKey}
-        />
-      ))}
-    </ul>
+    <Menu planetName={planetName} clickHandler={menuClickHandler} />
     <PlanetSections
       planetName={planetName}
       clickHandler={sectionMenuClickHandler}
