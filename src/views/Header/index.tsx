@@ -1,32 +1,32 @@
 import React, { MouseEventHandler } from 'react';
 
 import PlanetSections from '../PlanetSections';
-import MenuItem from 'components/MenuItem';
-import { planetNamesKeys } from 'src/constants';
+import MenuItem from 'COMPONENTS/MenuItem';
+import { APP_TITLE, PLANET_NAMES_KEYS } from 'SRC/constants';
 
 import './index.scss';
 
 type HeaderProps = {
-  planet: string;
+  planetName: string;
   menuClickHandler: (
     e: React.MouseEvent<HTMLLIElement>,
     ref: React.RefObject<HTMLLIElement>
   ) => void;
-  sectionPanelClickHandler: (
+  sectionMenuClickHandler: (
     e: React.MouseEvent<HTMLButtonElement>,
     ref: React.RefObject<HTMLButtonElement>
   ) => void;
 };
 
 const Header = ({
-  planet,
+  planetName,
   menuClickHandler,
-  sectionPanelClickHandler
+  sectionMenuClickHandler
 }: HeaderProps) => (
   <nav>
-    <div className="app-title">the planets</div>
+    <div className="app-title">{APP_TITLE}</div>
     <ul className="menu">
-      {planetNamesKeys.map(planetNameKey => (
+      {PLANET_NAMES_KEYS.map(planetNameKey => (
         <MenuItem
           key={planetNameKey}
           clickHandler={menuClickHandler}
@@ -35,8 +35,8 @@ const Header = ({
       ))}
     </ul>
     <PlanetSections
-      planetName={planet}
-      clickHandler={sectionPanelClickHandler}
+      planetName={planetName}
+      clickHandler={sectionMenuClickHandler}
       className="planet-sections-submenu"
     />
   </nav>

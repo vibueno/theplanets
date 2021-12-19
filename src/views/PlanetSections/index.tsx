@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, MouseEventHandler } from 'react';
-import Button from 'components/Button';
+import Button from 'COMPONENTS/Button';
 
-import { sections, sectionKeys } from 'src/constants';
+import { SECTIONS, SECTION_KEYS } from 'SRC/constants';
 
 type PlanetSectionsProps = {
   planetName: string;
@@ -19,15 +19,15 @@ const PlanetSections = ({
 }: PlanetSectionsProps) => {
   return (
     <div className={className}>
-      {sectionKeys.map(sectionKey => (
+      {SECTION_KEYS.map(sectionKey => (
         <Button
           key={sectionKey}
-          id={sections[sectionKey].id}
+          id={SECTIONS[sectionKey].NAME}
           cssClass={`btn btn-${planetName}`}
-          caption={sections[sectionKey].btnCaption}
-          extendedCaption={sections[sectionKey].btnCaptionExtended}
+          caption={SECTIONS[sectionKey].BTN_CAPTION}
+          extendedCaption={SECTIONS[sectionKey].BTN_CAPTION_LONG}
           numberingCssClass="btn-numbering"
-          numbering={sections[sectionKey].number}
+          numbering={SECTIONS[sectionKey].NUMBER}
           clickHandler={clickHandler}
         />
       ))}

@@ -10,7 +10,6 @@ type MenuItemProps = {
 
 const MenuItem = ({ planetName, clickHandler }: MenuItemProps) => {
   const ref = React.useRef<HTMLLIElement>(null);
-
   return (
     <li
       id={planetName}

@@ -1,17 +1,8 @@
 import React from 'react';
 
-import { planetNames } from '../../constants';
+import { PLANET_NAMES, PLANET_PICS } from '../../constants';
 
 import './index.scss';
-
-import geologyMercury from '../../assets/img/geology-mercury.png';
-import geologyVenus from '../../assets/img/geology-venus.png';
-import geologyEarth from '../../assets/img/geology-earth.png';
-import geologyMars from '../../assets/img/geology-mars.png';
-import geologyJupiter from '../../assets/img/geology-jupiter.png';
-import geologySaturn from '../../assets/img/geology-saturn.png';
-import geologyUranus from '../../assets/img/geology-uranus.png';
-import geologyNeptune from '../../assets/img/geology-neptune.png';
 
 const getSectionSuffix = (section: string) => {
   if (section === 'structure') return '-internal';
@@ -20,29 +11,29 @@ const getSectionSuffix = (section: string) => {
 
 const getGeologyPic = (planetName: string) => {
   switch (planetName) {
-    case planetNames.mercury:
-      return geologyMercury;
+    case PLANET_NAMES.MERCURY:
+      return PLANET_PICS.MERCURY.GEOLOGY;
       break;
-    case planetNames.venus:
-      return geologyVenus;
+    case PLANET_NAMES.VENUS:
+      return PLANET_PICS.VENUS.GEOLOGY;
       break;
-    case planetNames.earth:
-      return geologyEarth;
+    case PLANET_NAMES.EARTH:
+      return PLANET_PICS.EARTH.GEOLOGY;
       break;
-    case planetNames.mars:
-      return geologyMars;
+    case PLANET_NAMES.MARS:
+      return PLANET_PICS.MARS.GEOLOGY;
       break;
-    case planetNames.jupiter:
-      return geologyJupiter;
+    case PLANET_NAMES.JUPITER:
+      return PLANET_PICS.JUPITER.GEOLOGY;
       break;
-    case planetNames.saturn:
-      return geologySaturn;
+    case PLANET_NAMES.SATURN:
+      return PLANET_PICS.MARS.GEOLOGY;
       break;
-    case planetNames.uranus:
-      return geologyUranus;
+    case PLANET_NAMES.URANUS:
+      return PLANET_PICS.URANUS.GEOLOGY;
       break;
-    case planetNames.neptune:
-      return geologyNeptune;
+    case PLANET_NAMES.NEPTUNE:
+      return PLANET_PICS.NEPTUNE.GEOLOGY;
       break;
     default:
       break;

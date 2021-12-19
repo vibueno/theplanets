@@ -1,5 +1,5 @@
 import React from 'react';
-import MainPage from 'views/MainPage';
+import MainPage from 'VIEWS/MainPage';
 
 import './index.scss';
 import './responsive.scss';

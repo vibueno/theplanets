@@ -1,8 +1,9 @@
 interface ISectionItem {
-  id: string;
-  number: string;
-  btnCaption: string;
-  btnCaptionExtended: string;
+  KEY: string;
+  NAME: string;
+  NUMBER: string;
+  BTN_CAPTION: string;
+  BTN_CAPTION_LONG: string;
 }
 
 interface ISections {
@@ -14,8 +15,9 @@ interface IPlanetnames {
 }
 
 interface IPlanetStatsItem {
-  id: string;
-  title: string;
+  KEY: string;
+  NAME: string;
+  TITLE: string;
 }
 
 interface IPlanetStats {

@@ -1,4 +1,4 @@
-const planetsData: [{ [key: string]: any }] = require('assets/data.json');
+const planetsData: [{ [key: string]: any }] = require('ASSETS/data.json');
 
 const getPlanetData = (planetName: string, key: string) => {
   const planetInfo = planetsData.filter(

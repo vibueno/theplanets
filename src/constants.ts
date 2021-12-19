@@ -1,84 +1,131 @@
 import { ISections, IPlanetnames, IPlanetStats } from './interfaces';
 
-const sections: ISections = {
-  overview: {
-    id: 'overview',
-    number: '01',
-    btnCaption: 'overview',
-    btnCaptionExtended: 'overview'
+import MERCURY_GEOLOGY_PIC from 'ASSETS/img/geology-mercury.png';
+import VENUS_GEOLOGY_PIC from 'ASSETS/img/geology-venus.png';
+import EARTH_GEOLOGY_PIC from 'ASSETS/img/geology-earth.png';
+import MARS_GEOLOGY_PIC from 'ASSETS/img/geology-mars.png';
+import JUPITER_GEOLOGY_PIC from 'ASSETS/img/geology-jupiter.png';
+import SATURN_GEOLOGY_PIC from 'ASSETS/img/geology-saturn.png';
+import URANUS_GEOLOGY_PIC from 'ASSETS/img/geology-uranus.png';
+import NEPTUNE_GEOLOGY_PIC from 'ASSETS/img/geology-neptune.png';
+
+const APP_TITLE = 'the planets';
+
+const SECTIONS: ISections = {
+  OVERVIEW: {
+    KEY: 'OVERVIEW',
+    NAME: 'overview',
+    NUMBER: '01',
+    BTN_CAPTION: 'overview',
+    BTN_CAPTION_LONG: 'overview'
   },
-  structure: {
-    id: 'structure',
-    number: '02',
-    btnCaption: 'structure',
-    btnCaptionExtended: 'internal structure'
+  STRUCTURE: {
+    KEY: 'STRUCTURE',
+    NAME: 'structure',
+    NUMBER: '02',
+    BTN_CAPTION: 'structure',
+    BTN_CAPTION_LONG: 'internal structure'
   },
-  geology: {
-    id: 'geology',
-    number: '03',
-    btnCaption: 'geology',
-    btnCaptionExtended: 'surface geology'
+  GEOLOGY: {
+    KEY: 'GEOLOGY',
+    NAME: 'geology',
+    NUMBER: '03',
+    BTN_CAPTION: 'geology',
+    BTN_CAPTION_LONG: 'surface geology'
   }
 };
 
-const sectionKeys: string[] = [
-  sections.overview.id,
-  sections.structure.id,
-  sections.geology.id
+const SECTION_KEYS: string[] = [
+  SECTIONS.OVERVIEW.KEY,
+  SECTIONS.STRUCTURE.KEY,
+  SECTIONS.GEOLOGY.KEY
 ];
 
-const planetNames: IPlanetnames = {
-  mercury: 'mercury',
-  venus: 'venus',
-  earth: 'earth',
-  mars: 'mars',
-  jupiter: 'jupiter',
-  saturn: 'saturn',
-  uranus: 'uranus',
-  neptune: 'neptune'
+const PLANET_NAMES: IPlanetnames = {
+  MERCURY: 'mercury',
+  VENUS: 'venus',
+  EARTH: 'earth',
+  MARS: 'mars',
+  JUPITER: 'jupiter',
+  SATURN: 'saturn',
+  URANUS: 'uranus',
+  NEPTUNE: 'neptune'
 };
 
-const planetNamesKeys: string[] = [
-  planetNames.mercury,
-  planetNames.venus,
-  planetNames.earth,
-  planetNames.mars,
-  planetNames.jupiter,
-  planetNames.saturn,
-  planetNames.neptune
+const PLANET_NAMES_KEYS: string[] = [
+  PLANET_NAMES.MERCURY,
+  PLANET_NAMES.VENUS,
+  PLANET_NAMES.EARTH,
+  PLANET_NAMES.MARS,
+  PLANET_NAMES.JUPITER,
+  PLANET_NAMES.SATURN,
+  PLANET_NAMES.NEPTUNE
 ];
 
-const planetStats: IPlanetStats = {
-  rotation: {
-    id: 'rotation',
-    title: 'rotation time'
+const PLANET_PICS = {
+  MERCURY: {
+    GEOLOGY: MERCURY_GEOLOGY_PIC
   },
-  revolution: {
-    id: 'revolution',
-    title: 'rotation time'
+  VENUS: {
+    GEOLOGY: VENUS_GEOLOGY_PIC
   },
-  radius: {
-    id: 'radius',
-    title: 'radius'
+  EARTH: {
+    GEOLOGY: EARTH_GEOLOGY_PIC
   },
-  temperature: {
-    id: 'temperature',
-    title: 'average temp.'
+  MARS: {
+    GEOLOGY: MARS_GEOLOGY_PIC
+  },
+  JUPITER: {
+    GEOLOGY: JUPITER_GEOLOGY_PIC
+  },
+  SATURN: {
+    GEOLOGY: SATURN_GEOLOGY_PIC
+  },
+  URANUS: {
+    GEOLOGY: URANUS_GEOLOGY_PIC
+  },
+  NEPTUNE: {
+    GEOLOGY: NEPTUNE_GEOLOGY_PIC
   }
 };
 
-const planetStatsKeys: string[] = [
-  planetStats.rotation.id,
-  planetStats.revolution.id,
-  planetStats.radius.id,
-  planetStats.temperature.id
+const PLANET_STATS: IPlanetStats = {
+  ROTATION: {
+    KEY: 'ROTATION',
+    NAME: 'rotation',
+    TITLE: 'rotation time'
+  },
+  REVOLUTION: {
+    KEY: 'REVOLUTION',
+    NAME: 'revolution',
+    TITLE: 'revolution time'
+  },
+  RADIUS: {
+    KEY: 'RADIUS',
+    NAME: 'radius',
+    TITLE: 'radius'
+  },
+  TEMPERATURE: {
+    KEY: 'TEMPERATURE',
+    NAME: 'temperature',
+    TITLE: 'average temp.'
+  }
+};
+
+const PLANET_STATS_KEYS: string[] = [
+  PLANET_STATS.ROTATION.KEY,
+  PLANET_STATS.REVOLUTION.KEY,
+  PLANET_STATS.RADIUS.KEY,
+  PLANET_STATS.TEMPERATURE.KEY
 ];
 
 export {
-  sections,
-  sectionKeys,
-  planetNames,
-  planetNamesKeys,
-  planetStats,
-  planetStatsKeys
+  APP_TITLE,
+  SECTIONS,
+  SECTION_KEYS,
+  PLANET_NAMES,
+  PLANET_PICS,
+  PLANET_NAMES_KEYS,
+  PLANET_STATS,
+  PLANET_STATS_KEYS
 };
