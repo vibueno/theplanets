@@ -4,14 +4,14 @@ import { SECTIONS, PLANETS } from 'SRC/constants';
 
 type PlanetPicProps = {
   planetKey: string;
-  section: string;
+  sectionKey: string;
   className: string;
   classNameGeology: string;
 };
 
 const PlanetPic = ({
   planetKey,
-  section,
+  sectionKey,
   className,
   classNameGeology
 }: PlanetPicProps) => {
@@ -20,16 +20,16 @@ const PlanetPic = ({
     <>
       <img
         className={className}
-        src={require(`ASSETS/img/${PLANETS[planetKey].PICS[section]}`)}
+        src={require(`ASSETS/img/${PLANETS[planetKey].PICS[sectionKey]}`)}
         alt={planetName}
       />
-      {section === SECTIONS.GEOLOGY.KEY ? (
+      {sectionKey === SECTIONS.GEOLOGY.KEY && (
         <img
           className={classNameGeology}
           src={PLANETS[planetKey].PICS.GEOLOGY_ZOOM}
           alt={planetName}
         />
-      ) : null}
+      )}
     </>
   );
 };

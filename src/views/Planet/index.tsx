@@ -33,27 +33,18 @@ const Planet = ({
       <div className="planet-pic-container">
         <PlanetPic
           planetKey={planetKey}
-          section={sectionKey}
+          sectionKey={sectionKey}
           className={`planet-pic-${planetName}`}
           classNameGeology={'planet-pic-geology'}
         />
       </div>
 
       <div className="planet-desc-container">
-        <h1>{planetName}</h1>
         <PlanetDesc
+          planetName={planetName}
           planetDesc={getPlanetData(planetName, sectionName).content}
+          planetDescSource={getPlanetData(planetName, sectionName).source}
         />
-        <p className="source-container">
-          <span className="source-title">Source:</span>
-          <a href={getPlanetData(planetName, sectionName).source}>
-            Wikipedia
-            <img
-              className="source-icon"
-              src={require('ASSETS/img/icon-source.svg')}
-            />
-          </a>
-        </p>
       </div>
       <PlanetSectionsMenu
         planetKey={planetKey}

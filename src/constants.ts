@@ -11,6 +11,8 @@ import NEPTUNE_GEOLOGY_PIC from 'ASSETS/img/geology-neptune.png';
 
 const APP_TITLE = 'the planets';
 
+const ICON_SOURCE = 'icon-source.svg';
+
 const SECTIONS: ISections = {
   OVERVIEW: {
     KEY: 'OVERVIEW',
@@ -166,6 +168,7 @@ const PLANET_KEYS: string[] = [
 
 export {
   APP_TITLE,
+  ICON_SOURCE,
   SECTIONS,
   SECTION_KEYS,
   STATS,
