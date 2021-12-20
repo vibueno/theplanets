@@ -1,20 +1,20 @@
 import React from 'react';
-import StatsItem from 'COMPONENTS/StatsItem';
+import PlanetStatsItem from './PlanetStatsItem';
 
 import { getPlanetData } from 'SRC/utils';
 import { PLANETS, STATS, STATS_KEYS } from 'SRC/constants';
 
 import './index.scss';
 
-type StatsProps = {
+type PlanetStatsProps = {
   planetKey: string;
 };
 
-const Stats = ({ planetKey }: StatsProps) => (
+const PlanetStats = ({ planetKey }: PlanetStatsProps) => (
   <>
     <div className="planet-stats">
       {STATS_KEYS.map(statsKey => (
-        <StatsItem
+        <PlanetStatsItem
           key={statsKey}
           cssClass="planet-stats-item"
           title={STATS[statsKey].TITLE}
@@ -26,4 +26,4 @@ const Stats = ({ planetKey }: StatsProps) => (
   </>
 );
 
-export default Stats;
+export default PlanetStats;

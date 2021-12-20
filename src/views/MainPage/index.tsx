@@ -1,10 +1,7 @@
 import React, { useState, MouseEvent } from 'react';
 
 import Header from '../Header';
-import PlanetPic from 'COMPONENTS/PlanetPic';
-import PlanetDesc from 'COMPONENTS/PlanetDesc';
-import Sections from '../Sections';
-import Stats from '../Stats';
+import Planet from 'VIEWS/Planet';
 
 import { SECTIONS, PLANETS } from 'SRC/constants';
 
@@ -41,46 +38,11 @@ const MainPage = () => {
         />
         {currentPlanet && currentSection && (
           <main>
-            <div className="planet-pic-container">
-              <PlanetPic planetKey={currentPlanet} section={currentSection} />
-            </div>
-
-            <div className="planet-desc-container">
-              <h1>{currentPlanet}</h1>
-              <PlanetDesc
-                planetDesc={
-                  getPlanetData(
-                    PLANETS[currentPlanet].NAME,
-                    SECTIONS[currentSection].NAME
-                  ).content
-                }
-              />
-              <p className="source-container">
-                <span className="source-title">Source:</span>
-                <a
-                  href={
-                    getPlanetData(
-                      PLANETS[currentPlanet].NAME,
-                      SECTIONS[currentSection].NAME
-                    ).source
-                  }
-                >
-                  Wikipedia
-                  <img
-                    className="source-icon"
-                    src={require('ASSETS/img/icon-source.svg')}
-                  />
-                </a>
-              </p>
-            </div>
-            <Sections
+            <Planet
               planetKey={currentPlanet}
-              clickHandler={sectionMenuClickHandler}
-              className="planet-sections-button-panel"
+              sectionKey={currentSection}
+              sectionMenuClickHandler={sectionMenuClickHandler}
             />
-            <div className="planet-stats-container">
-              <Stats planetKey={currentPlanet} />
-            </div>
           </main>
         )}
       </div>

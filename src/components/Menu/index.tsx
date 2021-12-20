@@ -1,9 +1,9 @@
 import React from 'react';
-import MenuItem from 'COMPONENTS/MenuItem';
+import MenuItem from './MenuItem';
 
 import { PLANET_KEYS } from 'SRC/constants';
 
-type MenuProps = {
+type PlanetMenuProps = {
   planetKey: string;
   clickHandler: (
     e: React.MouseEvent<HTMLLIElement>,
@@ -11,7 +11,7 @@ type MenuProps = {
   ) => void;
 };
 
-const Menu = ({ planetKey, clickHandler }: MenuProps) => (
+const Menu = ({ planetKey, clickHandler }: PlanetMenuProps) => (
   <>
     <ul className="menu">
       {PLANET_KEYS.map(planetKey => (

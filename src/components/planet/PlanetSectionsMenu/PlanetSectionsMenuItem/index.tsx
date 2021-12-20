@@ -2,7 +2,7 @@ import React, { MouseEventHandler } from 'react';
 
 import './index.scss';
 
-type ButtonProps = {
+type PlanetSectionsMenuItemProps = {
   id: string;
   cssClass: string;
   caption: string;
@@ -15,7 +15,7 @@ type ButtonProps = {
   ) => void;
 };
 
-const Button = ({
+const PlanetSectionsMenuItem = ({
   id,
   cssClass,
   caption,
@@ -23,7 +23,7 @@ const Button = ({
   numberingCssClass,
   numbering,
   clickHandler
-}: ButtonProps) => {
+}: PlanetSectionsMenuItemProps) => {
   const ref = React.useRef<HTMLButtonElement>(null);
 
   return (
@@ -39,4 +39,4 @@ const Button = ({
     </button>
   );
 };
-export default Button;
+export default PlanetSectionsMenuItem;

@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, MouseEventHandler } from 'react';
-import Button from 'COMPONENTS/Button';
+import PlanetSectionsMenuItem from './PlanetSectionsMenuItem';
 
 import { PLANETS, SECTIONS, SECTION_KEYS } from 'SRC/constants';
 
-type SectionsProps = {
+type PlanetSectionsMenuProps = {
   planetKey: string;
   clickHandler: (
     e: React.MouseEvent<HTMLButtonElement>,
@@ -12,11 +12,15 @@ type SectionsProps = {
   className: string;
 };
 
-const Sections = ({ planetKey, clickHandler, className }: SectionsProps) => {
+const PlanetSectionsMenu = ({
+  planetKey,
+  clickHandler,
+  className
+}: PlanetSectionsMenuProps) => {
   return (
     <div className={className}>
       {SECTION_KEYS.map(sectionKey => (
-        <Button
+        <PlanetSectionsMenuItem
           key={sectionKey}
           id={sectionKey}
           cssClass={`btn btn-${PLANETS[planetKey].NAME}`}
@@ -31,4 +35,4 @@ const Sections = ({ planetKey, clickHandler, className }: SectionsProps) => {
   );
 };
 
-export default Sections;
+export default PlanetSectionsMenu;

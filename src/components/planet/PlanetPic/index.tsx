@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { SECTIONS, PLANETS } from '../../constants';
+import { SECTIONS, PLANETS } from 'SRC/constants';
 
 import './index.scss';
 
