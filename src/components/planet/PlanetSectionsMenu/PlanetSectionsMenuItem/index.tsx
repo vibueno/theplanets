@@ -4,10 +4,10 @@ import './index.scss';
 
 type PlanetSectionsMenuItemProps = {
   id: string;
-  cssClass: string;
+  className: string;
   caption: string;
-  extendedCaption: string;
-  numberingCssClass: string;
+  captionLong: string;
+  classNameNumbering: string;
   numbering: string;
   clickHandler: (
     e: React.MouseEvent<HTMLButtonElement>,
@@ -17,10 +17,10 @@ type PlanetSectionsMenuItemProps = {
 
 const PlanetSectionsMenuItem = ({
   id,
-  cssClass,
+  className,
   caption,
-  extendedCaption,
-  numberingCssClass,
+  captionLong,
+  classNameNumbering,
   numbering,
   clickHandler
 }: PlanetSectionsMenuItemProps) => {
@@ -29,13 +29,13 @@ const PlanetSectionsMenuItem = ({
   return (
     <button
       id={id}
-      className={cssClass}
+      className={`btn ${className}`}
       onClick={e => clickHandler(e, ref)}
       ref={ref}
     >
-      <span className={numberingCssClass}>{numbering}</span>
+      <span className={classNameNumbering}>{numbering}</span>
       <span className="btn-caption">{caption}</span>
-      <span className="btn-extended-caption">{extendedCaption}</span>
+      <span className="btn-caption-long">{captionLong}</span>
     </button>
   );
 };

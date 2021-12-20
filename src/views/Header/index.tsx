@@ -29,7 +29,7 @@ const Header = ({
     <PlanetSectionsMenu
       planetKey={planetKey}
       clickHandler={sectionMenuClickHandler}
-      className="planet-sections-submenu"
+      className="planet-sections-menu"
     />
   </nav>
 );

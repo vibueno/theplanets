@@ -1,0 +1,12 @@
+@import 'SRC/variables.scss';
+
+@media only screen and (min-width: 768px) {
+  .menu {
+    grid-row: 2 / 3;
+    display: flex;
+    margin: 0 0 2em 0;
+    list-style: none;
+    font: 700 11px/25px Spartan, Arial, Helvetica;
+    letter-spacing: +1px;
+  }
+}

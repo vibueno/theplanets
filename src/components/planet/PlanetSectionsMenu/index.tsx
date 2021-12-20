@@ -23,10 +23,10 @@ const PlanetSectionsMenu = ({
         <PlanetSectionsMenuItem
           key={sectionKey}
           id={sectionKey}
-          cssClass={`btn btn-${PLANETS[planetKey].NAME}`}
+          className={`btn-${PLANETS[planetKey].NAME}`}
           caption={SECTIONS[sectionKey].BTN_CAPTION}
-          extendedCaption={SECTIONS[sectionKey].BTN_CAPTION_LONG}
-          numberingCssClass="btn-numbering"
+          captionLong={SECTIONS[sectionKey].BTN_CAPTION_LONG}
+          classNameNumbering="btn-numbering"
           numbering={SECTIONS[sectionKey].NUMBER}
           clickHandler={clickHandler}
         />

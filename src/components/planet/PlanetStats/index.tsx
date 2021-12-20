@@ -4,8 +4,6 @@ import PlanetStatsItem from './PlanetStatsItem';
 import { getPlanetData } from 'SRC/utils';
 import { PLANETS, STATS, STATS_KEYS } from 'SRC/constants';
 
-import './index.scss';
-
 type PlanetStatsProps = {
   planetKey: string;
 };

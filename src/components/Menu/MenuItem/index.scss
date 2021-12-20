@@ -1,0 +1,22 @@
+@import 'SRC/variables.scss';
+
+@media only screen and (min-width: 768px) {
+  li {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    margin: 0 0 0 1.25rem;
+    border-top: 5px solid transparent;
+    cursor: pointer;
+
+    @mixin assign-menu-item-border-color() {
+      @each $planet-name, $planet-color in $planet-colors {
+        &.#{$planet-name}:hover {
+          border-color: $planet-color;
+        }
+      }
+    }
+
+    @include assign-menu-item-border-color();
+  }
+}

@@ -1,7 +1,5 @@
 import React from 'react';
 
-import './index.scss';
-
 type PlanetStatsItemProps = {
   cssClass: string;
   content: string;

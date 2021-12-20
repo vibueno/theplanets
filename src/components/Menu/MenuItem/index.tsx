@@ -2,6 +2,8 @@ import React, { MouseEvent } from 'react';
 
 import { PLANETS } from 'SRC/constants';
 
+import './index.scss';
+
 type MenuItemProps = {
   planetKey: string;
   clickHandler: (

@@ -3,6 +3,8 @@ import MenuItem from './MenuItem';
 
 import { PLANET_KEYS } from 'SRC/constants';
 
+import './index.scss';
+
 type PlanetMenuProps = {
   planetKey: string;
   clickHandler: (
@@ -12,17 +14,15 @@ type PlanetMenuProps = {
 };
 
 const Menu = ({ planetKey, clickHandler }: PlanetMenuProps) => (
-  <>
-    <ul className="menu">
-      {PLANET_KEYS.map(planetKey => (
-        <MenuItem
-          key={planetKey}
-          clickHandler={clickHandler}
-          planetKey={planetKey}
-        />
-      ))}
-    </ul>
-  </>
+  <ul className="menu">
+    {PLANET_KEYS.map(planetKey => (
+      <MenuItem
+        key={planetKey}
+        clickHandler={clickHandler}
+        planetKey={planetKey}
+      />
+    ))}
+  </ul>
 );
 
 export default Menu;

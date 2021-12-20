@@ -31,7 +31,12 @@ const Planet = ({
   return (
     <>
       <div className="planet-pic-container">
-        <PlanetPic planetKey={planetKey} section={sectionKey} />
+        <PlanetPic
+          planetKey={planetKey}
+          section={sectionKey}
+          className={`planet-pic-${planetName}`}
+          classNameGeology={'planet-pic-geology'}
+        />
       </div>
 
       <div className="planet-desc-container">
