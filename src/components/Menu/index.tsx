@@ -1,7 +1,7 @@
 import React from 'react';
 import MenuItem from './MenuItem';
 
-import { PLANET_KEYS } from 'SRC/constants';
+import { PLANETS, PLANET_KEYS } from 'SRC/constants';
 
 import './index.scss';
 
@@ -17,9 +17,9 @@ const Menu = ({ planetKey, clickHandler }: PlanetMenuProps) => (
   <ul className="menu">
     {PLANET_KEYS.map(planetKey => (
       <MenuItem
-        key={planetKey}
+        key={PLANETS[planetKey].NAME}
         clickHandler={clickHandler}
-        planetKey={planetKey}
+        planetName={PLANETS[planetKey].NAME}
       />
     ))}
   </ul>
