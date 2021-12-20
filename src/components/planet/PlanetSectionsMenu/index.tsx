@@ -22,7 +22,7 @@ const PlanetSectionsMenu = ({
       {SECTION_KEYS.map(sectionKey => (
         <PlanetSectionsMenuItem
           key={sectionKey}
-          id={sectionKey}
+          sectionKey={sectionKey}
           className={`btn-${PLANETS[planetKey].NAME}`}
           caption={SECTIONS[sectionKey].BTN_CAPTION}
           captionLong={SECTIONS[sectionKey].BTN_CAPTION_LONG}

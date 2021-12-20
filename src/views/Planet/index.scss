@@ -40,6 +40,11 @@
     margin: 2rem 0;
     font: 12px/25px Spartan, Arial, Helvetica;
     color: $color-grey-light;
+
+    .source-title {
+      margin: 0 0.5em 0 0;
+    }
+
     & a {
       display: flex;
       font-weight: 700;
@@ -50,12 +55,9 @@
         margin: 0 0 0 0.75em;
       }
     }
-
-    .source-title {
-      margin: 0 0.5em 0 0;
-    }
   }
 }
+
 .planet-sections-button-panel {
   display: none;
 }

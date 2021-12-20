@@ -42,11 +42,13 @@
 @include assign-btn-focus-color();
 
 @media only screen and (min-width: 768px) {
-  .btn-caption {
-    display: none;
-  }
+  .btn {
+    .btn-caption {
+      display: none;
+    }
 
-  .btn-caption-long {
-    display: inline-block;
+    .btn-caption-long {
+      display: inline-block;
+    }
   }
 }

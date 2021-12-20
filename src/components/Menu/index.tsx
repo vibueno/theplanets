@@ -19,6 +19,7 @@ const Menu = ({ planetKey, clickHandler }: PlanetMenuProps) => (
       <MenuItem
         key={PLANETS[planetKey].NAME}
         clickHandler={clickHandler}
+        planetKey={planetKey}
         planetName={PLANETS[planetKey].NAME}
       />
     ))}

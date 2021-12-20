@@ -3,7 +3,7 @@ import React, { MouseEventHandler } from 'react';
 import './index.scss';
 
 type PlanetSectionsMenuItemProps = {
-  id: string;
+  sectionKey: string;
   className: string;
   caption: string;
   captionLong: string;
@@ -16,7 +16,7 @@ type PlanetSectionsMenuItemProps = {
 };
 
 const PlanetSectionsMenuItem = ({
-  id,
+  sectionKey,
   className,
   caption,
   captionLong,
@@ -28,7 +28,7 @@ const PlanetSectionsMenuItem = ({
 
   return (
     <button
-      id={id}
+      id={sectionKey}
       className={`btn ${className}`}
       onClick={e => clickHandler(e, ref)}
       ref={ref}
