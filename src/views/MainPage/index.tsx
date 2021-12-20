@@ -10,22 +10,24 @@ import { getPlanetData } from 'SRC/utils';
 import './index.scss';
 
 const MainPage = () => {
-  const [currentPlanet, setCurrentPlanet] = useState(PLANETS.MERCURY.KEY);
-  const [currentSection, setCurrentSection] = useState(SECTIONS.OVERVIEW.KEY);
+  const [currentPlanetKey, setCurrentPlanetKey] = useState(PLANETS.MERCURY.KEY);
+  const [currentSectionKey, setCurrentSectionKey] = useState(
+    SECTIONS.OVERVIEW.KEY
+  );
 
   const sectionMenuClickHandler = (
     e: React.MouseEvent<HTMLButtonElement>,
     ref: React.RefObject<HTMLButtonElement>
   ): void => {
-    setCurrentSection(ref.current?.id as string);
+    setCurrentSectionKey(ref.current?.id as string);
   };
 
   const menuClickHandler = (
     e: React.MouseEvent<HTMLLIElement>,
     ref: React.RefObject<HTMLLIElement>
   ): void => {
-    setCurrentPlanet(ref.current?.id as string);
-    setCurrentSection(SECTIONS.OVERVIEW.KEY);
+    setCurrentPlanetKey(ref.current?.id as string);
+    setCurrentSectionKey(SECTIONS.OVERVIEW.KEY);
   };
 
   return (
@@ -34,13 +36,13 @@ const MainPage = () => {
         <Header
           menuClickHandler={menuClickHandler}
           sectionMenuClickHandler={sectionMenuClickHandler}
-          planetKey={currentPlanet}
+          planetKey={currentPlanetKey}
         />
-        {currentPlanet && currentSection && (
+        {currentPlanetKey && currentSectionKey && (
           <main>
             <Planet
-              planetKey={currentPlanet}
-              sectionKey={currentSection}
+              planetKey={currentPlanetKey}
+              sectionKey={currentSectionKey}
               sectionMenuClickHandler={sectionMenuClickHandler}
             />
           </main>
