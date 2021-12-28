@@ -15,26 +15,37 @@ $planet-colors: (
   neptune: #2d68f0
 );
 
-$planet-sizes: (
-  mercury: 14rem,
-  venus: 17rem,
-  earth: 20rem,
-  mars: 13rem,
-  jupiter: 28rem,
-  saturn: 26rem,
-  uranus: 22rem,
-  neptune: 22rem
+$planet-sizes-desktop: (
+  mercury: 290px,
+  venus: 400px,
+  earth: 450px,
+  mars: 336px,
+  jupiter: 582px,
+  saturn: 575px,
+  uranus: 458px,
+  neptune: 450px
+);
+
+$planet-sizes-tablet: (
+  mercury: 194px,
+  venus: 253px,
+  earth: 285px,
+  mars: 213px,
+  jupiter: 369px,
+  saturn: 503px,
+  uranus: 290px,
+  neptune: 285px
 );
 
 $planet-sizes-mobile: (
-  mercury: 12rem,
-  venus: 17rem,
-  earth: 20rem,
-  mars: 13rem,
-  jupiter: 28rem,
-  saturn: 26rem,
-  uranus: 22rem,
-  neptune: 22rem
+  mercury: 111px,
+  venus: 154px,
+  earth: 173px,
+  mars: 129px,
+  jupiter: 224px,
+  saturn: 305px,
+  uranus: 176px,
+  neptune: 173px
 );
 
 $border: 1px solid $color-grey-border;

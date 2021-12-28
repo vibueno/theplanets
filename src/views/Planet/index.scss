@@ -12,7 +12,7 @@
 
   .planet-pic-geology {
     position: absolute;
-    top: 450px;
+    top: 500px;
     width: auto;
     max-width: 150px;
     height: auto;
@@ -20,14 +20,15 @@
   }
 
   @mixin assign-planet-size-mobile() {
-    @each $planet-name, $planet-size-mobile in $planet-sizes-mobile {
+    @each $planet-name, $planet-size in $planet-sizes-mobile {
       .planet-pic-#{$planet-name} {
         @extend .planet-pic;
-        max-width: $planet-size-mobile;
-        max-height: $planet-size-mobile;
+        max-width: $planet-size;
+        max-height: $planet-size;
       }
     }
   }
+
   @include assign-planet-size-mobile();
 }
 
@@ -50,7 +51,7 @@
       margin: 0 0.5em 0 0;
     }
 
-    & a {
+    a {
       display: flex;
       font-weight: 700;
       color: $color-grey-light;
@@ -67,7 +68,7 @@
   display: none;
 }
 
-@mixin assign-btn-focus-color() {
+@mixin assign-btn-selected-color() {
   @each $planet-name, $planet-color in $planet-colors {
     .btn-#{$planet-name} {
       &[data-selected='true'] {
@@ -78,7 +79,7 @@
   }
 }
 
-@include assign-btn-focus-color();
+@include assign-btn-selected-color();
 
 .planet-stats {
   display: flex;
@@ -176,16 +177,16 @@
       top: 425px;
     }
 
-    @mixin assign-planet-size() {
-      @each $planet-name, $planet-size in $planet-sizes {
+    @mixin assign-planet-size-tablet() {
+      @each $planet-name, $planet-size in $planet-sizes-tablet {
         .planet-pic-#{$planet-name} {
-          @extend .planet-pic;
           max-width: $planet-size;
           max-height: $planet-size;
         }
       }
     }
-    @include assign-planet-size();
+
+    @include assign-planet-size-tablet();
   }
 
   .planet-stats-container {
@@ -218,6 +219,17 @@
   .planet-pic-container {
     grid-row: 1 / 3;
     grid-column: 1 / 2;
+
+    @mixin assign-planet-size-desktop() {
+      @each $planet-name, $planet-size in $planet-sizes-desktop {
+        .planet-pic-#{$planet-name} {
+          max-width: $planet-size;
+          max-height: $planet-size;
+        }
+      }
+    }
+
+    @include assign-planet-size-desktop();
   }
 
   .planet-desc-container {
