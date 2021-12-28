@@ -31,7 +31,10 @@
 
 .planet-desc-container {
   .planet-desc {
+    line-height: 25px;
     text-align: center;
+    letter-spacing: 0;
+    font: 11px/22px Spartan, Arial, Helvetica;
   }
 
   .source-container {
@@ -133,12 +136,14 @@
     grid-column: 1 / 2;
 
     & .planet-desc {
+      font: 14px/25px Spartan, Arial, Helvetica;
       text-align: left;
     }
 
     & .source-container {
       justify-content: left;
       margin: 1.5rem 0 2rem 0;
+      font: 14px/25px Spartan, Arial, Helvetica;
     }
   }
 

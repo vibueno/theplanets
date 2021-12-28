@@ -33,6 +33,7 @@
   @each $planet-name, $planet-color in $planet-colors {
     .btn-#{$planet-name} {
       &[data-selected='true'] {
+        color: $color-grey-light;
         border-bottom: 5px solid $planet-color;
       }
     }

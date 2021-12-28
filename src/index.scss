@@ -30,12 +30,17 @@ h3 {
 }
 
 h4 {
-  font: 700 9px/25px Spartan, Arial, Helvetica;
-  letter-spacing: +1px;
+  font: 700 8px/16px Spartan, Arial, Helvetica;
+  letter-spacing: 0.73px;
 }
 
 @media only screen and (min-width: 768px) {
   h1 {
     text-align: left;
+  }
+
+  h4 {
+    font: 700 11px/25px Spartan, Arial, Helvetica;
+    letter-spacing: 1px;
   }
 }
