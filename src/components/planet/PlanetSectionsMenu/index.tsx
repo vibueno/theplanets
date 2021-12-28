@@ -4,7 +4,8 @@ import PlanetSectionsMenuItem from './PlanetSectionsMenuItem';
 import { PLANETS, SECTIONS, SECTION_KEYS } from 'SRC/constants';
 
 type PlanetSectionsMenuProps = {
-  planetKey: string;
+  currentPlanetKey: string;
+  currentSectionKey: string;
   clickHandler: (
     e: React.MouseEvent<HTMLButtonElement>,
     ref: React.RefObject<HTMLButtonElement>
@@ -13,7 +14,8 @@ type PlanetSectionsMenuProps = {
 };
 
 const PlanetSectionsMenu = ({
-  planetKey,
+  currentPlanetKey,
+  currentSectionKey,
   clickHandler,
   className
 }: PlanetSectionsMenuProps) => {
@@ -23,7 +25,8 @@ const PlanetSectionsMenu = ({
         <PlanetSectionsMenuItem
           key={sectionKey}
           sectionKey={sectionKey}
-          className={`btn-${PLANETS[planetKey].NAME}`}
+          currentSectionKey={currentSectionKey}
+          className={`btn-${PLANETS[currentPlanetKey].NAME}`}
           caption={SECTIONS[sectionKey].BTN_CAPTION}
           captionLong={SECTIONS[sectionKey].BTN_CAPTION_LONG}
           classNameNumbering="btn-numbering"

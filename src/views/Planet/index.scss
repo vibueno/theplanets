@@ -65,7 +65,7 @@
 @mixin assign-btn-focus-color() {
   @each $planet-name, $planet-color in $planet-colors {
     .btn-#{$planet-name} {
-      &:focus {
+      &[data-selected='true'] {
         border-color: $planet-color;
         background-color: $planet-color;
       }

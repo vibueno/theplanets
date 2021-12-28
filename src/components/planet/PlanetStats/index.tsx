@@ -5,10 +5,10 @@ import { getPlanetData } from 'SRC/utils';
 import { PLANETS, STATS, STATS_KEYS } from 'SRC/constants';
 
 type PlanetStatsProps = {
-  planetKey: string;
+  currentPlanetKey: string;
 };
 
-const PlanetStats = ({ planetKey }: PlanetStatsProps) => (
+const PlanetStats = ({ currentPlanetKey }: PlanetStatsProps) => (
   <>
     <div className="planet-stats">
       {STATS_KEYS.map(statsKey => (
@@ -17,7 +17,10 @@ const PlanetStats = ({ planetKey }: PlanetStatsProps) => (
           cssClass="planet-stats-item"
           title={STATS[statsKey].TITLE}
           titleCssClass="planet-stats-item-title"
-          content={getPlanetData(PLANETS[planetKey].NAME, STATS[statsKey].NAME)}
+          content={getPlanetData(
+            PLANETS[currentPlanetKey].NAME,
+            STATS[statsKey].NAME
+          )}
         />
       ))}
     </div>

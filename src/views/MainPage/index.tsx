@@ -36,13 +36,14 @@ const MainPage = () => {
         <Header
           menuClickHandler={menuClickHandler}
           sectionMenuClickHandler={sectionMenuClickHandler}
-          planetKey={currentPlanetKey}
+          currentPlanetKey={currentPlanetKey}
+          currentSectionKey={currentSectionKey}
         />
         {currentPlanetKey && currentSectionKey && (
           <main>
             <Planet
-              planetKey={currentPlanetKey}
-              sectionKey={currentSectionKey}
+              currentPlanetKey={currentPlanetKey}
+              currentSectionKey={currentSectionKey}
               sectionMenuClickHandler={sectionMenuClickHandler}
             />
           </main>

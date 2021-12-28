@@ -24,22 +24,22 @@
     display: none;
   }
 
-  &:focus {
+  &[data-selected='true'] {
     outline: none;
   }
 }
 
-@mixin assign-btn-focus-color() {
+@mixin assign-btn-selected-color() {
   @each $planet-name, $planet-color in $planet-colors {
     .btn-#{$planet-name} {
-      &:focus {
+      &[data-selected='true'] {
         border-bottom: 5px solid $planet-color;
       }
     }
   }
 }
 
-@include assign-btn-focus-color();
+@include assign-btn-selected-color();
 
 @media only screen and (min-width: 768px) {
   .btn {

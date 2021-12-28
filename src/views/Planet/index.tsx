@@ -12,8 +12,8 @@ import { getPlanetData } from 'SRC/utils';
 import './index.scss';
 
 type PlanetProps = {
-  planetKey: string;
-  sectionKey: string;
+  currentPlanetKey: string;
+  currentSectionKey: string;
   sectionMenuClickHandler: (
     e: React.MouseEvent<HTMLButtonElement>,
     ref: React.RefObject<HTMLButtonElement>
@@ -21,38 +21,43 @@ type PlanetProps = {
 };
 
 const Planet = ({
-  planetKey,
-  sectionKey,
+  currentPlanetKey,
+  currentSectionKey,
   sectionMenuClickHandler
 }: PlanetProps) => {
-  const planetName = PLANETS[planetKey].NAME;
-  const sectionName = SECTIONS[sectionKey].NAME;
+  const currentPlanetName = PLANETS[currentPlanetKey].NAME;
+  const currentSectionName = SECTIONS[currentSectionKey].NAME;
 
   return (
     <>
       <div className="planet-pic-container">
         <PlanetPic
-          planetKey={planetKey}
-          sectionKey={sectionKey}
-          className={`planet-pic-${planetName}`}
+          currentPlanetKey={currentPlanetKey}
+          currentSectionKey={currentSectionKey}
+          className={`planet-pic-${currentPlanetName}`}
           classNameGeology={'planet-pic-geology'}
         />
       </div>
 
       <div className="planet-desc-container">
         <PlanetDesc
-          planetName={planetName}
-          planetDesc={getPlanetData(planetName, sectionName).content}
-          planetDescSource={getPlanetData(planetName, sectionName).source}
+          currentPlanetName={currentPlanetName}
+          currentPlanetDesc={
+            getPlanetData(currentPlanetName, currentSectionName).content
+          }
+          currentPlanetDescSource={
+            getPlanetData(currentPlanetName, currentSectionName).source
+          }
         />
       </div>
       <PlanetSectionsMenu
-        planetKey={planetKey}
+        currentPlanetKey={currentPlanetKey}
+        currentSectionKey={currentSectionKey}
         clickHandler={sectionMenuClickHandler}
         className="planet-sections-button-panel"
       />
       <div className="planet-stats-container">
-        <PlanetStats planetKey={planetKey} />
+        <PlanetStats currentPlanetKey={currentPlanetKey} />
       </div>
     </>
   );

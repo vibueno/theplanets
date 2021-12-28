@@ -4,6 +4,7 @@ import './index.scss';
 
 type PlanetSectionsMenuItemProps = {
   sectionKey: string;
+  currentSectionKey: string;
   className: string;
   caption: string;
   captionLong: string;
@@ -17,6 +18,7 @@ type PlanetSectionsMenuItemProps = {
 
 const PlanetSectionsMenuItem = ({
   sectionKey,
+  currentSectionKey,
   className,
   caption,
   captionLong,
@@ -31,6 +33,7 @@ const PlanetSectionsMenuItem = ({
       id={sectionKey}
       className={`btn ${className}`}
       onClick={e => clickHandler(e, ref)}
+      data-selected={sectionKey === currentSectionKey}
       ref={ref}
     >
       <span className={classNameNumbering}>{numbering}</span>

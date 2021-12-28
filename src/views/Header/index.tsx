@@ -7,7 +7,8 @@ import { APP_TITLE, PLANETS } from 'SRC/constants';
 import './index.scss';
 
 type HeaderProps = {
-  planetKey: string;
+  currentPlanetKey: string;
+  currentSectionKey: string;
   menuClickHandler: (
     e: React.MouseEvent<HTMLLIElement>,
     ref: React.RefObject<HTMLLIElement>
@@ -19,15 +20,17 @@ type HeaderProps = {
 };
 
 const Header = ({
-  planetKey,
+  currentPlanetKey,
+  currentSectionKey,
   menuClickHandler,
   sectionMenuClickHandler
 }: HeaderProps) => (
   <nav>
     <div className="app-title">{APP_TITLE}</div>
-    <Menu planetKey={planetKey} clickHandler={menuClickHandler} />
+    <Menu clickHandler={menuClickHandler} />
     <PlanetSectionsMenu
-      planetKey={planetKey}
+      currentPlanetKey={currentPlanetKey}
+      currentSectionKey={currentSectionKey}
       clickHandler={sectionMenuClickHandler}
       className="planet-sections-menu"
     />

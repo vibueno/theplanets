@@ -3,30 +3,30 @@ import React from 'react';
 import { SECTIONS, PLANETS } from 'SRC/constants';
 
 type PlanetPicProps = {
-  planetKey: string;
-  sectionKey: string;
+  currentPlanetKey: string;
+  currentSectionKey: string;
   className: string;
   classNameGeology: string;
 };
 
 const PlanetPic = ({
-  planetKey,
-  sectionKey,
+  currentPlanetKey,
+  currentSectionKey,
   className,
   classNameGeology
 }: PlanetPicProps) => {
-  const planetName = PLANETS[planetKey].NAME;
+  const planetName = PLANETS[currentPlanetKey].NAME;
   return (
     <>
       <img
         className={className}
-        src={require(`ASSETS/img/${PLANETS[planetKey].PICS[sectionKey]}`)}
+        src={require(`ASSETS/img/${PLANETS[currentPlanetKey].PICS[currentSectionKey]}`)}
         alt={planetName}
       />
-      {sectionKey === SECTIONS.GEOLOGY.KEY && (
+      {currentSectionKey === SECTIONS.GEOLOGY.KEY && (
         <img
           className={classNameGeology}
-          src={PLANETS[planetKey].PICS.GEOLOGY_ZOOM}
+          src={PLANETS[currentPlanetKey].PICS.GEOLOGY_ZOOM}
           alt={planetName}
         />
       )}

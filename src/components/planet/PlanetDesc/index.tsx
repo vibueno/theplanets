@@ -5,25 +5,25 @@ import { getPlanetData } from 'SRC/utils';
 import { ICON_SOURCE, PLANETS, SECTIONS } from 'SRC/constants';
 
 type PlanetDescProps = {
-  planetName: string;
-  planetDesc: string;
-  planetDescSource: string;
+  currentPlanetName: string;
+  currentPlanetDesc: string;
+  currentPlanetDescSource: string;
 };
 
 const PlanetDesc = ({
-  planetName,
-  planetDesc,
-  planetDescSource
+  currentPlanetName,
+  currentPlanetDesc,
+  currentPlanetDescSource
 }: PlanetDescProps) => {
   return (
     <>
-      <h1>{planetName}</h1>
+      <h1>{currentPlanetName}</h1>
 
-      <div className="planet-desc">{planetDesc}</div>
+      <div className="planet-desc">{currentPlanetDesc}</div>
 
       <p className="source-container">
         <span className="source-title">Source:</span>
-        <a href={planetDescSource}>
+        <a href={currentPlanetDescSource}>
           Wikipedia
           <img
             className="source-icon"
