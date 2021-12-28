@@ -1,6 +1,7 @@
 @import 'SRC/variables.scss';
 
 .btn {
+  display: flex;
   margin: 0;
   border: none;
   background-color: $color-blue-dark;
@@ -29,27 +30,31 @@
   }
 }
 
-@mixin assign-btn-selected-color() {
-  @each $planet-name, $planet-color in $planet-colors {
-    .btn-#{$planet-name} {
-      &[data-selected='true'] {
-        color: $color-grey-light;
-        border-bottom: 5px solid $planet-color;
+.planet-sections-menu {
+  @mixin assign-btn-selected-color() {
+    @each $planet-name, $planet-color in $planet-colors {
+      .btn-#{$planet-name} {
+        &[data-selected='true'] {
+          color: $color-grey-light;
+          border-bottom: 5px solid $planet-color;
+        }
       }
     }
   }
+
+  @include assign-btn-selected-color();
 }
 
-@include assign-btn-selected-color();
-
 @media only screen and (min-width: 768px) {
-  .btn {
-    .btn-caption {
-      display: none;
-    }
+  .planet-sections-button-panel {
+    .btn {
+      .btn-caption {
+        display: none;
+      }
 
-    .btn-caption-long {
-      display: inline-block;
+      .btn-caption-long {
+        display: inline-block;
+      }
     }
   }
 }
