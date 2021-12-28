@@ -16,8 +16,19 @@ $planet-colors: (
 );
 
 $planet-sizes: (
+  mercury: 14rem,
+  venus: 17rem,
+  earth: 20rem,
+  mars: 13rem,
+  jupiter: 28rem,
+  saturn: 26rem,
+  uranus: 22rem,
+  neptune: 22rem
+);
+
+$planet-sizes-mobile: (
   mercury: 12rem,
-  venus: 15rem,
+  venus: 17rem,
   earth: 20rem,
   mars: 13rem,
   jupiter: 28rem,

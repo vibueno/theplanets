@@ -11,22 +11,24 @@
   }
 
   .planet-pic-geology {
+    position: absolute;
+    top: 450px;
     width: auto;
     max-width: 150px;
     height: auto;
     max-height: 150px;
   }
 
-  @mixin assign-planet-size() {
-    @each $planet-name, $planet-size in $planet-sizes {
+  @mixin assign-planet-size-mobile() {
+    @each $planet-name, $planet-size-mobile in $planet-sizes-mobile {
       .planet-pic-#{$planet-name} {
         @extend .planet-pic;
-        max-width: $planet-size;
-        max-height: $planet-size;
+        max-width: $planet-size-mobile;
+        max-height: $planet-size-mobile;
       }
     }
   }
-  @include assign-planet-size();
+  @include assign-planet-size-mobile();
 }
 
 .planet-desc-container {
@@ -167,6 +169,23 @@
         display: inline-block;
       }
     }
+  }
+
+  .planet-pic-container {
+    .planet-pic-geology {
+      top: 425px;
+    }
+
+    @mixin assign-planet-size() {
+      @each $planet-name, $planet-size in $planet-sizes {
+        .planet-pic-#{$planet-name} {
+          @extend .planet-pic;
+          max-width: $planet-size;
+          max-height: $planet-size;
+        }
+      }
+    }
+    @include assign-planet-size();
   }
 
   .planet-stats-container {
