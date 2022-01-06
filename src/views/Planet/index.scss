@@ -161,7 +161,7 @@
       padding: 5px 25px;
       letter-spacing: 2.57px;
 
-      &:hover {
+      &[data-selected='false']:hover {
         border-color: $color-grey-dark;
         background-color: $color-grey-dark;
       }
