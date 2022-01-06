@@ -72,7 +72,7 @@
   @each $planet-name, $planet-color in $planet-colors {
     .btn-#{$planet-name} {
       &[data-selected='true'] {
-        border-color: $planet-color;
+        border: 1px solid $planet-color;
         background-color: $planet-color;
       }
     }
@@ -157,13 +157,15 @@
     .btn {
       justify-content: flex-start;
       margin: 0 0 1em 0;
-      border: $border;
       padding: 5px 25px;
       letter-spacing: 2.57px;
 
-      &[data-selected='false']:hover {
-        border-color: $color-grey-dark;
-        background-color: $color-grey-dark;
+      &[data-selected='false'] {
+        border: $border;
+
+        &:hover {
+          background-color: $color-grey-dark;
+        }
       }
 
       .btn-numbering {
