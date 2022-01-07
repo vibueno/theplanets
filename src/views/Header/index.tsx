@@ -1,6 +1,6 @@
 import React, { MouseEventHandler } from 'react';
 
-import PlanetSectionsMenu from 'COMPONENTS/planet/PlanetSectionsMenu';
+import PlanetSections from 'COMPONENTS/planet/PlanetSections';
 import Menu from 'COMPONENTS/Menu';
 import { APP_TITLE, PLANETS } from 'SRC/constants';
 
@@ -28,7 +28,7 @@ const Header = ({
   <nav>
     <div className="app-title">{APP_TITLE}</div>
     <Menu clickHandler={menuClickHandler} />
-    <PlanetSectionsMenu
+    <PlanetSections
       currentPlanetKey={currentPlanetKey}
       currentSectionKey={currentSectionKey}
       clickHandler={sectionMenuClickHandler}

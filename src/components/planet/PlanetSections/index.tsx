@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, MouseEventHandler } from 'react';
-import PlanetSectionsMenuItem from './PlanetSectionsMenuItem';
+import PlanetSectionsItem from './PlanetSectionsItem';
 
 import { PLANETS, SECTIONS, SECTION_KEYS } from 'SRC/constants';
 
-type PlanetSectionsMenuProps = {
+type PlanetSectionsProps = {
   currentPlanetKey: string;
   currentSectionKey: string;
   clickHandler: (
@@ -13,16 +13,16 @@ type PlanetSectionsMenuProps = {
   className: string;
 };
 
-const PlanetSectionsMenu = ({
+const PlanetSections = ({
   currentPlanetKey,
   currentSectionKey,
   clickHandler,
   className
-}: PlanetSectionsMenuProps) => {
+}: PlanetSectionsProps) => {
   return (
     <div className={className}>
       {SECTION_KEYS.map(sectionKey => (
-        <PlanetSectionsMenuItem
+        <PlanetSectionsItem
           key={sectionKey}
           sectionKey={sectionKey}
           currentSectionKey={currentSectionKey}
@@ -38,4 +38,4 @@ const PlanetSectionsMenu = ({
   );
 };
 
-export default PlanetSectionsMenu;
+export default PlanetSections;

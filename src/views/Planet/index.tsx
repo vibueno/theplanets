@@ -3,7 +3,7 @@ import React, { useState, MouseEvent } from 'react';
 import PlanetPic from 'COMPONENTS/planet/PlanetPic';
 import PlanetDesc from 'COMPONENTS/planet/PlanetDesc';
 import PlanetStats from 'COMPONENTS/planet/PlanetStats';
-import PlanetSectionsMenu from 'COMPONENTS/planet/PlanetSectionsMenu';
+import PlanetSections from 'COMPONENTS/planet/PlanetSections';
 
 import { SECTIONS, PLANETS } from 'SRC/constants';
 
@@ -50,7 +50,7 @@ const Planet = ({
           }
         />
       </div>
-      <PlanetSectionsMenu
+      <PlanetSections
         currentPlanetKey={currentPlanetKey}
         currentSectionKey={currentSectionKey}
         clickHandler={sectionMenuClickHandler}

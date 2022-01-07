@@ -68,18 +68,19 @@
   display: none;
 }
 
-@mixin assign-btn-selected-color() {
-  @each $planet-name, $planet-color in $planet-colors {
-    .btn-#{$planet-name} {
-      &[data-selected='true'] {
-        border: 1px solid $planet-color;
-        background-color: $planet-color;
+.planet-sections-button-panel {
+  @mixin assign-btn-selected-color() {
+    @each $planet-name, $planet-color in $planet-colors {
+      .btn-#{$planet-name} {
+        &[data-selected='true'] {
+          border: 1px solid $planet-color;
+          background-color: $planet-color;
+        }
       }
     }
   }
+  @include assign-btn-selected-color();
 }
-
-@include assign-btn-selected-color();
 
 .planet-stats {
   display: flex;
