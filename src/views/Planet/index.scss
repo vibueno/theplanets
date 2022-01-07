@@ -78,6 +78,15 @@
         }
       }
     }
+    @each $planet-name, $planet-color in $planet-numbering-selected-colors {
+      .btn-#{$planet-name} {
+        &[data-selected='true'] {
+          & .btn-numbering {
+            color: $planet-color;
+          }
+        }
+      }
+    }
   }
   @include assign-btn-selected-color();
 }

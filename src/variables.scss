@@ -6,13 +6,24 @@ $color-grey-light: #838391;
 
 $planet-colors: (
   mercury: #419ebb,
-  venus: #eda249,
+  venus: #dc9544,
   earth: #6f2ed6,
   mars: #d14c32,
   jupiter: #d83a34,
   saturn: #cd5120,
   uranus: #1ec2a4,
   neptune: #2d68f0
+);
+
+$planet-numbering-selected-colors: (
+  mercury: #a0cfdd,
+  venus: #ffe6bc,
+  earth: #b696ea,
+  mars: #e8a598,
+  jupiter: #ec9c99,
+  saturn: #e6a88f,
+  uranus: #a2ffec,
+  neptune: #96b3f8
 );
 
 $planet-sizes-desktop: (
