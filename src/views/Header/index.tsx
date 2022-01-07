@@ -26,7 +26,15 @@ const Header = ({
   sectionMenuClickHandler
 }: HeaderProps) => (
   <nav>
-    <div className="app-title">{APP_TITLE}</div>
+    <div className="app-title">
+      {APP_TITLE}
+      {/*
+        <img
+          src={require(`ASSETS/img/icon-hamburger.svg`)}
+          className="hamburger"
+        />
+      */}
+    </div>
     <Menu clickHandler={menuClickHandler} />
     <PlanetSections
       currentPlanetKey={currentPlanetKey}
