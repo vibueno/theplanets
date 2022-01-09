@@ -22,7 +22,12 @@ const MenuItem = ({ planetKey, planetName, clickHandler }: MenuItemProps) => {
       onClick={e => clickHandler(e, ref)}
       ref={ref}
     >
-      {planetName}
+      <span className="menu-item-bullet-point"></span>
+      <span className="menu-item-title">{planetName}</span>
+      <img
+        className="menu-item-arrow"
+        src={require(`ASSETS/img/icon-chevron.svg`)}
+      />
     </li>
   );
 };

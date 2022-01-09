@@ -30,6 +30,7 @@ const MainPage = () => {
   ): void => {
     setCurrentPlanetKey(ref.current?.id as string);
     setCurrentSectionKey(SECTIONS.OVERVIEW.KEY);
+    setIsMenuOpen(false);
   };
 
   const hamburgerClickHandler = () => {
