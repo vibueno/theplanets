@@ -18,17 +18,19 @@ type PlanetProps = {
     e: React.MouseEvent<HTMLButtonElement>,
     ref: React.RefObject<HTMLButtonElement>
   ) => void;
+  isMenuOpen: boolean;
 };
 
 const Planet = ({
   currentPlanetKey,
   currentSectionKey,
-  sectionMenuClickHandler
+  sectionMenuClickHandler,
+  isMenuOpen
 }: PlanetProps) => {
   const currentPlanetName = PLANETS[currentPlanetKey].NAME;
   const currentSectionName = SECTIONS[currentSectionKey].NAME;
 
-  return (
+  return !isMenuOpen ? (
     <>
       <div className="planet-pic-container">
         <PlanetPic
@@ -60,7 +62,7 @@ const Planet = ({
         <PlanetStats currentPlanetKey={currentPlanetKey} />
       </div>
     </>
-  );
+  ) : null;
 };
 
 export default Planet;

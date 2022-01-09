@@ -20,11 +20,6 @@ h1 {
 }
 
 @media only screen and (min-width: 768px) {
-  nav {
-    & .planet-sections-menu {
-      display: none;
-    }
-  }
   main {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -43,21 +38,21 @@ h1 {
     display: flex;
     padding: 0 2rem;
 
-    & .app-title {
+    .app-title {
       flex: 1 1 30%;
       justify-content: flex-start;
       align-items: center;
       margin: 0;
     }
 
-    & .menu {
+    .menu {
       flex: 1 1 70%;
       align-items: stretch;
       justify-content: flex-end;
       margin: 0;
     }
 
-    & .planet-sections-menu {
+    .planet-sections-menu {
       display: none;
     }
   }

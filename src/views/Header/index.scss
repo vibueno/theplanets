@@ -10,15 +10,27 @@ nav {
   .app-title {
     margin: 0.9rem 0 0.9rem 1.25rem;
     grid-row: 1 / 2;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
     justify-content: left;
     font: 500 28px Antonio, Arial, Helvetica;
     letter-spacing: -1.05px;
   }
 
+  .hamburger {
+    position: fixed;
+    top: 1.55rem;
+    right: 1.25rem;
+    cursor: pointer;
+  }
+
   .menu {
     display: fixed;
-    justify-content: center;
+  }
+
+  &[data-menu-open='true'] {
+    grid-template-rows: repeat(2, auto);
+    grid-template-columns: repeat(2, auto);
   }
 
   .planet-sections-menu {
@@ -49,9 +61,32 @@ nav {
   }
 }
 
+@media only screen and (max-width: 767px) {
+  nav {
+    &[data-menu-open='false'] {
+      .menu {
+        display: none;
+      }
+    }
+  }
+}
+
 @media only screen and (min-width: 768px) {
   nav {
+    .planet-sections-menu {
+      display: none;
+    }
+
     border-bottom: $border;
+
+    .hamburger {
+      display: none;
+    }
+
+    .menu {
+      display: fixed;
+      justify-content: center;
+    }
 
     .app-title {
       grid-row: 1 / 2;

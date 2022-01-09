@@ -15,6 +15,8 @@ const MainPage = () => {
     SECTIONS.OVERVIEW.KEY
   );
 
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   const sectionMenuClickHandler = (
     e: React.MouseEvent<HTMLButtonElement>,
     ref: React.RefObject<HTMLButtonElement>
@@ -30,14 +32,26 @@ const MainPage = () => {
     setCurrentSectionKey(SECTIONS.OVERVIEW.KEY);
   };
 
+  const hamburgerClickHandler = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const onResizeHandler = () => {
+    setIsMenuOpen(false);
+  };
+
+  window.addEventListener('resize', onResizeHandler);
+
   return (
     <>
       <div className="layout">
         <Header
           menuClickHandler={menuClickHandler}
+          hamburgerClickHandler={hamburgerClickHandler}
           sectionMenuClickHandler={sectionMenuClickHandler}
           currentPlanetKey={currentPlanetKey}
           currentSectionKey={currentSectionKey}
+          isMenuOpen={isMenuOpen}
         />
         {currentPlanetKey && currentSectionKey && (
           <main>
@@ -45,6 +59,7 @@ const MainPage = () => {
               currentPlanetKey={currentPlanetKey}
               currentSectionKey={currentSectionKey}
               sectionMenuClickHandler={sectionMenuClickHandler}
+              isMenuOpen={isMenuOpen}
             />
           </main>
         )}

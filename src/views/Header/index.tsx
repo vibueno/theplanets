@@ -13,36 +13,44 @@ type HeaderProps = {
     e: React.MouseEvent<HTMLLIElement>,
     ref: React.RefObject<HTMLLIElement>
   ) => void;
+  hamburgerClickHandler: (e: React.MouseEvent<HTMLImageElement>) => void;
   sectionMenuClickHandler: (
     e: React.MouseEvent<HTMLButtonElement>,
     ref: React.RefObject<HTMLButtonElement>
   ) => void;
+  isMenuOpen: boolean;
 };
 
 const Header = ({
   currentPlanetKey,
   currentSectionKey,
+  hamburgerClickHandler,
   menuClickHandler,
-  sectionMenuClickHandler
-}: HeaderProps) => (
-  <nav>
-    <div className="app-title">
-      {APP_TITLE}
-      {/*
-        <img
-          src={require(`ASSETS/img/icon-hamburger.svg`)}
-          className="hamburger"
-        />
-      */}
-    </div>
-    <Menu clickHandler={menuClickHandler} />
-    <PlanetSections
-      currentPlanetKey={currentPlanetKey}
-      currentSectionKey={currentSectionKey}
-      clickHandler={sectionMenuClickHandler}
-      className="planet-sections-menu"
-    />
-  </nav>
-);
+  sectionMenuClickHandler,
+  isMenuOpen
+}: HeaderProps) => {
+  return (
+    <nav data-menu-open={isMenuOpen}>
+      <div className="app-title">{APP_TITLE}</div>
+      <img
+        src={require(`ASSETS/img/icon-hamburger.svg`)}
+        className="hamburger"
+        onClick={hamburgerClickHandler}
+      />
+
+      <>
+        <Menu clickHandler={menuClickHandler} />
+        {!isMenuOpen && (
+          <PlanetSections
+            currentPlanetKey={currentPlanetKey}
+            currentSectionKey={currentSectionKey}
+            clickHandler={sectionMenuClickHandler}
+            className="planet-sections-menu"
+          />
+        )}
+      </>
+    </nav>
+  );
+};
 
 export default Header;
