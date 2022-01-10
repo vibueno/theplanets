@@ -1,4 +1,4 @@
-@import 'SRC/variables.scss';
+@use 'SRC/variables.scss' as *;
 
 @mixin assign-menu-item-bullet-point-color() {
   @each $planet-name, $planet-color in $planet-colors {

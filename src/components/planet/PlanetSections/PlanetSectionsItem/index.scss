@@ -1,4 +1,4 @@
-@import 'SRC/variables.scss';
+@use 'SRC/variables.scss' as *;
 
 @mixin assign-btn-selected-color() {
   @each $planet-name, $planet-color in $planet-colors {

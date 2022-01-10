@@ -1,4 +1,4 @@
-@import 'SRC/variables.scss';
+@use 'SRC/variables.scss' as *;
 
 @mixin assign-planet-size-mobile() {
   @each $planet-name, $planet-size in $planet-sizes-mobile {

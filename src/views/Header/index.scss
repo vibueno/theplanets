@@ -1,4 +1,4 @@
-@import 'SRC/variables.scss';
+@use 'SRC/variables' as *;
 
 nav {
   grid-row: 1;

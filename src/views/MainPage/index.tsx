@@ -45,6 +45,10 @@ const MainPage = () => {
 
   return (
     <>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Antonio:wght@500&family=Spartan:wght@400;700&display=swap"
+      />
       <div className="layout">
         <Header
           menuClickHandler={menuClickHandler}
