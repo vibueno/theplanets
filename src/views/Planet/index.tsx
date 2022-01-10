@@ -56,7 +56,7 @@ const Planet = ({
         currentPlanetKey={currentPlanetKey}
         currentSectionKey={currentSectionKey}
         clickHandler={sectionMenuClickHandler}
-        className="planet-sections-button-panel"
+        className="planet-sections-btn-panel"
       />
       <div className="planet-stats-container">
         <PlanetStats currentPlanetKey={currentPlanetKey} />

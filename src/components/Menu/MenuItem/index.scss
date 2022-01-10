@@ -1,20 +1,5 @@
 @use 'SRC/variables.scss' as *;
-
-@mixin assign-menu-item-bullet-point-color() {
-  @each $planet-name, $planet-color in $planet-colors {
-    &.#{$planet-name} .menu-item-bullet-point {
-      background-color: $planet-color;
-    }
-  }
-}
-
-@mixin assign-menu-item-border-color() {
-  @each $planet-name, $planet-color in $planet-colors {
-    &.#{$planet-name}:hover::before {
-      background-color: $planet-color;
-    }
-  }
-}
+@use 'SRC/mixins.scss' as mixins;
 
 li {
   cursor: pointer;
@@ -41,7 +26,7 @@ li {
       display: inline-block;
     }
 
-    @include assign-menu-item-bullet-point-color();
+    @include mixins.menu-item-bullet-point-color();
 
     .menu-item-title {
       display: flex;
@@ -95,6 +80,6 @@ li {
       display: none;
     }
 
-    @include assign-menu-item-border-color();
+    @include mixins.menu-item-border-color();
   }
 }

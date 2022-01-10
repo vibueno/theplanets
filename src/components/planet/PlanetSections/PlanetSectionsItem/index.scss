@@ -1,15 +1,5 @@
 @use 'SRC/variables.scss' as *;
-
-@mixin assign-btn-selected-color() {
-  @each $planet-name, $planet-color in $planet-colors {
-    .btn-#{$planet-name} {
-      &[data-selected='true'] {
-        color: $color-grey-light;
-        border-bottom: 5px solid $planet-color;
-      }
-    }
-  }
-}
+@use 'SRC/mixins.scss' as mixins;
 
 .btn {
   display: flex;
@@ -43,11 +33,11 @@
 }
 
 .planet-sections-menu {
-  @include assign-btn-selected-color();
+  @include mixins.planet-sections-menu-selected;
 }
 
 @media only screen and (min-width: 768px) {
-  .planet-sections-button-panel {
+  .planet-sections-btn-panel {
     .btn {
       .btn-caption {
         display: none;

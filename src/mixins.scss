@@ -1,0 +1,76 @@
+@use 'SRC/variables.scss' as *;
+
+@mixin menu-item-bullet-point-color() {
+  @each $planet-name, $planet-color in $planet-colors {
+    &.#{$planet-name} .menu-item-bullet-point {
+      background-color: $planet-color;
+    }
+  }
+}
+
+@mixin menu-item-border-color() {
+  @each $planet-name, $planet-color in $planet-colors {
+    &.#{$planet-name}:hover::before {
+      background-color: $planet-color;
+    }
+  }
+}
+
+@mixin planet-sections-menu-selected() {
+  @each $planet-name, $planet-color in $planet-colors {
+    .btn-#{$planet-name} {
+      &[data-selected='true'] {
+        color: $color-grey-light;
+        border-bottom: 5px solid $planet-color;
+      }
+    }
+  }
+}
+
+@mixin planet-sections-btn-panel-selected() {
+  @each $planet-name, $planet-color in $planet-colors {
+    .btn-#{$planet-name} {
+      &[data-selected='true'] {
+        border: 1px solid $planet-color;
+        background-color: $planet-color;
+      }
+    }
+  }
+  @each $planet-name, $planet-color in $planet-numbering-selecteds {
+    .btn-#{$planet-name} {
+      &[data-selected='true'] {
+        .btn-numbering {
+          color: $planet-color;
+        }
+      }
+    }
+  }
+}
+
+@mixin planet-size-mobile() {
+  @each $planet-name, $planet-size in $planet-sizes-mobile {
+    .planet-pic-#{$planet-name} {
+      @extend .planet-pic;
+      max-width: $planet-size;
+      max-height: $planet-size;
+    }
+  }
+}
+
+@mixin planet-size-tablet() {
+  @each $planet-name, $planet-size in $planet-sizes-tablet {
+    .planet-pic-#{$planet-name} {
+      max-width: $planet-size;
+      max-height: $planet-size;
+    }
+  }
+}
+
+@mixin planet-size-desktop() {
+  @each $planet-name, $planet-size in $planet-sizes-desktop {
+    .planet-pic-#{$planet-name} {
+      max-width: $planet-size;
+      max-height: $planet-size;
+    }
+  }
+}
