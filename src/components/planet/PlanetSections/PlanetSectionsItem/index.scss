@@ -17,18 +17,25 @@
       color: $color-grey-light;
     }
   }
+
   .btn-numbering {
     display: none;
     padding: 0 25px 0 0;
   }
 
+  &[data-selected='false'] {
+    .btn-caption {
+      color: $color-white;
+    }
+  }
+
   .btn-caption {
-    color: $color-white;
     display: inline-block;
   }
+
   .btn-caption-long {
-    color: $color-white;
     display: none;
+    color: $color-white;
   }
 }
 

@@ -20,10 +20,12 @@
   @each $planet-name, $planet-color in $planet-colors {
     .btn-#{$planet-name} {
       &[data-selected='true'] {
-        color: $color-grey-light;
         &::after {
           transform: scaleX(1);
           background-color: $planet-color;
+        }
+        .btn-caption {
+          color: $color-grey-light;
         }
       }
     }
