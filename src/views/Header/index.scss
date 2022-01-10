@@ -51,6 +51,7 @@ nav {
         height: 5px;
         bottom: 0;
         left: 0;
+        transform: scaleX(0);
         transition: transform 0.3s ease;
       }
     }

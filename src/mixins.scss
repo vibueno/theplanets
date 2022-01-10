@@ -22,6 +22,7 @@
       &[data-selected='true'] {
         color: $color-grey-light;
         &::after {
+          transform: scaleX(1);
           background-color: $planet-color;
         }
       }
