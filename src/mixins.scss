@@ -36,7 +36,7 @@
       }
     }
   }
-  @each $planet-name, $planet-color in $planet-numbering-selecteds {
+  @each $planet-name, $planet-color in $planet-numbering-selected {
     .btn-#{$planet-name} {
       &[data-selected='true'] {
         .btn-numbering {
@@ -47,27 +47,8 @@
   }
 }
 
-@mixin planet-size-mobile() {
-  @each $planet-name, $planet-size in $planet-sizes-mobile {
-    .planet-pic-#{$planet-name} {
-      @extend .planet-pic;
-      max-width: $planet-size;
-      max-height: $planet-size;
-    }
-  }
-}
-
-@mixin planet-size-tablet() {
-  @each $planet-name, $planet-size in $planet-sizes-tablet {
-    .planet-pic-#{$planet-name} {
-      max-width: $planet-size;
-      max-height: $planet-size;
-    }
-  }
-}
-
-@mixin planet-size-desktop() {
-  @each $planet-name, $planet-size in $planet-sizes-desktop {
+@mixin planet-sizes($planet-sizes) {
+  @each $planet-name, $planet-size in $planet-sizes {
     .planet-pic-#{$planet-name} {
       max-width: $planet-size;
       max-height: $planet-size;
