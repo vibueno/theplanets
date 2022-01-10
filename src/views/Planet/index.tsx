@@ -40,24 +40,25 @@ const Planet = ({
           classNameGeology={'planet-pic-geology'}
         />
       </div>
-
-      <div className="planet-desc-container">
-        <PlanetDesc
-          currentPlanetName={currentPlanetName}
-          currentPlanetDesc={
-            getPlanetData(currentPlanetName, currentSectionName).content
-          }
-          currentPlanetDescSource={
-            getPlanetData(currentPlanetName, currentSectionName).source
-          }
+      <div className="planet-desc-sections-container">
+        <div className="planet-desc-container">
+          <PlanetDesc
+            currentPlanetName={currentPlanetName}
+            currentPlanetDesc={
+              getPlanetData(currentPlanetName, currentSectionName).content
+            }
+            currentPlanetDescSource={
+              getPlanetData(currentPlanetName, currentSectionName).source
+            }
+          />
+        </div>
+        <PlanetSections
+          currentPlanetKey={currentPlanetKey}
+          currentSectionKey={currentSectionKey}
+          clickHandler={sectionMenuClickHandler}
+          className="planet-sections-btn-panel"
         />
       </div>
-      <PlanetSections
-        currentPlanetKey={currentPlanetKey}
-        currentSectionKey={currentSectionKey}
-        clickHandler={sectionMenuClickHandler}
-        className="planet-sections-btn-panel"
-      />
       <div className="planet-stats-container">
         <PlanetStats currentPlanetKey={currentPlanetKey} />
       </div>

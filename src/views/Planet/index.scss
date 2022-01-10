@@ -4,7 +4,7 @@
 .planet-pic-container {
   display: flex;
   justify-content: center;
-  margin: 4rem 0;
+  align-items: center;
 
   .planet-pic {
     width: auto;
@@ -107,51 +107,54 @@
     grid-column: 1 / 3;
   }
 
-  .planet-desc-container {
-    flex: 1 1 100%;
-    grid-row: 2 / 3;
-    grid-column: 1 / 2;
-
-    .planet-desc {
-      font: 14px/25px Spartan, Arial, Helvetica;
-      text-align: left;
-    }
-
-    .source-container {
-      justify-content: left;
-      margin: 1.5rem 0 2rem 0;
-      font: 14px/25px Spartan, Arial, Helvetica;
-    }
-  }
-
-  .planet-sections-btn-panel {
+  .planet-desc-sections-container {
     display: flex;
-    align-self: center;
-    flex-direction: column;
+    flex-direction: row;
     grid-row: 2 / 3;
-    grid-column: 2 / 3;
-    margin: 0;
-    border: none;
-    padding: 0 0 0 5em;
-    width: auto;
-    font: 700 12px/25px Spartan, Arial, Helvetica;
+    grid-column: 1 / 3;
 
-    .btn {
-      justify-content: flex-start;
-      margin: 0 0 1em 0;
-      padding: 5px 25px;
-      letter-spacing: 2.57px;
+    .planet-desc-container {
+      flex: 1 1 100%;
 
-      &[data-selected='false'] {
-        border: $border;
-
-        &:hover {
-          background-color: $color-grey-dark;
-        }
+      .planet-desc {
+        font: 14px/25px Spartan, Arial, Helvetica;
+        text-align: left;
       }
 
-      .btn-numbering {
-        display: inline-block;
+      .source-container {
+        justify-content: left;
+        margin: 1.5rem 0 2rem 0;
+        font: 14px/25px Spartan, Arial, Helvetica;
+      }
+    }
+
+    .planet-sections-btn-panel {
+      display: flex;
+      align-self: center;
+      flex-direction: column;
+      margin: 0;
+      border: none;
+      padding: 0 0 0 5em;
+      width: 100%;
+      font: 700 12px/25px Spartan, Arial, Helvetica;
+
+      .btn {
+        justify-content: flex-start;
+        margin: 0 0 1em 0;
+        padding: 5px 25px;
+        letter-spacing: 2.57px;
+
+        &[data-selected='false'] {
+          border: $border;
+
+          &:hover {
+            background-color: $color-grey-dark;
+          }
+        }
+
+        .btn-numbering {
+          display: inline-block;
+        }
       }
     }
   }
@@ -198,15 +201,15 @@
     @include mixins.planet-sizes($planet-sizes-desktop);
   }
 
-  .planet-desc-container {
+  .planet-desc-sections-container {
+    flex-direction: column;
     grid-row: 1 / 2;
     grid-column: 2 / 3;
-  }
 
-  .planet-sections-btn-panel {
-    padding: 0;
+    .planet-sections-btn-panel {
+      padding: 0;
+    }
   }
-
   .planet-stats-container {
     grid-column: 1 / 3;
     margin: 2rem 0 0 0;
