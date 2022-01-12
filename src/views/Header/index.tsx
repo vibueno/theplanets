@@ -19,6 +19,7 @@ type HeaderProps = {
     ref: React.RefObject<HTMLButtonElement>
   ) => void;
   isMenuOpen: boolean;
+  isTransitionDone: boolean;
 };
 
 const Header = ({
@@ -27,10 +28,11 @@ const Header = ({
   hamburgerClickHandler,
   menuClickHandler,
   sectionMenuClickHandler,
-  isMenuOpen
+  isMenuOpen,
+  isTransitionDone
 }: HeaderProps) => {
   return (
-    <nav data-menu-open={isMenuOpen}>
+    <nav data-menu-open={isMenuOpen} data-is-transition-done={isTransitionDone}>
       <div className="app-title">{APP_TITLE}</div>
       <img
         src={require(`ASSETS/img/icon-hamburger.svg`)}
@@ -39,15 +41,20 @@ const Header = ({
       />
 
       <>
-        <Menu clickHandler={menuClickHandler} />
-        {!isMenuOpen && (
-          <PlanetSections
-            currentPlanetKey={currentPlanetKey}
-            currentSectionKey={currentSectionKey}
-            clickHandler={sectionMenuClickHandler}
-            className="planet-sections-menu"
-          />
-        )}
+        <Menu
+          isMenuOpen={isMenuOpen}
+          className="inside-header"
+          clickHandler={menuClickHandler}
+        />
+
+        <PlanetSections
+          currentPlanetKey={currentPlanetKey}
+          currentSectionKey={currentSectionKey}
+          clickHandler={sectionMenuClickHandler}
+          className="planet-sections-menu"
+          isMenuOpen={isMenuOpen}
+          isTransitionDone={isTransitionDone}
+        />
       </>
     </nav>
   );

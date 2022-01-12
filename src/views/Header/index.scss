@@ -5,7 +5,6 @@ nav {
   display: grid;
   grid-template-rows: 4rem auto auto;
   align-items: stretch;
-  text-transform: uppercase;
 
   .app-title {
     margin: 0.9rem 0 0.9rem 1.25rem;
@@ -15,18 +14,19 @@ nav {
     justify-content: left;
     font: 500 28px Antonio, Arial, Helvetica;
     letter-spacing: -1.05px;
+    text-transform: uppercase;
   }
 
   .hamburger {
     position: fixed;
     top: 1.55rem;
     right: 1.25rem;
+    z-index: 2;
     cursor: pointer;
   }
 
   &[data-menu-open='true'] {
     grid-template-rows: 4rem auto;
-    grid-template-columns: repeat(2, auto);
   }
 
   .planet-sections-menu {
@@ -35,7 +35,6 @@ nav {
     display: grid;
     grid-template-columns: repeat(3, auto);
     border-bottom: $border;
-    border-top: $border;
 
     .btn {
       position: relative;
@@ -72,11 +71,11 @@ nav {
 
 @media only screen and (max-width: 767px) {
   nav {
-    &[data-menu-open='true'] {
-      //TODO: look for a better way to avoid vertical scrollbar
-      height: calc(100vh - 48px);
+    .app-title {
+      margin: 0;
+      padding: 0.9rem 0 0.9rem 1.25rem;
+      border-bottom: $border;
     }
-
     .menu {
       grid-column: 1/3;
       grid-row: 2;

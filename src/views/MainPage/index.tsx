@@ -1,7 +1,8 @@
-import React, { useState, MouseEvent } from 'react';
+import React, { useState, useEffect, MouseEvent } from 'react';
 
 import Header from '../Header';
 import Planet from 'VIEWS/Planet';
+import Menu from 'COMPONENTS/Menu';
 
 import { SECTIONS, PLANETS } from 'SRC/constants';
 
@@ -16,6 +17,8 @@ const MainPage = () => {
   );
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isTransitionDone, setIsTransitionDone] = useState(true);
+  const [scrollPosBeforeMenu, setScrollPosBeforeMenu] = useState(0);
 
   const sectionMenuClickHandler = (
     e: React.MouseEvent<HTMLButtonElement>,
@@ -34,20 +37,63 @@ const MainPage = () => {
   };
 
   const hamburgerClickHandler = () => {
-    setIsMenuOpen(!isMenuOpen);
+    if (isTransitionDone) {
+      setIsMenuOpen(!isMenuOpen);
+    }
   };
 
   const onResizeHandler = () => {
-    setIsMenuOpen(false);
+    if (isTransitionDone) {
+      setIsMenuOpen(false);
+    }
   };
 
   window.addEventListener('resize', onResizeHandler);
+
+  useEffect(() => {
+    let firstMenuItem: HTMLLIElement = document.querySelector('#MERCURY')!;
+    let lastMenuItem: HTMLLIElement = document.querySelector('#NEPTUNE')!;
+
+    if (firstMenuItem) {
+      firstMenuItem.ontransitionstart = () => {
+        setIsTransitionDone(false);
+      };
+
+      firstMenuItem.ontransitioncancel = () => {
+        setIsTransitionDone(true);
+      };
+    }
+    if (lastMenuItem) {
+      lastMenuItem.ontransitionend = () => {
+        setIsTransitionDone(true);
+      };
+      lastMenuItem.ontransitioncancel = () => {
+        setIsTransitionDone(true);
+      };
+    }
+  }, []);
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      setScrollPosBeforeMenu(window.pageYOffset);
+      window.scrollTo(0, 0);
+      document.body.style.overflow = 'hidden';
+    } else {
+      window.scrollTo(0, scrollPosBeforeMenu);
+      document.body.style.overflow = 'auto';
+    }
+  }, [isMenuOpen]);
 
   return (
     <>
       <link
         rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Antonio:wght@500&family=Spartan:wght@400;700&display=swap"
+      />
+      <Menu
+        isMenuOpen={isMenuOpen}
+        className="outside-header"
+        clickHandler={menuClickHandler}
       />
       <div className="layout">
         <Header
@@ -57,14 +103,19 @@ const MainPage = () => {
           currentPlanetKey={currentPlanetKey}
           currentSectionKey={currentSectionKey}
           isMenuOpen={isMenuOpen}
+          isTransitionDone={isTransitionDone}
         />
         {currentPlanetKey && currentSectionKey && (
-          <main>
+          <main
+            data-menu-open={isMenuOpen}
+            data-is-transition-done={isTransitionDone}
+          >
             <Planet
               currentPlanetKey={currentPlanetKey}
               currentSectionKey={currentSectionKey}
               sectionMenuClickHandler={sectionMenuClickHandler}
               isMenuOpen={isMenuOpen}
+              isTransitionDone={isTransitionDone}
             />
           </main>
         )}

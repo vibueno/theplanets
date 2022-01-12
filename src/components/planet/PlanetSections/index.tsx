@@ -11,16 +11,24 @@ type PlanetSectionsProps = {
     ref: React.RefObject<HTMLButtonElement>
   ) => void;
   className: string;
+  isMenuOpen: boolean;
+  isTransitionDone: boolean;
 };
 
 const PlanetSections = ({
   currentPlanetKey,
   currentSectionKey,
   clickHandler,
-  className
+  className,
+  isMenuOpen,
+  isTransitionDone
 }: PlanetSectionsProps) => {
   return (
-    <div className={className}>
+    <div
+      className={className}
+      data-menu-open={isMenuOpen}
+      data-is-transition-done={isTransitionDone}
+    >
       {SECTION_KEYS.map(sectionKey => (
         <PlanetSectionsItem
           key={sectionKey}

@@ -60,3 +60,11 @@
     }
   }
 }
+
+@mixin menu-animation($base-delay, $delay-increment) {
+  @for $i from 1 through 8 {
+    li:nth-of-type(#{$i}) {
+      transition-delay: $base-delay + ($i - 1) * $delay-increment;
+    }
+  }
+}

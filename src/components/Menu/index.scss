@@ -1,13 +1,53 @@
+@use 'SRC/mixins' as mixins;
+
 .menu {
   list-style: none;
+  font: 700 11px/25px Spartan, Arial, Helvetica;
+  letter-spacing: +1px;
+  text-transform: uppercase;
+}
+
+@media only screen and (max-width: 768px) {
+  .menu {
+    &.inside-header {
+      display: none;
+    }
+
+    &.outside-header {
+      position: fixed;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      top: 5rem;
+      left: -100vw;
+      width: 100vw;
+      height: 75%;
+
+      li {
+        transition: transform 0.5s ease-in-out;
+        width: 80%;
+      }
+
+      @include mixins.menu-animation(0.025s, 0.07s);
+
+      &[data-menu-open='true'] {
+        li {
+          transform: translateX(100vw);
+        }
+      }
+    }
+  }
 }
 
 @media only screen and (min-width: 768px) {
   .menu {
-    grid-row: 2 / 3;
-    display: flex;
-    margin: 0 0 2em 0;
-    font: 700 11px/25px Spartan, Arial, Helvetica;
-    letter-spacing: +1px;
+    &.inside-header {
+      display: flex;
+    }
+
+    &.outside-header {
+      display: none;
+    }
   }
 }

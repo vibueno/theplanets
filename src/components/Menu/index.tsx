@@ -6,14 +6,16 @@ import { PLANETS, PLANET_KEYS } from 'SRC/constants';
 import './index.scss';
 
 type PlanetMenuProps = {
+  isMenuOpen: boolean;
+  className: string;
   clickHandler: (
     e: React.MouseEvent<HTMLLIElement>,
     ref: React.RefObject<HTMLLIElement>
   ) => void;
 };
 
-const Menu = ({ clickHandler }: PlanetMenuProps) => (
-  <ul className="menu">
+const Menu = ({ isMenuOpen, className, clickHandler }: PlanetMenuProps) => (
+  <ul data-menu-open={isMenuOpen} className={`menu ${className}`}>
     {PLANET_KEYS.map(planetKey => (
       <MenuItem
         key={PLANETS[planetKey].NAME}

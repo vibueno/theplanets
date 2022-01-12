@@ -19,19 +19,21 @@ type PlanetProps = {
     ref: React.RefObject<HTMLButtonElement>
   ) => void;
   isMenuOpen: boolean;
+  isTransitionDone: boolean;
 };
 
 const Planet = ({
   currentPlanetKey,
   currentSectionKey,
   sectionMenuClickHandler,
-  isMenuOpen
+  isMenuOpen,
+  isTransitionDone
 }: PlanetProps) => {
   const currentPlanetName = PLANETS[currentPlanetKey].NAME;
   const currentSectionName = SECTIONS[currentSectionKey].NAME;
 
-  return !isMenuOpen ? (
-    <>
+  return (
+    <div className="planet-container">
       <div className="planet-pic-container">
         <PlanetPic
           currentPlanetKey={currentPlanetKey}
@@ -57,13 +59,15 @@ const Planet = ({
           currentSectionKey={currentSectionKey}
           clickHandler={sectionMenuClickHandler}
           className="planet-sections-btn-panel"
+          isMenuOpen={isMenuOpen}
+          isTransitionDone={isTransitionDone}
         />
       </div>
       <div className="planet-stats-container">
         <PlanetStats currentPlanetKey={currentPlanetKey} />
       </div>
-    </>
-  ) : null;
+    </div>
+  );
 };
 
 export default Planet;
