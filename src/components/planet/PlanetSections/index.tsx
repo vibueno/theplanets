@@ -14,17 +14,16 @@ type PlanetSectionsProps = {
     ref: React.RefObject<HTMLButtonElement>
   ) => void;
   className: string;
-  isTransitionDone: boolean;
 };
 
 const PlanetSections = ({
   currentPlanetKey,
   currentSectionKey,
   clickHandler,
-  className,
-  isTransitionDone
+  className
 }: PlanetSectionsProps) => {
   const isMenuOpen = useSelector(selectors.getIsMenuOpen);
+  const isTransitionDone = useSelector(selectors.getIsTransitionDone);
 
   return (
     <div

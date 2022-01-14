@@ -20,7 +20,6 @@ type HeaderProps = {
     e: React.MouseEvent<HTMLButtonElement>,
     ref: React.RefObject<HTMLButtonElement>
   ) => void;
-  isTransitionDone: boolean;
 };
 
 const Header = ({
@@ -28,10 +27,10 @@ const Header = ({
   currentSectionKey,
   hamburgerClickHandler,
   menuClickHandler,
-  sectionMenuClickHandler,
-  isTransitionDone
+  sectionMenuClickHandler
 }: HeaderProps) => {
   const isMenuOpen = useSelector(selectors.getIsMenuOpen);
+  const isTransitionDone = useSelector(selectors.getIsTransitionDone);
 
   return (
     <nav data-menu-open={isMenuOpen} data-is-transition-done={isTransitionDone}>
@@ -50,7 +49,6 @@ const Header = ({
           currentSectionKey={currentSectionKey}
           clickHandler={sectionMenuClickHandler}
           className="planet-sections-menu"
-          isTransitionDone={isTransitionDone}
         />
       </>
     </nav>

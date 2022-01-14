@@ -1,7 +1,7 @@
 import React, { useState, useEffect, MouseEvent } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { setIsMenuOpen } from 'REDUX/appStateSlice';
+import { setIsMenuOpen, setIsTransitionDone } from 'REDUX/appStateSlice';
 import { selectors } from 'REDUX/appStateSlice';
 
 import Header from '../Header';
@@ -20,12 +20,12 @@ const MainPage = () => {
     SECTIONS.OVERVIEW.KEY
   );
 
-  const [isTransitionDone, setIsTransitionDone] = useState(true);
   const [scrollPosBeforeMenu, setScrollPosBeforeMenu] = useState(0);
 
   const dispatch = useDispatch();
 
   const isMenuOpen = useSelector(selectors.getIsMenuOpen);
+  const isTransitionDone = useSelector(selectors.getIsTransitionDone);
 
   const sectionMenuClickHandler = (
     e: React.MouseEvent<HTMLButtonElement>,
@@ -63,19 +63,19 @@ const MainPage = () => {
 
     if (firstMenuItem) {
       firstMenuItem.ontransitionstart = () => {
-        setIsTransitionDone(false);
+        dispatch(setIsTransitionDone(false));
       };
 
       firstMenuItem.ontransitioncancel = () => {
-        setIsTransitionDone(true);
+        dispatch(setIsTransitionDone(true));
       };
     }
     if (lastMenuItem) {
       lastMenuItem.ontransitionend = () => {
-        setIsTransitionDone(true);
+        dispatch(setIsTransitionDone(true));
       };
       lastMenuItem.ontransitioncancel = () => {
-        setIsTransitionDone(true);
+        dispatch(setIsTransitionDone(true));
       };
     }
   }, []);
@@ -105,7 +105,6 @@ const MainPage = () => {
           sectionMenuClickHandler={sectionMenuClickHandler}
           currentPlanetKey={currentPlanetKey}
           currentSectionKey={currentSectionKey}
-          isTransitionDone={isTransitionDone}
         />
         {currentPlanetKey && currentSectionKey && (
           <main
@@ -116,7 +115,6 @@ const MainPage = () => {
               currentPlanetKey={currentPlanetKey}
               currentSectionKey={currentSectionKey}
               sectionMenuClickHandler={sectionMenuClickHandler}
-              isTransitionDone={isTransitionDone}
             />
           </main>
         )}
