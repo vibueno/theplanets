@@ -1,4 +1,8 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
+
+import { selectors } from 'REDUX/appStateSlice';
+
 import MenuItem from './MenuItem';
 
 import { PLANETS, PLANET_KEYS } from 'SRC/constants';
@@ -6,7 +10,6 @@ import { PLANETS, PLANET_KEYS } from 'SRC/constants';
 import './index.scss';
 
 type PlanetMenuProps = {
-  isMenuOpen: boolean;
   className: string;
   clickHandler: (
     e: React.MouseEvent<HTMLLIElement>,
@@ -14,17 +17,20 @@ type PlanetMenuProps = {
   ) => void;
 };
 
-const Menu = ({ isMenuOpen, className, clickHandler }: PlanetMenuProps) => (
-  <ul data-menu-open={isMenuOpen} className={`menu ${className}`}>
-    {PLANET_KEYS.map(planetKey => (
-      <MenuItem
-        key={PLANETS[planetKey].NAME}
-        clickHandler={clickHandler}
-        planetKey={planetKey}
-        planetName={PLANETS[planetKey].NAME}
-      />
-    ))}
-  </ul>
-);
+const Menu = ({ className, clickHandler }: PlanetMenuProps) => {
+  const isMenuOpen = useSelector(selectors.getIsMenuOpen);
+  return (
+    <ul data-menu-open={isMenuOpen} className={`menu ${className}`}>
+      {PLANET_KEYS.map(planetKey => (
+        <MenuItem
+          key={PLANETS[planetKey].NAME}
+          clickHandler={clickHandler}
+          planetKey={planetKey}
+          planetName={PLANETS[planetKey].NAME}
+        />
+      ))}
+    </ul>
+  );
+};
 
 export default Menu;

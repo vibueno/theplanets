@@ -97,11 +97,7 @@ const MainPage = () => {
         rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Antonio:wght@500&family=Spartan:wght@400;700&display=swap"
       />
-      <Menu
-        isMenuOpen={isMenuOpen}
-        className="outside-header"
-        clickHandler={menuClickHandler}
-      />
+      <Menu className="outside-header" clickHandler={menuClickHandler} />
       <div className="layout">
         <Header
           menuClickHandler={menuClickHandler}
@@ -109,7 +105,6 @@ const MainPage = () => {
           sectionMenuClickHandler={sectionMenuClickHandler}
           currentPlanetKey={currentPlanetKey}
           currentSectionKey={currentSectionKey}
-          isMenuOpen={isMenuOpen}
           isTransitionDone={isTransitionDone}
         />
         {currentPlanetKey && currentSectionKey && (
@@ -121,7 +116,6 @@ const MainPage = () => {
               currentPlanetKey={currentPlanetKey}
               currentSectionKey={currentSectionKey}
               sectionMenuClickHandler={sectionMenuClickHandler}
-              isMenuOpen={isMenuOpen}
               isTransitionDone={isTransitionDone}
             />
           </main>

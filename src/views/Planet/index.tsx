@@ -18,7 +18,6 @@ type PlanetProps = {
     e: React.MouseEvent<HTMLButtonElement>,
     ref: React.RefObject<HTMLButtonElement>
   ) => void;
-  isMenuOpen: boolean;
   isTransitionDone: boolean;
 };
 
@@ -26,7 +25,6 @@ const Planet = ({
   currentPlanetKey,
   currentSectionKey,
   sectionMenuClickHandler,
-  isMenuOpen,
   isTransitionDone
 }: PlanetProps) => {
   const currentPlanetName = PLANETS[currentPlanetKey].NAME;
@@ -59,7 +57,6 @@ const Planet = ({
           currentSectionKey={currentSectionKey}
           clickHandler={sectionMenuClickHandler}
           className="planet-sections-btn-panel"
-          isMenuOpen={isMenuOpen}
           isTransitionDone={isTransitionDone}
         />
       </div>

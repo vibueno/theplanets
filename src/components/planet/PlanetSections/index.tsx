@@ -1,4 +1,7 @@
 import React, { useEffect, useRef, MouseEventHandler } from 'react';
+import { useSelector } from 'react-redux';
+import { selectors } from 'REDUX/appStateSlice';
+
 import PlanetSectionsItem from './PlanetSectionsItem';
 
 import { PLANETS, SECTIONS, SECTION_KEYS } from 'SRC/constants';
@@ -11,7 +14,6 @@ type PlanetSectionsProps = {
     ref: React.RefObject<HTMLButtonElement>
   ) => void;
   className: string;
-  isMenuOpen: boolean;
   isTransitionDone: boolean;
 };
 
@@ -20,9 +22,10 @@ const PlanetSections = ({
   currentSectionKey,
   clickHandler,
   className,
-  isMenuOpen,
   isTransitionDone
 }: PlanetSectionsProps) => {
+  const isMenuOpen = useSelector(selectors.getIsMenuOpen);
+
   return (
     <div
       className={className}

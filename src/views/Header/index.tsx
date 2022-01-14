@@ -1,4 +1,6 @@
 import React, { MouseEventHandler } from 'react';
+import { useSelector } from 'react-redux';
+import { selectors } from 'REDUX/appStateSlice';
 
 import PlanetSections from 'COMPONENTS/planet/PlanetSections';
 import Menu from 'COMPONENTS/Menu';
@@ -18,7 +20,6 @@ type HeaderProps = {
     e: React.MouseEvent<HTMLButtonElement>,
     ref: React.RefObject<HTMLButtonElement>
   ) => void;
-  isMenuOpen: boolean;
   isTransitionDone: boolean;
 };
 
@@ -28,9 +29,10 @@ const Header = ({
   hamburgerClickHandler,
   menuClickHandler,
   sectionMenuClickHandler,
-  isMenuOpen,
   isTransitionDone
 }: HeaderProps) => {
+  const isMenuOpen = useSelector(selectors.getIsMenuOpen);
+
   return (
     <nav data-menu-open={isMenuOpen} data-is-transition-done={isTransitionDone}>
       <div className="app-title">{APP_TITLE}</div>
@@ -41,18 +43,13 @@ const Header = ({
       />
 
       <>
-        <Menu
-          isMenuOpen={isMenuOpen}
-          className="inside-header"
-          clickHandler={menuClickHandler}
-        />
+        <Menu className="inside-header" clickHandler={menuClickHandler} />
 
         <PlanetSections
           currentPlanetKey={currentPlanetKey}
           currentSectionKey={currentSectionKey}
           clickHandler={sectionMenuClickHandler}
           className="planet-sections-menu"
-          isMenuOpen={isMenuOpen}
           isTransitionDone={isTransitionDone}
         />
       </>
