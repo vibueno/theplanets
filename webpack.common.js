@@ -61,7 +61,8 @@ module.exports = {
       COMPONENTS: path.resolve(__dirname, 'src/components'),
       VIEWS: path.resolve(__dirname, 'src/views'),
       ASSETS: path.resolve(__dirname, 'src/assets'),
-      SRC: path.resolve(__dirname, 'src')
+      SRC: path.resolve(__dirname, 'src'),
+      REDUX: path.resolve(__dirname, 'src/redux')
     }
   },
   plugins: [

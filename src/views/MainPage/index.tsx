@@ -1,4 +1,6 @@
 import React, { useState, useEffect, MouseEvent } from 'react';
+import { useDispatch } from 'react-redux';
+import { updateTest } from 'REDUX/appStateSlice';
 
 import Header from '../Header';
 import Planet from 'VIEWS/Planet';
@@ -19,6 +21,8 @@ const MainPage = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isTransitionDone, setIsTransitionDone] = useState(true);
   const [scrollPosBeforeMenu, setScrollPosBeforeMenu] = useState(0);
+
+  const dispatch = useDispatch();
 
   const sectionMenuClickHandler = (
     e: React.MouseEvent<HTMLButtonElement>,
@@ -75,6 +79,7 @@ const MainPage = () => {
 
   useEffect(() => {
     if (isMenuOpen) {
+      dispatch(updateTest('new value'));
       setScrollPosBeforeMenu(window.pageYOffset);
       window.scrollTo(0, 0);
       document.body.style.overflow = 'hidden';
