@@ -18,31 +18,27 @@ h1 {
 
 @media only screen and (max-width: 768px) {
   main {
-    transition: opacity 1s ease-in-out;
+    transition: opacity 1s ease-in-out 0.5s;
 
     &[data-menu-open='false'][data-is-transition-done='true'] {
-      transition: opacity 1s ease-in-out 0.5s;
       opacity: 1;
-      visibility: visible;
     }
 
     &[data-menu-open='true'] {
+      transition: opacity 0.25s ease-in-out;
       opacity: 0;
-      visibility: hidden;
     }
   }
   nav {
     .planet-sections-menu {
       transition: opacity 1s ease-in-out 0.5s;
-
       &[data-menu-open='false'][data-is-transition-done='true'] {
         opacity: 1;
-        visibility: visible;
       }
 
       &[data-menu-open='true'] {
+        transition: opacity 0.25s ease-in-out;
         opacity: 0;
-        visibility: hidden;
       }
     }
   }
