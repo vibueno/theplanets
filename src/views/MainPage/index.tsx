@@ -1,6 +1,7 @@
 import React, { useState, useEffect, MouseEvent } from 'react';
-import { useDispatch } from 'react-redux';
-import { updateTest } from 'REDUX/appStateSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { AppState } from 'REDUX/store';
+import { setIsMenuOpenRedux } from 'REDUX/appStateSlice';
 
 import Header from '../Header';
 import Planet from 'VIEWS/Planet';
@@ -18,11 +19,14 @@ const MainPage = () => {
     SECTIONS.OVERVIEW.KEY
   );
 
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isTransitionDone, setIsTransitionDone] = useState(true);
   const [scrollPosBeforeMenu, setScrollPosBeforeMenu] = useState(0);
 
   const dispatch = useDispatch();
+
+  const isMenuOpen = useSelector(
+    (state: AppState) => state.appState.isMenuOpen
+  );
 
   const sectionMenuClickHandler = (
     e: React.MouseEvent<HTMLButtonElement>,
@@ -37,18 +41,18 @@ const MainPage = () => {
   ): void => {
     setCurrentPlanetKey(ref.current?.id as string);
     setCurrentSectionKey(SECTIONS.OVERVIEW.KEY);
-    setIsMenuOpen(false);
+    dispatch(setIsMenuOpenRedux(false));
   };
 
   const hamburgerClickHandler = () => {
     if (isTransitionDone) {
-      setIsMenuOpen(!isMenuOpen);
+      dispatch(setIsMenuOpenRedux(!isMenuOpen));
     }
   };
 
   const onResizeHandler = () => {
     if (isTransitionDone) {
-      setIsMenuOpen(false);
+      dispatch(setIsMenuOpenRedux(false));
     }
   };
 
@@ -79,7 +83,6 @@ const MainPage = () => {
 
   useEffect(() => {
     if (isMenuOpen) {
-      dispatch(updateTest('new value'));
       setScrollPosBeforeMenu(window.pageYOffset);
       window.scrollTo(0, 0);
       document.body.style.overflow = 'hidden';

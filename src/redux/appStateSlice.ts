@@ -1,19 +1,20 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 interface appState {
-  value: string;
+  isMenuOpen: boolean;
 }
 
 export const appStateSlice = createSlice({
   name: 'appState',
-  initialState: { value: 'testvalue' },
+  initialState: { isMenuOpen: false },
   reducers: {
-    updateTest: (state, action: PayloadAction<string>) => {
-      state.value = action.payload;
+    setIsMenuOpenRedux: (state, action: PayloadAction<boolean>) => {
+      console.log(action.payload);
+      state.isMenuOpen = action.payload;
     }
   }
 });
 
-export const { updateTest } = appStateSlice.actions;
+export const { setIsMenuOpenRedux } = appStateSlice.actions;
 
 export default appStateSlice.reducer;
