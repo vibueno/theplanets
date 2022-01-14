@@ -1,7 +1,8 @@
 import React, { useState, useEffect, MouseEvent } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { AppState } from 'REDUX/store';
-import { setIsMenuOpenRedux } from 'REDUX/appStateSlice';
+
+import { setIsMenuOpen } from 'REDUX/appStateSlice';
+import { selectors } from 'REDUX/appStateSlice';
 
 import Header from '../Header';
 import Planet from 'VIEWS/Planet';
@@ -24,9 +25,7 @@ const MainPage = () => {
 
   const dispatch = useDispatch();
 
-  const isMenuOpen = useSelector(
-    (state: AppState) => state.appState.isMenuOpen
-  );
+  const isMenuOpen = useSelector(selectors.getIsMenuOpen);
 
   const sectionMenuClickHandler = (
     e: React.MouseEvent<HTMLButtonElement>,
@@ -41,18 +40,18 @@ const MainPage = () => {
   ): void => {
     setCurrentPlanetKey(ref.current?.id as string);
     setCurrentSectionKey(SECTIONS.OVERVIEW.KEY);
-    dispatch(setIsMenuOpenRedux(false));
+    dispatch(setIsMenuOpen(false));
   };
 
   const hamburgerClickHandler = () => {
     if (isTransitionDone) {
-      dispatch(setIsMenuOpenRedux(!isMenuOpen));
+      dispatch(setIsMenuOpen(!isMenuOpen));
     }
   };
 
   const onResizeHandler = () => {
     if (isTransitionDone) {
-      dispatch(setIsMenuOpenRedux(false));
+      dispatch(setIsMenuOpen(false));
     }
   };
 
