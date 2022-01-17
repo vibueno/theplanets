@@ -7,7 +7,8 @@
     "build": "webpack --config webpack.prod.js",
     "start": "node ./server.js",
     "format": "prettier --write \"./src/**/*.{ts,tsx}\"",
-    "eslint-fix": "eslint --fix \"./src/**/*.{ts,tsx}\""
+    "eslint-fix": "eslint --fix \"./src/**/*.{ts,tsx}\"",
+    "test": "export NODE_ENV=test & jest --coverage"
   },
   "eslintConfig": {
     "env": {
@@ -67,7 +68,8 @@
   "babel": {
     "presets": [
       "@babel/preset-env",
-      "@babel/preset-react"
+      "@babel/preset-react",
+      "@babel/preset-typescript"
     ]
   },
   "browserslist": {
@@ -82,13 +84,25 @@
       "last 1 safari version"
     ]
   },
+  "jest": {
+    "moduleNameMapper": {
+      ".+\\.(css|styl|less|sass|scss|png|jpg|svg|ttf|woff|woff2)$": "<rootDir>/__mocks__/fileMock.js",
+      "^REDUX(.*)$": "<rootDir>/src/redux$1",
+      "^SRC(.*)$": "<rootDir>/src$1",
+      "^ASSETS(.*)$": "<rootDir>/src/assets$1",
+      "^COMPONENTS(.*)$": "<rootDir>/src/components$1"
+    }
+  },
   "devDependencies": {
     "@babel/core": "^7.13.14",
     "@babel/preset-env": "^7.13.12",
     "@babel/preset-react": "^7.13.13",
+    "@babel/preset-typescript": "^7.16.7",
     "@testing-library/react": "^12.0.0",
-    "@types/jest": "^26.0.22",
+    "@types/jest": "^26.0.24",
     "@types/react-dom": "^17.0.8",
+    "@types/react-test-renderer": "^17.0.1",
+    "@types/redux-mock-store": "^1.0.3",
     "@typescript-eslint/eslint-plugin": "^4.16.1",
     "@typescript-eslint/parser": "^4.16.1",
     "babel-eslint": "^10.1.0",
@@ -107,6 +121,7 @@
     "extract-loader": "^5.1.0",
     "file-loader": "^6.2.0",
     "html-loader": "^2.1.2",
+    "jest": "^27.4.7",
     "path-browserify": "^1.0.1",
     "prettier": "^2.3.2",
     "process": "^0.11.10",
@@ -128,6 +143,8 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-redux": "^7.2.6",
+    "react-test-renderer": "^17.0.2",
+    "redux-mock-store": "^1.5.4",
     "terser-webpack-plugin": "^5.1.4",
     "webpack": "^5.42.0",
     "webpack-merge": "^5.8.0"
