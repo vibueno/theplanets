@@ -1,56 +1,76 @@
 @use 'SRC/variables.scss' as *;
 @use 'SRC/mixins.scss' as mixins;
 
-.btn {
-  display: flex;
-  margin: 0;
-  border: none;
-  background-color: $color-blue-dark;
-  cursor: pointer;
+.btn
+{
   font: 700 9px/22px Spartan, Arial, Helvetica;
+
+  display: flex;
+
+  margin: 0;
+
+  cursor: pointer;
+  text-align: left;
   letter-spacing: 1.93px;
   text-transform: uppercase;
-  text-align: left;
 
-  &[data-selected='false'] {
-    .btn-numbering {
+  border: none;
+  background-color: $color-blue-dark;
+
+  &[data-selected='false']
+  {
+    .btn-numbering
+    {
       color: $color-grey-light;
     }
   }
 
-  .btn-numbering {
+  .btn-numbering
+  {
     display: none;
+
     padding: 0 25px 0 0;
   }
 
-  &[data-selected='false'] {
-    .btn-caption {
+  &[data-selected='false']
+  {
+    .btn-caption
+    {
       color: $color-white;
     }
   }
 
-  .btn-caption {
+  .btn-caption
+  {
     display: inline-block;
   }
 
-  .btn-caption-long {
+  .btn-caption-long
+  {
     display: none;
+
     color: $color-white;
   }
 }
 
-.planet-sections-menu {
+.planet-sections-menu
+{
   @include mixins.planet-sections-menu-selected;
 }
 
-@media only screen and (min-width: 768px) {
-  .planet-sections-btn-panel {
-    .btn {
-      .btn-caption {
+@media only screen and (min-width: 768px)
+{
+  .planet-sections-btn-panel
+  {
+    .btn
+    {
+      .btn-caption
+      {
         display: none;
       }
 
-      .btn-caption-long {
+      .btn-caption-long
+      {
         display: inline-block;
       }
     }

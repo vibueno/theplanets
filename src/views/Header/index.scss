@@ -1,117 +1,156 @@
 @use 'SRC/variables' as *;
 
-nav {
-  grid-row: 1;
+nav
+{
   display: grid;
-  grid-template-rows: 4rem auto auto;
   align-items: stretch;
 
-  .app-title {
-    margin: 0.9rem 0 0.9rem 1.25rem;
-    grid-row: 1 / 2;
-    display: grid;
-    grid-template-columns: repeat(2, auto);
-    justify-content: left;
+  grid-row: 1;
+  grid-template-rows: 4rem auto auto;
+
+  .app-title
+  {
     font: 500 28px Antonio, Arial, Helvetica;
+
+    display: grid;
+    justify-content: left;
+
+    margin: .9rem 0 .9rem 1.25rem;
+
     letter-spacing: -1.05px;
     text-transform: uppercase;
+
+    grid-row: 1 / 2;
+    grid-template-columns: repeat(2, auto);
   }
 
-  .hamburger {
+  .hamburger
+  {
     position: fixed;
+    z-index: 2;
     top: 1.55rem;
     right: 1.25rem;
-    z-index: 2;
+
     cursor: pointer;
   }
 
-  &[data-menu-open='true'] {
+  &[data-menu-open='true']
+  {
     grid-template-rows: 4rem auto;
   }
 
-  .planet-sections-menu {
-    grid-row: 2 / 3;
-    grid-column: 1 / 1;
+  .planet-sections-menu
+  {
     display: grid;
-    grid-template-columns: repeat(3, auto);
+
     border-bottom: $border;
 
-    .btn {
+    grid-row: 2 / 3;
+    grid-column: 1 / 1;
+    grid-template-columns: repeat(3, auto);
+
+    .btn
+    {
       position: relative;
+
       justify-content: center;
-      padding: 0.9rem 0 0.75rem 0;
+
+      padding: .9rem 0 .75rem 0;
+
       background-color: transparent;
 
-      &::after {
-        content: '';
+      &::after
+      {
         position: absolute;
-        display: block;
-        width: 100%;
-        height: 5px;
         bottom: 0;
         left: 0;
+
+        display: block;
+
+        width: 100%;
+        height: 5px;
+
+        content: '';
+        transition: transform .3s ease;
         transform: scaleX(0);
-        transition: transform 0.3s ease;
       }
     }
 
-    #overview {
+    #overview
+    {
       grid-column: 1 / 2;
     }
 
-    #structure {
+    #structure
+    {
       grid-column: 2 / 3;
     }
 
-    #geology {
+    #geology
+    {
       grid-column: 3 / 4;
     }
   }
 }
 
-@media only screen and (max-width: 767px) {
-  nav {
-    .app-title {
+@media only screen and (max-width: 767px)
+{
+  nav
+  {
+    .app-title
+    {
       margin: 0;
-      padding: 0.9rem 0 0.9rem 1.25rem;
+      padding: .9rem 0 .9rem 1.25rem;
+
       border-bottom: $border;
     }
-    .menu {
+    .menu
+    {
+      width: 85%;
+
       grid-column: 1/3;
       grid-row: 2;
-      width: 85%;
       justify-self: center;
     }
 
-    &[data-menu-open='false'] {
-      .menu {
+    &[data-menu-open='false']
+    {
+      .menu
+      {
         display: none;
       }
     }
   }
 }
 
-@media only screen and (min-width: 768px) {
-  nav {
-    .planet-sections-menu {
-      display: none;
-    }
-
+@media only screen and (min-width: 768px)
+{
+  nav
+  {
     border-bottom: $border;
-
-    .hamburger {
+    .planet-sections-menu
+    {
       display: none;
     }
 
-    .menu {
+    .hamburger
+    {
+      display: none;
+    }
+
+    .menu
+    {
       display: fixed;
       justify-content: center;
     }
 
-    .app-title {
-      grid-row: 1 / 2;
+    .app-title
+    {
       justify-content: center;
-      margin: 0.75em 0;
+
+      margin: .75em 0;
+
+      grid-row: 1 / 2;
     }
   }
 }

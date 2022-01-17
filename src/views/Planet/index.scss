@@ -1,202 +1,266 @@
 @use 'SRC/variables.scss' as *;
 @use 'SRC/mixins.scss' as mixins;
 
-.planet-container {
+.planet-container
+{
   grid-template-columns: 65% 35%;
   grid-row: 1/3;
   grid-column: 1/2;
 
-  .planet-pic-container {
+  .planet-pic-container
+  {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 
-    .planet-pic {
+    @include mixins.planet-sizes($planet-sizes-mobile);
+
+    .planet-pic
+    {
       width: auto;
       height: auto;
     }
 
-    .planet-pic-geology {
+    .planet-pic-geology
+    {
       position: absolute;
       top: 175px;
+
       width: auto;
       max-width: 75px;
       height: auto;
       max-height: 75px;
     }
-
-    @include mixins.planet-sizes($planet-sizes-mobile);
   }
 }
 
-.planet-container {
-  .planet-desc-container {
-    .planet-desc {
+.planet-container
+{
+  .planet-desc-container
+  {
+    .planet-desc
+    {
+      font: 11px/22px Spartan, Arial, Helvetica;
       line-height: 25px;
+
       text-align: center;
       letter-spacing: 0;
-      font: 11px/22px Spartan, Arial, Helvetica;
     }
 
-    .source-container {
+    .source-container
+    {
+      font: 12px/25px Spartan, Arial, Helvetica;
+
       display: flex;
       justify-content: center;
+
       margin: 2rem 0;
-      font: 12px/25px Spartan, Arial, Helvetica;
+
       color: $color-grey-light;
 
-      .source-title {
-        margin: 0 0.5em 0 0;
+      .source-title
+      {
+        margin: 0 .5em 0 0;
       }
 
-      a {
-        display: flex;
+      a
+      {
         font-weight: 700;
+
+        display: flex;
+
         color: $color-grey-light;
 
-        .source-icon {
+        .source-icon
+        {
           align-self: center;
-          margin: 0 0 0 0.75em;
+
+          margin: 0 0 0 .75em;
         }
       }
     }
   }
 }
 
-.planet-sections-btn-panel {
+.planet-sections-btn-panel
+{
   display: none;
 }
 
-.planet-sections-btn-panel {
+.planet-sections-btn-panel
+{
   @include mixins.planet-sections-btn-panel-selected();
 }
 
-.planet-stats {
+.planet-stats
+{
   display: flex;
   flex-direction: column;
+
   width: 100%;
 
-  .planet-stats-item {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 10px 20px;
-    margin: 0 0 20px 0;
-    min-width: 4.5em;
+  .planet-stats-item
+  {
     font: 500 20px/16px Antonio, Arial, Helvetica;
-    letter-spacing: -0.75px;
+
+    display: flex;
+    align-items: center;
+    flex-direction: row;
     flex-grow: 1;
-    border: $border;
+
+    min-width: 4.5em;
+    margin: 0 0 20px 0;
+    padding: 10px 20px;
+
+    letter-spacing: -.75px;
     letter-spacing: -1.5px;
     text-transform: uppercase;
+
+    border: $border;
   }
 
-  .planet-stats-item:last-child {
+  .planet-stats-item:last-child
+  {
     margin: 0;
   }
 
-  .planet-stats-item-title {
+  .planet-stats-item-title
+  {
     flex: 1 1 50%;
+
     letter-spacing: +1px;
     text-transform: uppercase;
+
     color: $color-grey-light;
   }
 
-  .planet-stats-item-content {
-    flex: 1 1 50%;
+  .planet-stats-item-content
+  {
     display: flex;
+    flex: 1 1 50%;
     justify-content: flex-end;
   }
 }
 
-@media only screen and (min-width: 768px) {
-  .planet-container {
+@media only screen and (min-width: 768px)
+{
+  .planet-container
+  {
     grid-column: 1 / 3;
-    .planet-pic-container {
+    .planet-pic-container
+    {
       grid-row: 1 / 2;
       grid-column: 1 / 3;
     }
 
-    .planet-desc-sections-container {
+    .planet-desc-sections-container
+    {
       display: flex;
       flex-direction: row;
+
       grid-row: 2 / 3;
 
-      .planet-desc-container {
+      .planet-desc-container
+      {
         flex: 1 1 100%;
 
-        .planet-desc {
+        .planet-desc
+        {
           font: 14px/25px Spartan, Arial, Helvetica;
+
           text-align: left;
         }
 
-        .source-container {
-          justify-content: left;
-          margin: 1.5rem 0 2rem 0;
+        .source-container
+        {
           font: 14px/25px Spartan, Arial, Helvetica;
+
+          justify-content: left;
+
+          margin: 1.5rem 0 2rem 0;
         }
       }
 
-      .planet-sections-btn-panel {
+      .planet-sections-btn-panel
+      {
+        font: 700 12px/25px Spartan, Arial, Helvetica;
+
         display: flex;
         align-self: center;
         flex-direction: column;
-        margin: 0;
-        border: none;
-        padding: 0 0 0 5em;
-        width: 100%;
-        font: 700 12px/25px Spartan, Arial, Helvetica;
 
-        .btn {
+        width: 100%;
+        margin: 0;
+        padding: 0 0 0 5em;
+
+        border: none;
+
+        .btn
+        {
           justify-content: flex-start;
+
           margin: 0 0 1em 0;
           padding: 5px 25px;
+
           letter-spacing: 2.57px;
 
-          &[data-selected='false'] {
+          &[data-selected='false']
+          {
             border: $border;
 
-            &:hover {
+            &:hover
+            {
               background-color: $color-grey-dark;
             }
           }
 
-          .btn-numbering {
+          .btn-numbering
+          {
             display: inline-block;
           }
         }
       }
     }
 
-    .planet-pic-container {
-      .planet-pic-geology {
+    .planet-pic-container
+    {
+      @include mixins.planet-sizes($planet-sizes-tablet);
+      .planet-pic-geology
+      {
         top: 250px;
+
         max-width: 100px;
         max-height: 100px;
       }
-
-      @include mixins.planet-sizes($planet-sizes-tablet);
     }
 
-    .planet-stats-container {
+    .planet-stats-container
+    {
       grid-row: 3 /4;
 
-      .planet-stats {
+      .planet-stats
+      {
         flex-direction: row;
 
-        .planet-stats-item {
+        .planet-stats-item
+        {
+          font: 500 24px/52px Antonio, Arial, Helvetica;
+
           display: block;
+
           width: 25%;
           margin: 0 1rem 0 0;
-          font: 500 24px/52px Antonio, Arial, Helvetica;
-          letter-spacing: -0.9px;
+
+          letter-spacing: -.9px;
         }
 
-        .planet-stats-item:last-child {
+        .planet-stats-item:last-child
+        {
           margin: 0;
         }
 
-        .planet-stats-item-content {
+        .planet-stats-item-content
+        {
           display: block;
         }
       }
@@ -204,48 +268,62 @@
   }
 }
 
-@media only screen and (min-width: 1200px) {
-  .planet-container {
+@media only screen and (min-width: 1200px)
+{
+  .planet-container
+  {
     display: grid;
 
-    .planet-pic-container {
+    .planet-pic-container
+    {
       grid-row: 1 / 3;
       grid-column: 1 / 2;
+      @include mixins.planet-sizes($planet-sizes-desktop);
 
-      .planet-pic-geology {
+      .planet-pic-geology
+      {
         top: 460px;
+
         max-width: 150px;
         max-height: 150px;
       }
-
-      @include mixins.planet-sizes($planet-sizes-desktop);
     }
 
-    .planet-desc-sections-container {
+    .planet-desc-sections-container
+    {
       flex-direction: column;
+
       grid-row: 1 / 2;
       grid-column: 2 / 3;
 
-      .planet-sections-btn-panel {
+      .planet-sections-btn-panel
+      {
         padding: 0;
       }
     }
-    .planet-stats-container {
-      grid-column: 1 / 3;
+    .planet-stats-container
+    {
       margin: 2rem 0 0 0;
 
-      .planet-stats-item {
+      grid-column: 1 / 3;
+
+      .planet-stats-item
+      {
         flex-direction: row;
-        padding: 20px;
+
         margin: 0 2rem 0 0;
+        padding: 20px;
+
         letter-spacing: -1.5px;
 
-        .planet-stats-item-content {
+        .planet-stats-item-content
+        {
           font: 500 40px/52px Antonio, Arial, Helvetica;
         }
       }
 
-      .planet-stats-item:last-child {
+      .planet-stats-item:last-child
+      {
         margin: 0;
       }
     }

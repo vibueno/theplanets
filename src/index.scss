@@ -1,44 +1,59 @@
 @use './variables.scss' as *;
 
-* {
+*
+{
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-body {
-  background: $color-blue-dark url('./assets/img/background-stars.svg');
+body
+{
   font: 11px/22px Spartan, Arial, Helvetica;
+
   color: $color-white;
+  background: $color-blue-dark url('./assets/img/background-stars.svg');
 }
 
-h1 {
+h1
+{
   font: 500 40px/103px Antonio, Arial, Helvetica;
+
   text-transform: uppercase;
 }
 
-h2 {
+h2
+{
   font: 500 40px/52px Antonio, Arial, Helvetica;
+
   letter-spacing: -1.5px;
 }
 
-h3 {
+h3
+{
   font: 700 12px/25px Spartan, Arial, Helvetica;
+
   letter-spacing: +2.6px;
 }
 
-h4 {
+h4
+{
   font: 700 8px/16px Spartan, Arial, Helvetica;
-  letter-spacing: 0.73px;
+
+  letter-spacing: .73px;
 }
 
-@media only screen and (min-width: 768px) {
-  h1 {
+@media only screen and (min-width: 768px)
+{
+  h1
+  {
     text-align: left;
   }
 
-  h4 {
+  h4
+  {
     font: 700 11px/25px Spartan, Arial, Helvetica;
+
     letter-spacing: 1px;
   }
 }

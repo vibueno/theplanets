@@ -1,30 +1,43 @@
 @use 'SRC/variables.scss' as *;
 
-@mixin menu-item-bullet-point-color() {
-  @each $planet-name, $planet-color in $planet-colors {
-    &.#{$planet-name} .menu-item-bullet-point {
+@mixin menu-item-bullet-point-color()
+{
+  @each $planet-name, $planet-color in $planet-colors
+  {
+    &.#{$planet-name} .menu-item-bullet-point
+    {
       background-color: $planet-color;
     }
   }
 }
 
-@mixin menu-item-border-color() {
-  @each $planet-name, $planet-color in $planet-colors {
-    &.#{$planet-name}:hover::before {
+@mixin menu-item-border-color()
+{
+  @each $planet-name, $planet-color in $planet-colors
+  {
+    &.#{$planet-name}:hover::before
+    {
       background-color: $planet-color;
     }
   }
 }
 
-@mixin planet-sections-menu-selected() {
-  @each $planet-name, $planet-color in $planet-colors {
-    .btn-#{$planet-name} {
-      &[data-selected='true'] {
-        &::after {
+@mixin planet-sections-menu-selected()
+{
+  @each $planet-name, $planet-color in $planet-colors
+  {
+    .btn-#{$planet-name}
+    {
+      &[data-selected='true']
+      {
+        &::after
+        {
           transform: scaleX(1);
+
           background-color: $planet-color;
         }
-        .btn-caption {
+        .btn-caption
+        {
           color: $color-grey-light;
         }
       }
@@ -32,19 +45,27 @@
   }
 }
 
-@mixin planet-sections-btn-panel-selected() {
-  @each $planet-name, $planet-color in $planet-colors {
-    .btn-#{$planet-name} {
-      &[data-selected='true'] {
+@mixin planet-sections-btn-panel-selected()
+{
+  @each $planet-name, $planet-color in $planet-colors
+  {
+    .btn-#{$planet-name}
+    {
+      &[data-selected='true']
+      {
         border: 1px solid $planet-color;
         background-color: $planet-color;
       }
     }
   }
-  @each $planet-name, $planet-color in $planet-numbering-selected {
-    .btn-#{$planet-name} {
-      &[data-selected='true'] {
-        .btn-numbering {
+  @each $planet-name, $planet-color in $planet-numbering-selected
+  {
+    .btn-#{$planet-name}
+    {
+      &[data-selected='true']
+      {
+        .btn-numbering
+        {
           color: $planet-color;
         }
       }
@@ -52,18 +73,24 @@
   }
 }
 
-@mixin planet-sizes($planet-sizes) {
-  @each $planet-name, $planet-size in $planet-sizes {
-    .planet-pic-#{$planet-name} {
+@mixin planet-sizes($planet-sizes)
+{
+  @each $planet-name, $planet-size in $planet-sizes
+  {
+    .planet-pic-#{$planet-name}
+    {
       max-width: $planet-size;
       max-height: $planet-size;
     }
   }
 }
 
-@mixin menu-animation($base-delay, $delay-increment) {
-  @for $i from 1 through 8 {
-    li:nth-of-type(#{$i}) {
+@mixin menu-animation($base-delay, $delay-increment)
+{
+  @for $i from 1 through 8
+  {
+    li:nth-of-type(#{$i})
+    {
       transition-delay: $base-delay + ($i - 1) * $delay-increment;
     }
   }
