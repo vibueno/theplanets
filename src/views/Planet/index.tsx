@@ -1,4 +1,6 @@
 import React, { useState, MouseEvent } from 'react';
+import { useSelector } from 'react-redux';
+import { selectors } from 'REDUX/appStateSlice';
 
 import PlanetPic from 'COMPONENTS/planet/PlanetPic';
 import PlanetDesc from 'COMPONENTS/planet/PlanetDesc';
@@ -12,19 +14,15 @@ import { getPlanetData } from 'SRC/utils';
 import './index.scss';
 
 type PlanetProps = {
-  currentPlanetKey: string;
-  currentSectionKey: string;
   sectionMenuClickHandler: (
     e: React.MouseEvent<HTMLButtonElement>,
     ref: React.RefObject<HTMLButtonElement>
   ) => void;
 };
 
-const Planet = ({
-  currentPlanetKey,
-  currentSectionKey,
-  sectionMenuClickHandler
-}: PlanetProps) => {
+const Planet = ({ sectionMenuClickHandler }: PlanetProps) => {
+  const currentPlanetKey = useSelector(selectors.getCurrentPlanetKey);
+  const currentSectionKey = useSelector(selectors.getCurrentSectionKey);
   const currentPlanetName = PLANETS[currentPlanetKey].NAME;
   const currentSectionName = SECTIONS[currentSectionKey].NAME;
 

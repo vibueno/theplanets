@@ -1,7 +1,12 @@
 import React, { useState, useEffect, MouseEvent } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { setIsMenuOpen, setIsTransitionDone } from 'REDUX/appStateSlice';
+import {
+  setCurrentPlanetKey,
+  setCurrentSectionKey,
+  setIsMenuOpen,
+  setIsTransitionDone
+} from 'REDUX/appStateSlice';
 import { selectors } from 'REDUX/appStateSlice';
 
 import Header from '../Header';
@@ -15,31 +20,28 @@ import { getPlanetData } from 'SRC/utils';
 import './index.scss';
 
 const MainPage = () => {
-  const [currentPlanetKey, setCurrentPlanetKey] = useState(PLANETS.MERCURY.KEY);
-  const [currentSectionKey, setCurrentSectionKey] = useState(
-    SECTIONS.OVERVIEW.KEY
-  );
+  const currentPlanetKey = useSelector(selectors.getCurrentPlanetKey);
+  const currentSectionKey = useSelector(selectors.getCurrentSectionKey);
+  const isMenuOpen = useSelector(selectors.getIsMenuOpen);
+  const isTransitionDone = useSelector(selectors.getIsTransitionDone);
 
   const [scrollPosBeforeMenu, setScrollPosBeforeMenu] = useState(0);
 
   const dispatch = useDispatch();
 
-  const isMenuOpen = useSelector(selectors.getIsMenuOpen);
-  const isTransitionDone = useSelector(selectors.getIsTransitionDone);
-
   const sectionMenuClickHandler = (
     e: React.MouseEvent<HTMLButtonElement>,
     ref: React.RefObject<HTMLButtonElement>
   ): void => {
-    setCurrentSectionKey(ref.current?.id as string);
+    dispatch(setCurrentSectionKey(ref.current?.id as string));
   };
 
   const menuClickHandler = (
     e: React.MouseEvent<HTMLLIElement>,
     ref: React.RefObject<HTMLLIElement>
   ): void => {
-    setCurrentPlanetKey(ref.current?.id as string);
-    setCurrentSectionKey(SECTIONS.OVERVIEW.KEY);
+    dispatch(setCurrentPlanetKey(ref.current?.id as string));
+    dispatch(setCurrentSectionKey(SECTIONS.OVERVIEW.KEY));
     dispatch(setIsMenuOpen(false));
   };
 
@@ -103,19 +105,13 @@ const MainPage = () => {
           menuClickHandler={menuClickHandler}
           hamburgerClickHandler={hamburgerClickHandler}
           sectionMenuClickHandler={sectionMenuClickHandler}
-          currentPlanetKey={currentPlanetKey}
-          currentSectionKey={currentSectionKey}
         />
         {currentPlanetKey && currentSectionKey && (
           <main
             data-menu-open={isMenuOpen}
             data-is-transition-done={isTransitionDone}
           >
-            <Planet
-              currentPlanetKey={currentPlanetKey}
-              currentSectionKey={currentSectionKey}
-              sectionMenuClickHandler={sectionMenuClickHandler}
-            />
+            <Planet sectionMenuClickHandler={sectionMenuClickHandler} />
           </main>
         )}
       </div>

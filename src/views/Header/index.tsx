@@ -9,8 +9,6 @@ import { APP_TITLE, PLANETS } from 'SRC/constants';
 import './index.scss';
 
 type HeaderProps = {
-  currentPlanetKey: string;
-  currentSectionKey: string;
   menuClickHandler: (
     e: React.MouseEvent<HTMLLIElement>,
     ref: React.RefObject<HTMLLIElement>
@@ -23,12 +21,12 @@ type HeaderProps = {
 };
 
 const Header = ({
-  currentPlanetKey,
-  currentSectionKey,
   hamburgerClickHandler,
   menuClickHandler,
   sectionMenuClickHandler
 }: HeaderProps) => {
+  const currentPlanetKey = useSelector(selectors.getCurrentPlanetKey);
+  const currentSectionKey = useSelector(selectors.getCurrentSectionKey);
   const isMenuOpen = useSelector(selectors.getIsMenuOpen);
   const isTransitionDone = useSelector(selectors.getIsTransitionDone);
 
