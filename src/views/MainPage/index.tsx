@@ -43,12 +43,6 @@ const MainPage = () => {
     dispatch(setIsMenuOpen(false));
   };
 
-  const hamburgerClickHandler = () => {
-    if (isTransitionDone) {
-      dispatch(setIsMenuOpen(!isMenuOpen));
-    }
-  };
-
   const onResizeHandler = () => {
     if (isTransitionDone) {
       dispatch(setIsMenuOpen(false));
@@ -98,7 +92,6 @@ const MainPage = () => {
       <div className="layout">
         <Header
           menuClickHandler={menuClickHandler}
-          hamburgerClickHandler={hamburgerClickHandler}
           sectionMenuClickHandler={sectionMenuClickHandler}
         />
         {currentPlanetKey && currentSectionKey && (
