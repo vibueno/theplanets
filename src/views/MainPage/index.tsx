@@ -25,8 +25,6 @@ const MainPage = () => {
   const isMenuOpen = useSelector(selectors.getIsMenuOpen);
   const isTransitionDone = useSelector(selectors.getIsTransitionDone);
 
-  const [scrollPosBeforeMenu, setScrollPosBeforeMenu] = useState(0);
-
   const dispatch = useDispatch();
 
   const sectionMenuClickHandler = (
@@ -84,11 +82,8 @@ const MainPage = () => {
 
   useEffect(() => {
     if (isMenuOpen) {
-      setScrollPosBeforeMenu(window.pageYOffset);
-      window.scrollTo(0, 0);
       document.body.style.overflow = 'hidden';
     } else {
-      window.scrollTo(0, scrollPosBeforeMenu);
       document.body.style.overflow = 'auto';
     }
   }, [isMenuOpen]);
