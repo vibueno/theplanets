@@ -43,14 +43,6 @@ const MainPage = () => {
     dispatch(setIsMenuOpen(false));
   };
 
-  const onResizeHandler = () => {
-    if (isTransitionDone) {
-      dispatch(setIsMenuOpen(false));
-    }
-  };
-
-  window.addEventListener('resize', onResizeHandler);
-
   useEffect(() => {
     let firstMenuItem: HTMLLIElement = document.querySelector('#MERCURY')!;
     let lastMenuItem: HTMLLIElement = document.querySelector('#NEPTUNE')!;
@@ -81,6 +73,18 @@ const MainPage = () => {
       document.body.style.overflow = 'auto';
     }
   }, [isMenuOpen]);
+
+  useEffect(() => {
+    const onResizeHandler = () => {
+      if (isTransitionDone) {
+        dispatch(setIsMenuOpen(false));
+      }
+    };
+
+    window.addEventListener('resize', onResizeHandler);
+
+    return () => window.removeEventListener('resize', onResizeHandler);
+  }, []);
 
   return (
     <>
