@@ -11,7 +11,7 @@ nav
 
   background: $color-blue-dark url('ASSETS/img/background-stars.svg');
 
-  grid-row: 1;
+  grid-row: 1 /2;
   grid-template-rows: 4rem auto auto;
 
   .app-title

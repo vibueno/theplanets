@@ -7,7 +7,7 @@ import './index.scss';
 
 const App = () => (
   <Provider store={store}>
-    <MainPage />;
+    <MainPage />
   </Provider>
 );
 export default App;
