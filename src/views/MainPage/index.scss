@@ -18,6 +18,8 @@ h1
 
   display: grid;
 
+  min-height: 100%;
+
   grid-template-rows: repeat(2, auto);
   grid-template-columns: 1fr;
 }
@@ -128,8 +130,6 @@ h1
   .layout
   {
     display: grid;
-
-    height: 100%;
 
     grid-template-rows: 5rem auto;
     grid-template-columns: repeat(2, 1fr);
