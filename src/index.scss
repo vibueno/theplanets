@@ -29,7 +29,7 @@ body
 
 h1
 {
-  font: 500 40px/103px Antonio, Arial, Helvetica;
+  font: 500 48px/103px Antonio, Arial, Helvetica;
 
   text-transform: uppercase;
 }
@@ -67,5 +67,15 @@ h4
     font: 700 11px/25px Spartan, Arial, Helvetica;
 
     letter-spacing: 1px;
+  }
+}
+
+@media only screen and (min-width: 1200px)
+{
+  h1
+  {
+    font: 500 80px/103px Antonio, Arial, Helvetica;
+
+    margin: 2rem 0 1rem 0;
   }
 }
