@@ -64,12 +64,7 @@ h1
 {
   main
   {
-    display: grid;
-
     margin: 3rem 2rem 1.5rem 2rem;
-
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, auto);
   }
 }
 
@@ -114,8 +109,6 @@ h1
 
   main
   {
-    display: grid;
-
     margin: 3rem 7.5rem 3rem 7.5rem;
 
     grid-row: 2 / 3;
