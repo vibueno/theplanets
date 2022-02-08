@@ -147,7 +147,7 @@
   .planet-container
   {
     grid-column: 1 / 3;
-    grid-template-rows: 35em 2.25fr 1fr;
+    grid-template-rows: 1fr 23rem auto;
 
     .planet-pic-container
     {
