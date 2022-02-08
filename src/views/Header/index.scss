@@ -6,13 +6,9 @@ nav
   z-index: 2;
   top: 0;
 
-  display: grid;
   align-items: stretch;
 
   background: $color-blue-dark url('ASSETS/img/background-stars.svg');
-
-  grid-row: 1 /2;
-  grid-template-rows: 4rem auto auto;
 
   .app-title
   {
@@ -52,7 +48,6 @@ nav
     border-bottom: $border;
 
     grid-row: 2 / 3;
-    grid-column: 1 / 1;
     grid-template-columns: repeat(3, auto);
 
     .btn
@@ -146,7 +141,6 @@ nav
 
     .menu
     {
-      display: fixed;
       justify-content: center;
     }
 
