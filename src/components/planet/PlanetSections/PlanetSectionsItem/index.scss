@@ -6,7 +6,9 @@
   font: 700 9px/22px Spartan, Arial, Helvetica;
 
   display: flex;
+  align-items: center;
 
+  height: 48px;
   margin: 0;
 
   cursor: pointer;
@@ -64,6 +66,8 @@
   {
     .btn
     {
+      font: 700 12px/22px Spartan, Arial, Helvetica;
+
       .btn-caption
       {
         display: none;
