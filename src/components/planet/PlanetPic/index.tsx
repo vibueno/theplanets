@@ -17,7 +17,7 @@ const PlanetPic = ({
 }: PlanetPicProps) => {
   const planetName = PLANETS[currentPlanetKey].NAME;
   return (
-    <>
+    <div className={`planet-pic-container-${planetName}`}>
       <img
         className={className}
         src={require(`ASSETS/img/${PLANETS[currentPlanetKey].PICS[currentSectionKey]}`)}
@@ -30,7 +30,7 @@ const PlanetPic = ({
           alt={planetName}
         />
       )}
-    </>
+    </div>
   );
 };
 

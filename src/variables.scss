@@ -27,36 +27,36 @@ $planet-numbering-selected: (
 );
 
 $planet-sizes-desktop: (
-  mercury: 20em,
-  venus: 30em,
-  earth: 33em,
-  mars: 25em,
-  jupiter: 45em,
-  saturn: 47em,
-  uranus: 35em,
-  neptune: 37em
+  mercury: 290px,
+  venus: 400px,
+  earth: 450px,
+  mars: 336px,
+  jupiter: 582px,
+  saturn: 666px,
+  uranus: 458px,
+  neptune: 450px
 );
 
 $planet-sizes-tablet: (
-  mercury: 15em,
-  venus: 16em,
-  earth: 18em,
-  mars: 13em,
-  jupiter: 25em,
-  saturn: 30em,
-  uranus: 17em,
-  neptune: 16em
+  mercury: 184px,
+  venus: 253px,
+  earth: 285px,
+  mars: 213px,
+  jupiter: 369px,
+  saturn: 422px,
+  uranus: 290px,
+  neptune: 285px
 );
 
 $planet-sizes-mobile: (
-  mercury: 8em,
-  venus: 12em,
-  earth: 14em,
-  mars: 9em,
-  jupiter: 15em,
-  saturn: 20em,
-  uranus: 13em,
-  neptune: 12em
+  mercury: 111px,
+  venus: 154px,
+  earth: 173px,
+  mars: 129px,
+  jupiter: 224px,
+  saturn: 256px,
+  uranus: 176px,
+  neptune: 173px
 );
 
 $border: 1px solid $color-grey-border;

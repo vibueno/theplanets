@@ -28,11 +28,11 @@ const Planet = ({ sectionMenuClickHandler }: PlanetProps) => {
 
   return (
     <div className="planet-container">
-      <div className="planet-pic-container">
+      <div className="planet-pic-section-container">
         <PlanetPic
           currentPlanetKey={currentPlanetKey}
           currentSectionKey={currentSectionKey}
-          className={`planet-pic-${currentPlanetName}`}
+          className={`planet-pic`}
           classNameGeology={'planet-pic-geology'}
         />
       </div>

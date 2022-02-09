@@ -77,10 +77,9 @@
 {
   @each $planet-name, $planet-size in $planet-sizes
   {
-    .planet-pic-#{$planet-name}
+    .planet-pic-container-#{$planet-name}
     {
-      max-width: $planet-size;
-      max-height: $planet-size;
+      max-width: min(min($planet-size, 40vw), 70vh);
     }
   }
 }
