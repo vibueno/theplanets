@@ -79,6 +79,8 @@
   {
     .planet-pic-container-#{$planet-name}
     {
+      position: relative;
+
       max-width: min(min($planet-size, 40vw), 70vh);
     }
   }
