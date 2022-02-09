@@ -215,6 +215,8 @@
 
           &[data-selected='false']
           {
+            transition: background-color .3s;
+
             border: $border;
 
             &:hover
