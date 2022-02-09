@@ -171,6 +171,9 @@
 
       .planet-desc-container
       {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         .planet-desc
         {
           font: 14px/25px Spartan, Arial, Helvetica;
