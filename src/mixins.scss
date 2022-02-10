@@ -86,7 +86,12 @@
     {
       position: relative;
 
-      max-width: min(min($planet-size, 40vw), 70vh);
+      display: flex;
+      justify-content: center;
+
+      width: auto;
+      height: 100%;
+      max-height: min($planet-size, 60vh);
     }
   }
 }
