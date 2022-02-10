@@ -28,7 +28,7 @@
     .planet-pic-geology
     {
       position: absolute;
-      top: 70%;
+      top: 65%;
       left: calc(50% - 35px);
 
       width: 70px;
@@ -38,10 +38,16 @@
 
   .planet-desc-container
   {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
     .planet-desc
     {
-      font: 11px/22px Spartan, Arial, Helvetica;
+      font: 12px/22px Spartan, Arial, Helvetica;
       line-height: 25px;
+
+      max-width: 450px;
 
       text-align: center;
       letter-spacing: 0;
@@ -165,18 +171,24 @@
     {
       display: grid;
 
+      margin: 0 0 2rem 0;
+
       grid-template-columns: repeat(2, 1fr);
       grid-row: 2 / 3;
       grid-column: 1 / 3;
 
       .planet-desc-container
       {
-        display: flex;
+        align-items: flex-start;
         flex-direction: column;
         justify-content: center;
+
         .planet-desc
         {
           font: 14px/25px Spartan, Arial, Helvetica;
+
+          max-width: 100%;
+          min-height: 11em;
 
           text-align: left;
         }
@@ -187,7 +199,7 @@
 
           justify-content: left;
 
-          margin: 1.5rem 0 2rem 0;
+          margin: .5em 0 0 0;
         }
       }
 
@@ -202,7 +214,7 @@
         width: 100%;
         height: 100%;
         margin: 0;
-        padding: 0 0 0 5em;
+        padding: 0 0 0 4em;
 
         border: none;
 
@@ -314,6 +326,21 @@
       grid-template-columns: auto;
       grid-row: 1 / 2;
       grid-column: 2 / 3;
+
+      .planet-desc-container
+      {
+        justify-content: flex-start;
+      }
+
+      .source-container
+      {
+        font: 14px/25px Spartan, Arial, Helvetica;
+
+        justify-content: left;
+
+        margin: 1.5rem 0 2rem 0;
+      }
+
       .planet-sections-btn-panel
       {
         padding: 0;
