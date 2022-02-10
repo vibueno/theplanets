@@ -11,13 +11,18 @@ import './index.scss';
 
 type PlanetMenuProps = {
   className: string;
+  currentPlanetKey: string;
   clickHandler: (
     e: React.MouseEvent<HTMLLIElement>,
     ref: React.RefObject<HTMLLIElement>
   ) => void;
 };
 
-const Menu = ({ className, clickHandler }: PlanetMenuProps) => {
+const Menu = ({
+  className,
+  currentPlanetKey,
+  clickHandler
+}: PlanetMenuProps) => {
   const isMenuOpen = useSelector(selectors.getIsMenuOpen);
   return (
     <ul data-menu-open={isMenuOpen} className={`menu ${className}`}>
@@ -26,6 +31,7 @@ const Menu = ({ className, clickHandler }: PlanetMenuProps) => {
           key={PLANETS[planetKey].NAME}
           clickHandler={clickHandler}
           planetKey={planetKey}
+          currentPlanetKey={currentPlanetKey}
           planetName={PLANETS[planetKey].NAME}
         />
       ))}

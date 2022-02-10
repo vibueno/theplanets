@@ -92,7 +92,11 @@ const MainPage = () => {
         rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Antonio:wght@500&family=Spartan:wght@400;700&display=swap"
       />
-      <Menu className="outside-header" clickHandler={menuClickHandler} />
+      <Menu
+        className="outside-header"
+        currentPlanetKey={currentPlanetKey}
+        clickHandler={menuClickHandler}
+      />
       <div className="layout">
         <Header
           menuClickHandler={menuClickHandler}

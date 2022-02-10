@@ -45,7 +45,11 @@ const Header = ({ menuClickHandler, sectionMenuClickHandler }: HeaderProps) => {
       />
 
       <>
-        <Menu className="inside-header" clickHandler={menuClickHandler} />
+        <Menu
+          className="inside-header"
+          currentPlanetKey={currentPlanetKey}
+          clickHandler={menuClickHandler}
+        />
 
         <PlanetSections
           currentPlanetKey={currentPlanetKey}

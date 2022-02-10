@@ -15,7 +15,12 @@
 {
   @each $planet-name, $planet-color in $planet-colors
   {
-    &.#{$planet-name}:hover::after
+    &.#{$planet-name}[data-selected='false']:hover::after
+    {
+      background-color: $planet-color;
+    }
+
+    &.#{$planet-name}[data-selected='true']::before
     {
       background-color: $planet-color;
     }
