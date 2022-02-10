@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useLayoutEffect } from 'react';
 
 import { SECTIONS, PLANETS } from 'SRC/constants';
 
@@ -15,9 +15,19 @@ const PlanetPic = ({
   className,
   classNameGeology
 }: PlanetPicProps) => {
-  const planetName = PLANETS[currentPlanetKey].NAME;
+  const [planetName, setPlanetName] = useState<string>(
+    PLANETS[currentPlanetKey].NAME
+  );
+
+  useLayoutEffect(() => {
+    setPlanetName(PLANETS[currentPlanetKey].NAME);
+  }, [currentPlanetKey]);
+
   return (
-    <div className={`planet-pic-container-${planetName}`}>
+    <div
+      key={`planet-pic-container-${currentPlanetKey}-${currentSectionKey}`}
+      className={`planet-pic-container-${planetName}`}
+    >
       <img
         className={className}
         src={require(`ASSETS/img/${PLANETS[currentPlanetKey].PICS[currentSectionKey]}`)}

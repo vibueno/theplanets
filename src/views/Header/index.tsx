@@ -44,20 +44,18 @@ const Header = ({ menuClickHandler, sectionMenuClickHandler }: HeaderProps) => {
         onClick={hamburgerClickHandler}
       />
 
-      <>
-        <Menu
-          className="inside-header"
-          currentPlanetKey={currentPlanetKey}
-          clickHandler={menuClickHandler}
-        />
+      <Menu
+        className="inside-header"
+        currentPlanetKey={currentPlanetKey}
+        clickHandler={menuClickHandler}
+      />
 
-        <PlanetSections
-          currentPlanetKey={currentPlanetKey}
-          currentSectionKey={currentSectionKey}
-          clickHandler={sectionMenuClickHandler}
-          className="planet-sections-menu"
-        />
-      </>
+      <PlanetSections
+        currentPlanetKey={currentPlanetKey}
+        currentSectionKey={currentSectionKey}
+        clickHandler={sectionMenuClickHandler}
+        className="planet-sections-menu"
+      />
     </nav>
   );
 };
