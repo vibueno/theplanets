@@ -24,7 +24,7 @@ h1
   grid-template-columns: 1fr;
 }
 
-@media only screen and (max-width: 768px)
+@media only screen and (max-width: 767px)
 {
   main
   {
@@ -62,11 +62,25 @@ h1
   }
 }
 
+@media only screen and (min-width: 768px)
+{
+  .layout
+  {
+    grid-template-rows: repeat(2, auto);
+  }
+}
+
+
 @media only screen and (min-width: 1200px)
 {
   body
   {
     font: 14px/25px Spartan, Arial, Helvetica;
+  }
+
+  .layout
+  {
+    grid-template-rows: 5rem auto;
   }
 
   nav
@@ -115,10 +129,5 @@ h1
   h4
   {
     font: 700 11px/25px Spartan, Arial, Helvetica;
-  }
-
-  .layout
-  {
-    grid-template-rows: 5rem auto;
   }
 }
