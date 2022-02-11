@@ -24,22 +24,21 @@ const PlanetPic = ({
   }, [currentPlanetKey]);
 
   return (
-    <div
-      key={`planet-pic-container-${currentPlanetKey}-${currentSectionKey}`}
-      className={`planet-pic-container-${planetName}`}
-    >
+    <div className={`planet-pic-container-${planetName}`}>
       <img
+        key={`planet-pic-${currentPlanetKey}-${currentSectionKey}`}
         className={className}
         src={require(`ASSETS/img/${PLANETS[currentPlanetKey].PICS[currentSectionKey]}`)}
         alt={planetName}
       />
-      {currentSectionKey === SECTIONS.GEOLOGY.KEY && (
-        <img
-          className={classNameGeology}
-          src={PLANETS[currentPlanetKey].PICS.GEOLOGY_ZOOM}
-          alt={planetName}
-        />
-      )}
+
+      <img
+        className={`${classNameGeology} ${
+          currentSectionKey === SECTIONS.GEOLOGY.KEY ? 'show' : 'hide'
+        }`}
+        src={PLANETS[currentPlanetKey].PICS.GEOLOGY_ZOOM}
+        alt={planetName}
+      />
     </div>
   );
 };
