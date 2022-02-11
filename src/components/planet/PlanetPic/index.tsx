@@ -26,7 +26,7 @@ const PlanetPic = ({
   return (
     <div className={`planet-pic-container-${planetName}`}>
       <img
-        key={`planet-pic-${currentPlanetKey}-${currentSectionKey}`}
+        key={`planet-pic-${currentPlanetKey}`}
         className={className}
         src={require(`ASSETS/img/${PLANETS[currentPlanetKey].PICS[currentSectionKey]}`)}
         alt={planetName}
