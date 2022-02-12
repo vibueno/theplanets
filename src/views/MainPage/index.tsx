@@ -38,6 +38,9 @@ const MainPage = () => {
     e: React.MouseEvent<HTMLLIElement>,
     ref: React.RefObject<HTMLLIElement>
   ): void => {
+    if (currentPlanetKey !== ref.current?.id) {
+      window.scroll(0, 0);
+    }
     dispatch(setCurrentPlanetKey(ref.current?.id as string));
     dispatch(setCurrentSectionKey(SECTIONS.OVERVIEW.KEY));
     dispatch(setIsMenuOpen(false));
