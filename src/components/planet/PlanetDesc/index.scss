@@ -1,0 +1,80 @@
+@use 'SRC/variables.scss' as *;
+
+.planet-desc-container
+{
+  display: flex;
+
+  .planet-desc
+  {
+    min-height: 10rem;
+  }    .source-container
+  {
+    font: 12px/25px Spartan, Arial, Helvetica;
+
+    display: flex;
+    justify-content: center;
+
+    color: $color-grey-light;
+
+    .source-title
+    {
+      margin: 0 .5em 0 0;
+    }
+
+    a
+    {
+      font-weight: 700;
+
+      display: flex;
+
+      color: $color-grey-light;
+
+      .source-icon
+      {
+        align-self: center;
+
+        margin: 0 0 0 .75em;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 767px)
+{
+  .source-container
+  {
+    margin: 1rem 0 0 0;
+  }
+
+  .planet-desc
+  {
+    font: 13px/25px Spartan, Arial, Helvetica;
+
+    text-align: center;
+  }
+}
+
+@media only screen and (min-width: 768px)
+{
+  .planet-desc
+  {
+    font: 14px/25px Spartan, Arial, Helvetica;
+
+    text-align: left;
+  }
+
+  .source-container
+  {
+    font: 14px/25px Spartan, Arial, Helvetica;
+
+    justify-content: left;
+  }
+}
+
+@media only screen and (min-width: 1200px)
+{
+  .source-container
+  {
+    font: 14px/25px Spartan, Arial, Helvetica;
+  }
+}

@@ -1,0 +1,80 @@
+@use 'SRC/variables.scss' as *;
+@use 'SRC/mixins.scss' as mixins;
+
+@keyframes toggleIn
+{
+  0%
+  {
+    opacity: 0;
+  }
+  100%
+  {
+    opacity: 1;
+  }
+}
+
+.planet-pic
+{
+  max-width: 100%;
+  max-height: 100%;
+
+  animation-name: toggleIn;
+  animation-duration: 1s;
+}
+
+.planet-pic-geology
+{
+  position: absolute;
+  top: 65%;
+
+  height: auto;
+
+  &.show
+  {
+    transition: transform .75s ease-in;
+    transform: translateY(0px);
+  }
+
+  &.hide
+  {
+    transform: translateY(-1000px);
+  }
+}
+
+
+@media only screen and (max-width: 767px)
+{
+  .planet-pic-geology
+  {
+    width: 70px;
+  }
+}
+
+@media only screen and (min-width: 768px)
+{
+  .planet-pic-geology
+  {
+    width: 100px;
+  }
+}
+
+@media only screen and (max-width: 767px)
+{
+  @include mixins.planet-sizes($planet-sizes-mobile);
+}
+
+
+@media only screen and (min-width: 768px)
+{
+  @include mixins.planet-sizes($planet-sizes-tablet);
+}
+
+@media only screen and (min-width: 1200px) and (min-height:1000px)
+{
+  @include mixins.planet-sizes($planet-sizes-desktop);
+
+  .planet-pic-geology
+  {
+    width: 162px;
+  }
+}

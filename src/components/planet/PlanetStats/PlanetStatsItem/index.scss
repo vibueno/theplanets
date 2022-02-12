@@ -1,0 +1,88 @@
+@use 'SRC/variables.scss' as *;
+
+.planet-stats-item
+{
+  font: 500 20px/16px Antonio, Arial, Helvetica;
+
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  flex-grow: 1;
+
+  min-width: 4.5em;
+  max-height: 48px;
+  margin: 0 0 20px 0;
+  padding: 10px 15px;
+
+  letter-spacing: -.75px;
+  letter-spacing: -1.5px;
+  text-transform: uppercase;
+
+  border: $border;
+}
+
+.planet-stats-item:last-child
+{
+  margin: 0;
+}
+
+.planet-stats-item-title
+{
+  flex: 1 1 50%;
+
+  letter-spacing: +1px;
+  text-transform: uppercase;
+
+  color: $color-grey-light;
+}
+
+.planet-stats-item-content
+{
+  display: flex;
+  flex: 1 1 50%;
+  justify-content: flex-end;
+}
+
+@media only screen and (min-width: 768px)
+{
+  .planet-stats-item
+  {
+    font: 500 24px/52px Antonio, Arial, Helvetica;
+
+    display: block;
+
+    width: 25%;
+    max-height: 120px;
+    margin: 0 .75vw 0 0;
+
+    letter-spacing: -.9px;
+
+    &:last-child
+    {
+      margin: 0;
+    }
+  }
+
+  .planet-stats-item-content
+  {
+    display: block;
+  }
+}
+
+@media only screen and (min-width: 1200px)
+{
+  .planet-stats-item
+  {
+    flex-direction: row;
+
+    margin: 0 2rem 0 0;
+    padding: 20px;
+
+    letter-spacing: -1.5px;
+
+    .planet-stats-item-content
+    {
+      font: 500 40px/52px Antonio, Arial, Helvetica;
+    }
+  }
+}

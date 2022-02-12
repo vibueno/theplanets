@@ -1,5 +1,4 @@
 @use 'SRC/variables.scss' as *;
-@use 'SRC/mixins.scss' as mixins;
 
 .btn
 {
@@ -7,9 +6,9 @@
 
   display: flex;
   align-items: center;
+  justify-content: flex-start;
 
-  height: 48px;
-  margin: 0;
+  padding: 5px 25px;
 
   cursor: pointer;
   text-align: left;
@@ -18,21 +17,6 @@
 
   border: none;
   background-color: $color-blue-dark;
-
-  &[data-selected='false']
-  {
-    .btn-numbering
-    {
-      color: $color-grey-light;
-    }
-  }
-
-  .btn-numbering
-  {
-    display: none;
-
-    padding: 0 25px 0 0;
-  }
 
   &[data-selected='false']
   {
@@ -55,27 +39,53 @@
   }
 }
 
-.planet-sections-menu
+@media only screen and (max-width: 767px)
 {
-  @include mixins.planet-sections-menu-selected;
+  .btn-numbering
+  {
+    display: none;
+  }
 }
 
 @media only screen and (min-width: 768px)
 {
-  .planet-sections-btn-panel
+  .btn
   {
-    .btn
-    {
-      font: 700 12px/22px Spartan, Arial, Helvetica;
+    font: 700 12px/22px Spartan, Arial, Helvetica;
 
-      .btn-caption
+    height: 48px;
+    margin: 0 0 1em 0;
+    .btn-numbering
+    {
+      display: inline-block;
+
+      padding: 0 25px 0 0;
+    }
+
+    .btn-caption
+    {
+      display: none;
+    }
+
+    .btn-caption-long
+    {
+      display: inline-block;
+    }
+
+    &[data-selected='false']
+    {
+      transition: background-color .3s;
+
+      border: $border;
+
+      &:hover
       {
-        display: none;
+        background-color: $color-grey-dark;
       }
 
-      .btn-caption-long
+      .btn-numbering
       {
-        display: inline-block;
+        color: $color-grey-light;
       }
     }
   }

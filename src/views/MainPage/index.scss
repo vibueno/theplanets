@@ -44,24 +44,6 @@ h1
       opacity: 0;
     }
   }
-  nav
-  {
-    .planet-sections-menu
-    {
-      transition: opacity 1s ease-in-out .5s;
-      &[data-menu-open='false'][data-is-transition-done='true']
-      {
-        opacity: 1;
-      }
-
-      &[data-menu-open='true']
-      {
-        transition: opacity .25s ease-in-out;
-
-        opacity: 0;
-      }
-    }
-  }
 }
 
 @media only screen and (min-width: 768px)
@@ -87,38 +69,6 @@ h1
   .layout
   {
     grid-template-rows: 5rem auto;
-  }
-
-  nav
-  {
-    display: flex;
-
-    padding: 0 2rem;
-
-    grid-column: 1 / 3;
-
-    .app-title
-    {
-      align-items: center;
-      flex: 1 1 30%;
-      justify-content: flex-start;
-
-      margin: 0;
-    }
-
-    .menu
-    {
-      align-items: stretch;
-      flex: 1 1 70%;
-      justify-content: flex-end;
-
-      margin: 0;
-    }
-
-    .planet-sections-menu
-    {
-      display: none;
-    }
   }
 
   main

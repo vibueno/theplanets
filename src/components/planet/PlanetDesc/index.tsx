@@ -4,6 +4,8 @@ import { getPlanetData } from 'SRC/utils';
 
 import { ICON_SOURCE, PLANETS, SECTIONS } from 'SRC/constants';
 
+import './index.scss';
+
 type PlanetDescProps = {
   currentPlanetName: string;
   currentPlanetDesc: string;

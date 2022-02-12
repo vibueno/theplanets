@@ -2,6 +2,8 @@ import React, { useState, useLayoutEffect } from 'react';
 
 import { SECTIONS, PLANETS } from 'SRC/constants';
 
+import './index.scss';
+
 type PlanetPicProps = {
   currentPlanetKey: string;
   currentSectionKey: string;

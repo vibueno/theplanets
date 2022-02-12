@@ -1,7 +1,5 @@
 import React, { MouseEvent } from 'react';
 
-import './index.scss';
-
 type MenuItemProps = {
   planetKey: string;
   planetName: string;
