@@ -31,7 +31,7 @@
 {
   @each $planet-name, $planet-color in $planet-colors
   {
-    .btn-#{$planet-name}
+    .btn-section-#{$planet-name}
     {
       &[data-selected='true']
       {
@@ -54,7 +54,7 @@
 {
   @each $planet-name, $planet-color in $planet-colors
   {
-    .btn-#{$planet-name}
+    .btn-section-#{$planet-name}
     {
       &[data-selected='true']
       {
@@ -65,7 +65,7 @@
   }
   @each $planet-name, $planet-color in $planet-numbering-selected
   {
-    .btn-#{$planet-name}
+    .btn-section-#{$planet-name}
     {
       &[data-selected='true']
       {

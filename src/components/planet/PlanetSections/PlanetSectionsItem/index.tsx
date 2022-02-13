@@ -1,7 +1,5 @@
 import React, { MouseEventHandler } from 'react';
 
-import './index.scss';
-
 type PlanetSectionsMenuItemProps = {
   sectionKey: string;
   currentSectionKey: string;
@@ -31,7 +29,7 @@ const PlanetSectionsMenuItem = ({
   return (
     <button
       id={sectionKey}
-      className={`btn ${className}`}
+      className={`btn-section ${className}`}
       onClick={e => clickHandler(e, ref)}
       data-selected={sectionKey === currentSectionKey}
       ref={ref}

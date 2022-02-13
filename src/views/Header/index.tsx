@@ -54,7 +54,7 @@ const Header = ({ menuClickHandler, sectionMenuClickHandler }: HeaderProps) => {
         currentPlanetKey={currentPlanetKey}
         currentSectionKey={currentSectionKey}
         clickHandler={sectionMenuClickHandler}
-        className="planet-sections-menu"
+        isMenu={true}
       />
     </nav>
   );
