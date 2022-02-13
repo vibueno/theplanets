@@ -8,7 +8,7 @@ import PlanetSections from 'COMPONENTS/planet/PlanetSections';
 import Menu from 'COMPONENTS/Menu';
 import { APP_TITLE, PLANETS } from 'SRC/constants';
 
-import './index.scss';
+import styles from './index.module.scss';
 
 type HeaderProps = {
   menuClickHandler: (
@@ -37,15 +37,15 @@ const Header = ({ menuClickHandler, sectionMenuClickHandler }: HeaderProps) => {
 
   return (
     <nav data-menu-open={isMenuOpen} data-is-transition-done={isTransitionDone}>
-      <div className="app-title">{APP_TITLE}</div>
+      <div className={styles.appTitle}>{APP_TITLE}</div>
       <img
         src={require(`ASSETS/img/icon-hamburger.svg`)}
-        className="hamburger"
+        className={styles.hamburger}
         onClick={hamburgerClickHandler}
       />
 
       <Menu
-        className="inside-header"
+        isInsideHeader
         currentPlanetKey={currentPlanetKey}
         clickHandler={menuClickHandler}
       />

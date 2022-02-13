@@ -4,7 +4,7 @@ import PlanetStatsItem from './PlanetStatsItem';
 import { getPlanetData } from 'SRC/utils';
 import { PLANETS, STATS, STATS_KEYS } from 'SRC/constants';
 
-import './index.scss';
+import styles from './index.module.scss';
 
 type PlanetStatsProps = {
   currentPlanetKey: string;
@@ -12,7 +12,7 @@ type PlanetStatsProps = {
 
 const PlanetStats = ({ currentPlanetKey }: PlanetStatsProps) => (
   <>
-    <div className="planet-stats">
+    <div className={styles.planetStats}>
       {STATS_KEYS.map(statsKey => (
         <PlanetStatsItem
           key={statsKey}

@@ -1,10 +1,8 @@
 import React from 'react';
 
-import { getPlanetData } from 'SRC/utils';
-
 import { ICON_SOURCE, PLANETS, SECTIONS } from 'SRC/constants';
 
-import './index.scss';
+import styles from './index.module.scss';
 
 type PlanetDescProps = {
   currentPlanetName: string;
@@ -21,14 +19,14 @@ const PlanetDesc = ({
     <>
       <h1>{currentPlanetName}</h1>
 
-      <div className="planet-desc">{currentPlanetDesc}</div>
+      <div className={styles.planetDesc}>{currentPlanetDesc}</div>
 
-      <p className="source-container">
-        <span className="source-title">Source:</span>
+      <p className={styles.sourceContainer}>
+        <span className={styles.sourceTitle}>Source:</span>
         <a href={currentPlanetDescSource}>
           Wikipedia
           <img
-            className="source-icon"
+            className={styles.sourceIcon}
             src={require(`ASSETS/img/${ICON_SOURCE}`)}
           />
         </a>

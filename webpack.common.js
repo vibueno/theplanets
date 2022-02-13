@@ -21,11 +21,16 @@ module.exports = {
         test: /\.s[ac]ss$/i,
         use: [
           // Creates `style` nodes from JS strings
-          'style-loader',
+          { loader: 'style-loader' },
           // Translates CSS into CommonJS
-          'css-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: { localIdentName: '[local]' }
+            }
+          },
           // Compiles Sass to CSS
-          'sass-loader'
+          { loader: 'sass-loader' }
         ]
       },
       {

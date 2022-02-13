@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './index.scss';
+import styles from './index.module.scss';
 
 type PlanetStatsItemProps = {
   className?: string;
@@ -22,11 +22,11 @@ const PlanetStatsItem = ({
   title,
   titleClassName
 }: PlanetStatsItemProps) => (
-  <div className={`planet-stats-item ${className}`}>
-    <div className={`planet-stats-item-title ${titleClassName}`}>
+  <div className={`${styles.planetStatsItem} ${className}`}>
+    <div className={`${styles.planetStatsItemTitle} ${titleClassName}`}>
       <h4>{title}</h4>
     </div>
-    <div className="planet-stats-item-content">{content}</div>
+    <div className={styles.planetStatsItemContent}>{content}</div>
   </div>
 );
 

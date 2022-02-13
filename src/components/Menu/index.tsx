@@ -7,11 +7,11 @@ import MenuItem from './MenuItem';
 
 import { PLANETS, PLANET_KEYS } from 'SRC/constants';
 
-import './index.scss';
+import styles from './index.module.scss';
 
 type PlanetMenuProps = {
-  className: string;
   currentPlanetKey: string;
+  isInsideHeader: boolean;
   clickHandler: (
     e: React.MouseEvent<HTMLLIElement>,
     ref: React.RefObject<HTMLLIElement>
@@ -19,20 +19,22 @@ type PlanetMenuProps = {
 };
 
 const Menu = ({
-  className,
   currentPlanetKey,
+  isInsideHeader,
   clickHandler
 }: PlanetMenuProps) => {
   const isMenuOpen = useSelector(selectors.getIsMenuOpen);
   return (
-    <ul data-menu-open={isMenuOpen} className={`menu ${className}`}>
+    <ul className={styles.menu} data-is-inside-header={isInsideHeader}>
       {PLANET_KEYS.map(planetKey => (
         <MenuItem
           key={PLANETS[planetKey].NAME}
-          clickHandler={clickHandler}
           planetKey={planetKey}
-          currentPlanetKey={currentPlanetKey}
           planetName={PLANETS[planetKey].NAME}
+          currentPlanetKey={currentPlanetKey}
+          isMenuOpen={isMenuOpen}
+          isInsideHeader={isInsideHeader}
+          clickHandler={clickHandler}
         />
       ))}
     </ul>

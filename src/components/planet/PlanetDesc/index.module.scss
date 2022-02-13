@@ -1,69 +1,65 @@
 @use 'SRC/variables.scss' as *;
 
-.planet-desc-container
+.planetDesc
+{
+  min-height: 10rem;
+}
+
+.sourceContainer
 {
   display: flex;
+  justify-content: center;
 
-  .planet-desc
+  color: $color-grey-light;
+
+  .sourceTitle
   {
-    min-height: 10rem;
+    margin: 0 .5em 0 0;
   }
 
-  .source-container
+  a
   {
+    font-weight: 700;
+
     display: flex;
-    justify-content: center;
 
     color: $color-grey-light;
 
-    .source-title
+    .sourceIcon
     {
-      margin: 0 .5em 0 0;
-    }
+      align-self: center;
 
-    a
-    {
-      font-weight: 700;
-
-      display: flex;
-
-      color: $color-grey-light;
-
-      .source-icon
-      {
-        align-self: center;
-
-        margin: 0 0 0 .75em;
-      }
+      margin: 0 0 0 .75em;
     }
   }
 }
 
+
 @media only screen and (max-width: 767px)
 {
-  .source-container
-  {
-    margin: 1rem 0 0 0;
-  }
-
-  .planet-desc
+  .planetDesc
   {
     font: 13px/25px Spartan, Arial, Helvetica;
 
     text-align: center;
   }
+
+  .sourceContainer
+  {
+    margin: 1rem 0 0 0;
+  }
 }
 
 @media only screen and (min-width: 768px)
 {
-  .planet-desc
+  .planetDesc
   {
     font: 14px/25px Spartan, Arial, Helvetica;
 
     text-align: left;
   }
 
-  .source-container
+  .sourceContainer
   {
     font: 14px/25px Spartan, Arial, Helvetica;
 
@@ -73,7 +69,7 @@
 
 @media only screen and (min-width: 1200px)
 {
-  .source-container
+  .sourceContainer
   {
     font: 14px/25px Spartan, Arial, Helvetica;
   }

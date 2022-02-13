@@ -4,7 +4,7 @@
 {
   @each $planet-name, $planet-color in $planet-colors
   {
-    &.#{$planet-name} .menu-item-bullet-point
+    &.#{$planet-name} .menuItemBulletPoint
     {
       background-color: $planet-color;
     }
@@ -31,7 +31,7 @@
 {
   @each $planet-name, $planet-color in $planet-colors
   {
-    .btn-section-#{$planet-name}
+    &.planetSectionsBtn-#{$planet-name}
     {
       &[data-selected='true']
       {
@@ -40,10 +40,6 @@
           transform: scaleX(1);
 
           background-color: $planet-color;
-        }
-        .btn-caption
-        {
-          color: $color-grey-light;
         }
       }
     }
@@ -54,7 +50,7 @@
 {
   @each $planet-name, $planet-color in $planet-colors
   {
-    .btn-section-#{$planet-name}
+    &.planetSectionsBtn-#{$planet-name}
     {
       &[data-selected='true']
       {
@@ -65,11 +61,11 @@
   }
   @each $planet-name, $planet-color in $planet-numbering-selected
   {
-    .btn-section-#{$planet-name}
+    &.planetSectionsBtn-#{$planet-name}
     {
       &[data-selected='true']
       {
-        .btn-numbering
+        .planetSectionsBtnNumbering
         {
           color: $planet-color;
         }
@@ -82,7 +78,7 @@
 {
   @each $planet-name, $planet-size in $planet-sizes
   {
-    .planet-pic-container-#{$planet-name}
+    .planetPicContainer-#{$planet-name}
     {
       position: relative;
 

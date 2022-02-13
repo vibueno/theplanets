@@ -15,9 +15,7 @@ import Menu from 'COMPONENTS/Menu';
 
 import { SECTIONS, PLANETS } from 'SRC/constants';
 
-import { getPlanetData } from 'SRC/utils';
-
-import './index.scss';
+import styles from './index.module.scss';
 
 const MainPage = () => {
   const currentPlanetKey = useSelector(selectors.getCurrentPlanetKey);
@@ -96,11 +94,11 @@ const MainPage = () => {
         href="https://fonts.googleapis.com/css2?family=Antonio:wght@500&family=Spartan:wght@400;700&display=swap"
       />
       <Menu
-        className="outside-header"
         currentPlanetKey={currentPlanetKey}
+        isInsideHeader={false}
         clickHandler={menuClickHandler}
       />
-      <div className="layout">
+      <div className={styles.layout}>
         <Header
           menuClickHandler={menuClickHandler}
           sectionMenuClickHandler={sectionMenuClickHandler}

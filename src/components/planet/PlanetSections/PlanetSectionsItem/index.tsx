@@ -1,12 +1,13 @@
 import React, { MouseEventHandler } from 'react';
 
+import styles from './index.module.scss';
+
 type PlanetSectionsMenuItemProps = {
   sectionKey: string;
   currentSectionKey: string;
   className: string;
   caption: string;
   captionLong: string;
-  classNameNumbering: string;
   numbering: string;
   clickHandler: (
     e: React.MouseEvent<HTMLButtonElement>,
@@ -20,7 +21,6 @@ const PlanetSectionsMenuItem = ({
   className,
   caption,
   captionLong,
-  classNameNumbering,
   numbering,
   clickHandler
 }: PlanetSectionsMenuItemProps) => {
@@ -29,14 +29,14 @@ const PlanetSectionsMenuItem = ({
   return (
     <button
       id={sectionKey}
-      className={`btn-section ${className}`}
+      className={`${styles.planetSectionsBtn} ${styles[className]}`}
       onClick={e => clickHandler(e, ref)}
       data-selected={sectionKey === currentSectionKey}
       ref={ref}
     >
-      <span className={classNameNumbering}>{numbering}</span>
-      <span className="btn-caption">{caption}</span>
-      <span className="btn-caption-long">{captionLong}</span>
+      <span className={styles.planetSectionsBtnNumbering}>{numbering}</span>
+      <span className={styles.planetSectionsBtnCaption}>{caption}</span>
+      <span className={styles.planetSectionsBtnCaptionLong}>{captionLong}</span>
     </button>
   );
 };

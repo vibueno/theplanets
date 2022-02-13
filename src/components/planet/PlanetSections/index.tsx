@@ -6,7 +6,7 @@ import PlanetSectionsItem from './PlanetSectionsItem';
 
 import { PLANETS, SECTIONS, SECTION_KEYS } from 'SRC/constants';
 
-import './index.scss';
+import styles from './index.module.scss';
 
 type PlanetSectionsProps = {
   currentPlanetKey: string;
@@ -16,23 +16,13 @@ type PlanetSectionsProps = {
     ref: React.RefObject<HTMLButtonElement>
   ) => void;
   isMenu: boolean;
-  className?: string;
-};
-
-const defaultProps: PlanetSectionsProps = {
-  currentPlanetKey: '',
-  currentSectionKey: '',
-  clickHandler: () => {},
-  isMenu: false,
-  className: ''
 };
 
 const PlanetSections = ({
   currentPlanetKey,
   currentSectionKey,
   clickHandler,
-  isMenu,
-  className
+  isMenu
 }: PlanetSectionsProps) => {
   const isMenuOpen = useSelector(selectors.getIsMenuOpen);
   const isTransitionDone = useSelector(selectors.getIsTransitionDone);
@@ -40,8 +30,8 @@ const PlanetSections = ({
   return (
     <div
       className={`${
-        isMenu ? 'planet-sections-menu' : 'planet-sections-btn-panel'
-      } ${className}`}
+        isMenu ? styles.planetSectionsMenu : styles.planetSectionsBtnPanel
+      }`}
       data-menu-open={isMenuOpen}
       data-is-transition-done={isTransitionDone}
     >
@@ -50,10 +40,9 @@ const PlanetSections = ({
           key={sectionKey}
           sectionKey={sectionKey}
           currentSectionKey={currentSectionKey}
-          className={`btn-section-${PLANETS[currentPlanetKey].NAME}`}
+          className={`planetSectionsBtn-${PLANETS[currentPlanetKey].NAME}`}
           caption={SECTIONS[sectionKey].BTN_CAPTION}
           captionLong={SECTIONS[sectionKey].BTN_CAPTION_LONG}
-          classNameNumbering="btn-numbering"
           numbering={SECTIONS[sectionKey].NUMBER}
           clickHandler={clickHandler}
         />
@@ -61,7 +50,5 @@ const PlanetSections = ({
     </div>
   );
 };
-
-PlanetSections.defaultProps = defaultProps;
 
 export default PlanetSections;

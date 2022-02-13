@@ -1,6 +1,6 @@
 @use 'SRC/variables.scss' as *;
 
-.planet-stats-item
+.planetStatsItem
 {
   font: 500 20px/16px Antonio, Arial, Helvetica;
 
@@ -21,12 +21,12 @@
   border: $border;
 }
 
-.planet-stats-item:last-child
+.planetStatsItem:last-child
 {
   margin: 0;
 }
 
-.planet-stats-item-title
+.planetStatsItemTitle
 {
   flex: 1 1 50%;
 
@@ -36,7 +36,7 @@
   color: $color-grey-light;
 }
 
-.planet-stats-item-content
+.planetStatsItemContent
 {
   display: flex;
   flex: 1 1 50%;
@@ -45,7 +45,7 @@
 
 @media only screen and (min-width: 768px)
 {
-  .planet-stats-item
+  .planetStatsItem
   {
     font: 500 24px/52px Antonio, Arial, Helvetica;
 
@@ -63,7 +63,7 @@
     }
   }
 
-  .planet-stats-item-content
+  .planetStatsItemContent
   {
     display: block;
   }
@@ -71,7 +71,7 @@
 
 @media only screen and (min-width: 1200px)
 {
-  .planet-stats-item
+  .planetStatsItem
   {
     flex-direction: row;
 
@@ -80,7 +80,7 @@
 
     letter-spacing: -1.5px;
 
-    .planet-stats-item-content
+    .planetStatsItemContent
     {
       font: 500 40px/52px Antonio, Arial, Helvetica;
     }

@@ -2,21 +2,14 @@ import React, { useState, useLayoutEffect } from 'react';
 
 import { SECTIONS, PLANETS } from 'SRC/constants';
 
-import './index.scss';
+import styles from './index.module.scss';
 
 type PlanetPicProps = {
   currentPlanetKey: string;
   currentSectionKey: string;
-  className: string;
-  classNameGeology: string;
 };
 
-const PlanetPic = ({
-  currentPlanetKey,
-  currentSectionKey,
-  className,
-  classNameGeology
-}: PlanetPicProps) => {
+const PlanetPic = ({ currentPlanetKey, currentSectionKey }: PlanetPicProps) => {
   const [planetName, setPlanetName] = useState<string>(
     PLANETS[currentPlanetKey].NAME
   );
@@ -26,17 +19,17 @@ const PlanetPic = ({
   }, [currentPlanetKey]);
 
   return (
-    <div className={`planet-pic-container-${planetName}`}>
+    <div className={styles[`planetPicContainer-${planetName}`]}>
       <img
-        key={`planet-pic-${currentPlanetKey}`}
-        className={className}
+        key={`planetPic-${currentPlanetKey}`}
+        className={styles.planetPic}
         src={require(`ASSETS/img/${PLANETS[currentPlanetKey].PICS[currentSectionKey]}`)}
         alt={planetName}
       />
 
       <img
-        className={`${classNameGeology} ${
-          currentSectionKey === SECTIONS.GEOLOGY.KEY ? 'show' : 'hide'
+        className={`${styles.planetPicGeology} ${
+          currentSectionKey === SECTIONS.GEOLOGY.KEY ? styles.show : styles.hide
         }`}
         src={PLANETS[currentPlanetKey].PICS.GEOLOGY_ZOOM}
         alt={planetName}

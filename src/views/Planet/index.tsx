@@ -11,7 +11,7 @@ import { SECTIONS, PLANETS } from 'SRC/constants';
 
 import { getPlanetData } from 'SRC/utils';
 
-import './index.scss';
+import styles from './index.module.scss';
 
 type PlanetProps = {
   sectionMenuClickHandler: (
@@ -27,17 +27,15 @@ const Planet = ({ sectionMenuClickHandler }: PlanetProps) => {
   const currentSectionName = SECTIONS[currentSectionKey].NAME;
 
   return (
-    <div className="planet-container">
-      <div className="planet-pic-section-container">
+    <div className={styles.planetContainer}>
+      <div className={styles.planetPicSectionContainer}>
         <PlanetPic
           currentPlanetKey={currentPlanetKey}
           currentSectionKey={currentSectionKey}
-          className={`planet-pic`}
-          classNameGeology={'planet-pic-geology'}
         />
       </div>
-      <div className="planet-desc-sections-container">
-        <div className="planet-desc-container">
+      <div className={styles.planetDescSectionsContainer}>
+        <div className={styles.planetDescContainer}>
           <PlanetDesc
             currentPlanetName={currentPlanetName}
             currentPlanetDesc={
@@ -55,7 +53,7 @@ const Planet = ({ sectionMenuClickHandler }: PlanetProps) => {
           isMenu={false}
         />
       </div>
-      <div className="planet-stats-container">
+      <div className={styles.planetStatsContainer}>
         <PlanetStats currentPlanetKey={currentPlanetKey} />
       </div>
     </div>
