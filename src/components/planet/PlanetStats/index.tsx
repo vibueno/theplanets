@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import PlanetStatsItem from './PlanetStatsItem';
 
-import { getPlanetData } from 'SRC/utils';
+import { getPlanetData, getPlanetDataApi } from 'SRC/utils';
 import { PLANETS, STATS, STATS_KEYS } from 'SRC/constants';
 
 import styles from './index.module.scss';
@@ -10,23 +10,31 @@ type PlanetStatsProps = {
   currentPlanetKey: string;
 };
 
+type PlanetData = {
+  [key: string]: string | {};
+};
+
 const PlanetStats = ({ currentPlanetKey }: PlanetStatsProps) => {
-  const planetStatsItems = [];
+  const [planetStatsItems, setPlanetStatsItems] = useState<JSX.Element[]>([]);
 
-  for (let index = 0; index < STATS_KEYS.length; index++) {
-    planetStatsItems.push(
-      <PlanetStatsItem
-        key={STATS_KEYS[index]}
-        title={STATS[STATS_KEYS[index]].TITLE}
-        content={getPlanetData(
-          PLANETS[currentPlanetKey].NAME,
-          STATS[STATS_KEYS[index]].NAME
-        )}
-      />
-    );
-  }
+  useEffect(() => {
+    getPlanetDataApi(PLANETS[currentPlanetKey].NAME).then(response => {
+      const planetStats: JSX.Element[] = [];
 
-  return (
+      STATS_KEYS.forEach((statsKey: string) => {
+        planetStats.push(
+          <PlanetStatsItem
+            key={statsKey}
+            title={STATS[statsKey].TITLE}
+            content={response.data![statsKey.toLowerCase()] as string}
+          />
+        );
+      });
+      setPlanetStatsItems([...planetStats]);
+    });
+  }, [currentPlanetKey]);
+
+  return planetStatsItems.length > 0 ? (
     <div className={styles.planetStats}>
       <div className={styles.planetStatsColumn}>
         {planetStatsItems.slice(0, 2)}
@@ -35,7 +43,7 @@ const PlanetStats = ({ currentPlanetKey }: PlanetStatsProps) => {
         {planetStatsItems.slice(2, 4)}
       </div>
     </div>
-  );
+  ) : null;
 };
 
 export default PlanetStats;
