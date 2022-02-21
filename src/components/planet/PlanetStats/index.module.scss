@@ -3,6 +3,19 @@
   display: flex;
 
   width: 100%;
+
+  grid-column: 1 / 3;
+
+  .planetStatsColumn
+  {
+    display: flex;
+    flex-direction: column;
+
+    &:first-child
+    {
+      margin: 0 0 20px 0;
+    }
+  }
 }
 
 @media only screen and (max-width: 767px)
@@ -13,11 +26,58 @@
   }
 }
 
-
 @media only screen and (min-width: 768px)
 {
   .planetStats
   {
-    flex-direction: row;
+    .planetStatsColumn
+    {
+      flex-direction: row;
+
+      width: 100%;
+
+      &:first-child
+      {
+        margin: 0 1.5vw 0 0;
+      }
+    }
+  }
+}
+
+
+@media only screen and (min-width: 1200px) and (max-height:768px)
+{
+  .planetStats
+  {
+    display: grid;
+
+    grid-template-columns: subgrid;
+
+    .planetStatsColumn
+    {
+      display: flex;
+      flex-direction: row;
+
+      &:first-child
+      {
+        grid-column: 1/2;
+      }
+
+      &:nth-child(2)
+      {
+        grid-column: 2/3;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1200px) and (min-height:769px)
+{
+  .planetStats
+  {
+    .planetStatsColumn:first-child
+    {
+      margin: 0 2rem 0 0;
+    }
   }
 }
