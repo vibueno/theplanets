@@ -5,233 +5,195 @@ exports[`Header Header renders correctly 1`] = `
   data-is-transition-done={true}
   data-menu-open={false}
 >
-  <div
-    className="app-title"
-  >
+  <div>
     the planets
   </div>
   <img
-    className="hamburger"
     onClick={[Function]}
     src=""
   />
   <ul
-    className="menu inside-header"
-    data-menu-open={false}
+    data-is-inside-header={true}
   >
     <li
       className="mercury"
+      data-is-inside-header={true}
+      data-menu-open={false}
+      data-selected={true}
       id="MERCURY"
       onClick={[Function]}
     >
-      <span
-        className="menu-item-bullet-point"
-      />
-      <span
-        className="menu-item-title"
-      >
+      <span />
+      <span>
         mercury
       </span>
       <img
-        className="menu-item-arrow"
         src=""
       />
     </li>
     <li
       className="venus"
+      data-is-inside-header={true}
+      data-menu-open={false}
+      data-selected={false}
       id="VENUS"
       onClick={[Function]}
     >
-      <span
-        className="menu-item-bullet-point"
-      />
-      <span
-        className="menu-item-title"
-      >
+      <span />
+      <span>
         venus
       </span>
       <img
-        className="menu-item-arrow"
         src=""
       />
     </li>
     <li
       className="earth"
+      data-is-inside-header={true}
+      data-menu-open={false}
+      data-selected={false}
       id="EARTH"
       onClick={[Function]}
     >
-      <span
-        className="menu-item-bullet-point"
-      />
-      <span
-        className="menu-item-title"
-      >
+      <span />
+      <span>
         earth
       </span>
       <img
-        className="menu-item-arrow"
         src=""
       />
     </li>
     <li
       className="mars"
+      data-is-inside-header={true}
+      data-menu-open={false}
+      data-selected={false}
       id="MARS"
       onClick={[Function]}
     >
-      <span
-        className="menu-item-bullet-point"
-      />
-      <span
-        className="menu-item-title"
-      >
+      <span />
+      <span>
         mars
       </span>
       <img
-        className="menu-item-arrow"
         src=""
       />
     </li>
     <li
       className="jupiter"
+      data-is-inside-header={true}
+      data-menu-open={false}
+      data-selected={false}
       id="JUPITER"
       onClick={[Function]}
     >
-      <span
-        className="menu-item-bullet-point"
-      />
-      <span
-        className="menu-item-title"
-      >
+      <span />
+      <span>
         jupiter
       </span>
       <img
-        className="menu-item-arrow"
         src=""
       />
     </li>
     <li
       className="saturn"
+      data-is-inside-header={true}
+      data-menu-open={false}
+      data-selected={false}
       id="SATURN"
       onClick={[Function]}
     >
-      <span
-        className="menu-item-bullet-point"
-      />
-      <span
-        className="menu-item-title"
-      >
+      <span />
+      <span>
         saturn
       </span>
       <img
-        className="menu-item-arrow"
         src=""
       />
     </li>
     <li
       className="uranus"
+      data-is-inside-header={true}
+      data-menu-open={false}
+      data-selected={false}
       id="URANUS"
       onClick={[Function]}
     >
-      <span
-        className="menu-item-bullet-point"
-      />
-      <span
-        className="menu-item-title"
-      >
+      <span />
+      <span>
         uranus
       </span>
       <img
-        className="menu-item-arrow"
         src=""
       />
     </li>
     <li
       className="neptune"
+      data-is-inside-header={true}
+      data-menu-open={false}
+      data-selected={false}
       id="NEPTUNE"
       onClick={[Function]}
     >
-      <span
-        className="menu-item-bullet-point"
-      />
-      <span
-        className="menu-item-title"
-      >
+      <span />
+      <span>
         neptune
       </span>
       <img
-        className="menu-item-arrow"
         src=""
       />
     </li>
   </ul>
   <div
-    className="planet-sections-menu"
+    className="undefined"
     data-is-transition-done={true}
     data-menu-open={false}
   >
     <button
-      className="btn btn-mercury"
+      className="undefined undefined"
       data-selected={true}
       id="OVERVIEW"
       onClick={[Function]}
     >
-      <span
-        className="btn-numbering"
-      >
+      <span>
         01
       </span>
-      <span
-        className="btn-caption"
-      >
+      <span>
         overview
       </span>
-      <span
-        className="btn-caption-long"
-      >
+      <span>
         overview
       </span>
     </button>
     <button
-      className="btn btn-mercury"
+      className="undefined undefined"
       data-selected={false}
       id="STRUCTURE"
       onClick={[Function]}
     >
-      <span
-        className="btn-numbering"
-      >
+      <span>
         02
       </span>
-      <span
-        className="btn-caption"
-      >
+      <span>
         structure
       </span>
-      <span
-        className="btn-caption-long"
-      >
+      <span>
         internal structure
       </span>
     </button>
     <button
-      className="btn btn-mercury"
+      className="undefined undefined"
       data-selected={false}
       id="GEOLOGY"
       onClick={[Function]}
     >
-      <span
-        className="btn-numbering"
-      >
+      <span>
         03
       </span>
-      <span
-        className="btn-caption"
-      >
+      <span>
         geology
       </span>
-      <span
-        className="btn-caption-long"
-      >
+      <span>
         surface geology
       </span>
     </button>

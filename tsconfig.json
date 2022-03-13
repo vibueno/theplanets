@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "baseUrl": "./",
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
@@ -14,7 +15,14 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": false,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "paths": {
+      "COMPONENTS/*": ["src/components/*"],
+      "VIEWS/*": ["src/views/*"],
+      "ASSETS/*": ["src/assets/*"],
+      "SRC/*": ["src/*"],
+      "REDUX/*": ["src/redux/*"]
+    }
   },
-  "include": ["src", "index.d.ts"]
+  "include": ["src", "index.d.ts", "./jest-setup.ts"]
 }

@@ -1,4 +1,4 @@
-import React, { MouseEventHandler } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { setIsMenuOpen } from 'REDUX/appStateSlice';
@@ -6,7 +6,7 @@ import { selectors } from 'REDUX/appStateSlice';
 
 import PlanetSections from 'COMPONENTS/planet/PlanetSections';
 import Menu from 'COMPONENTS/Menu';
-import { APP_TITLE, PLANETS } from 'SRC/constants';
+import { APP_TITLE } from '../../constants';
 
 import styles from './index.module.scss';
 
