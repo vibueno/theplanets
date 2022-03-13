@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PlanetSectionsItem PlanetSectionsItem renders correctly 1`] = `
+<button
+  className="undefined undefined"
+  data-selected={true}
+  id="OVERVIEW"
+  onClick={[Function]}
+>
+  <span>
+    01
+  </span>
+  <span>
+    caption
+  </span>
+  <span>
+    captionLong
+  </span>
+</button>
+`;

@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PlanetSections PlanetSections renders correctly 1`] = `
+<div
+  className="undefined"
+  data-is-transition-done={true}
+  data-menu-open={false}
+>
+  <button
+    className="undefined undefined"
+    data-selected={true}
+    id="OVERVIEW"
+    onClick={[Function]}
+  >
+    <span>
+      01
+    </span>
+    <span>
+      overview
+    </span>
+    <span>
+      overview
+    </span>
+  </button>
+  <button
+    className="undefined undefined"
+    data-selected={false}
+    id="STRUCTURE"
+    onClick={[Function]}
+  >
+    <span>
+      02
+    </span>
+    <span>
+      structure
+    </span>
+    <span>
+      internal structure
+    </span>
+  </button>
+  <button
+    className="undefined undefined"
+    data-selected={false}
+    id="GEOLOGY"
+    onClick={[Function]}
+  >
+    <span>
+      03
+    </span>
+    <span>
+      geology
+    </span>
+    <span>
+      surface geology
+    </span>
+  </button>
+</div>
+`;

@@ -3,10 +3,10 @@ import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
 import * as renderer from 'react-test-renderer';
 import { render, screen } from '@testing-library/react';
-import Header from '../';
-import { APP_TITLE, PLANETS, SECTIONS } from 'SRC/constants';
+import PlanetSectionsItem from '../';
+import { PLANETS, SECTIONS } from 'SRC/constants';
 
-describe('Header', () => {
+describe('PlanetSectionsItem', () => {
   const initialState = {
     appState: {
       isMenuOpen: false,
@@ -20,34 +20,35 @@ describe('Header', () => {
 
   let store = mockStore(initialState);
   const props = {
-    menuClickHandler: () => {
-      return;
-    },
-    hamburgerClickHandler: () => {
-      return;
-    },
-    sectionMenuClickHandler: () => {
-      return;
-    }
+    sectionKey: SECTIONS.OVERVIEW.KEY,
+    currentSectionKey: SECTIONS.OVERVIEW.KEY,
+    className: `planetSectionsBtn-${PLANETS[PLANETS.MERCURY.KEY].NAME}`,
+    caption: 'caption',
+    captionLong: 'captionLong',
+    numbering: SECTIONS[SECTIONS.OVERVIEW.KEY].NUMBER,
+    clickHandler: () => {}
   };
 
-  it('Header renders correctly', () => {
+  it('PlanetSectionsItem renders correctly', () => {
     const tree = renderer
       .create(
         <Provider store={store}>
-          <Header {...props} />
+          <PlanetSectionsItem {...props} />
         </Provider>
       )
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
-  it('Header contains title', () => {
+  it('PlanetSectionsItem selected if currentPlanetKey === planetKey', () => {
     render(
       <Provider store={store}>
-        <Header {...props} />
+        <PlanetSectionsItem {...props} />
       </Provider>
     );
-    expect(screen.queryByText(APP_TITLE)).toHaveTextContent(APP_TITLE);
+    expect(screen.queryByRole('button')).toHaveAttribute(
+      'data-selected',
+      'true'
+    );
   });
 });

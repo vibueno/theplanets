@@ -3,10 +3,10 @@ import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
 import * as renderer from 'react-test-renderer';
 import { render, screen } from '@testing-library/react';
-import Header from '../';
-import { APP_TITLE, PLANETS, SECTIONS } from 'SRC/constants';
+import PlanetSections from '../';
+import { PLANETS, SECTIONS } from 'SRC/constants';
 
-describe('Header', () => {
+describe('PlanetSections', () => {
   const initialState = {
     appState: {
       isMenuOpen: false,
@@ -20,34 +20,32 @@ describe('Header', () => {
 
   let store = mockStore(initialState);
   const props = {
-    menuClickHandler: () => {
-      return;
-    },
-    hamburgerClickHandler: () => {
-      return;
-    },
-    sectionMenuClickHandler: () => {
-      return;
-    }
+    currentPlanetKey: PLANETS.MERCURY.KEY,
+    currentSectionKey: SECTIONS.OVERVIEW.KEY,
+    clickHandler: () => {},
+    isMenu: true
   };
 
-  it('Header renders correctly', () => {
+  it('PlanetSections renders correctly', () => {
     const tree = renderer
       .create(
         <Provider store={store}>
-          <Header {...props} />
+          <PlanetSections {...props} />
         </Provider>
       )
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
-  it('Header contains title', () => {
+  it('PlanetSections contains as many sections as SECTIONS.SECTIONS', () => {
     render(
       <Provider store={store}>
-        <Header {...props} />
+        <PlanetSections {...props} />
       </Provider>
     );
-    expect(screen.queryByText(APP_TITLE)).toHaveTextContent(APP_TITLE);
+
+    expect(screen.queryAllByRole('button').length).toEqual(
+      Object.keys(SECTIONS).length
+    );
   });
 });

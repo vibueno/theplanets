@@ -91,7 +91,11 @@
       "^SRC(.*)$": "<rootDir>/src$1",
       "^ASSETS(.*)$": "<rootDir>/src/assets$1",
       "^COMPONENTS(.*)$": "<rootDir>/src/components$1"
-    }
+    },
+    "testEnvironment": "jsdom",
+    "setupFilesAfterEnv": [
+      "@testing-library/jest-dom/extend-expect"
+    ]
   },
   "devDependencies": {
     "@babel/core": "^7.13.14",
